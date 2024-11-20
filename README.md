@@ -5,7 +5,7 @@
 
 
 - <b>Google Cybersecurity Certificate</b>
-[<a href="https://imgur.com/a/0wY6SN7" target = "_blank" > Certificate of Completion </a>]
+  - [Certificate of Completion](https://imgur.com/a/0wY6SN7)
 - <b>Control & Compliance Checklist </b>
   - [Checklist of Compliance Assessment](https://imgur.com/a/ToLYuIl)
 - <b>Security Risk Assessment Report</b>
@@ -31,7 +31,7 @@
 [<img align="left" alt="George Akai | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
 [<img align="left" alt="George Akai | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />][instagram]
 
-[instagram]: https://www.instagram.com/george.akai_
+[instagram]: https://www.instagram.com/georgeakai_infosec
 [linkedin]: https://www.linkedin.com/in/george-akai-91a41022b
 
 <!--
