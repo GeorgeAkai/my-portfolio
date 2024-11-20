@@ -6,8 +6,10 @@
 
 - <b>Google Cybersecurity Certificate</b>
 [<a href="https://imgur.com/a/0wY6SN7" target = "_blank" > Certificate of Completion </a>]
-- <b>Control & Compliance Checklist </b> <a href="https://imgur.com/a/ToLYuIl" target="_blank">[Image]</a>
-- <b>Security Risk Assessment Report</b> <a href="https://imgur.com/a/44Ou1Nx" target="_blank">[Image]</a>
+- <b>Control & Compliance Checklist </b>
+  - [Checklist of Compliance Assessment](https://imgur.com/a/ToLYuIl)
+- <b>Security Risk Assessment Report</b>
+  - [Risk Assessment](https://imgur.com/a/44Ou1Nx)
 - <b>Open Source Intelligence</b>
 - <b>Log Analysis</b>
 - <b>Network Traffict Analysis</b>
