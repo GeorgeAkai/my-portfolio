@@ -12,10 +12,13 @@
   - [Risk Assessment](https://imgur.com/a/44Ou1Nx)
 - <b>Open Source Intelligence</b>
 - <b>Log Analysis</b>
+  - [Log Analysis](https://imgur.com/a/fWjRAHB)
 - <b>Network Traffict Analysis</b>
+  - [Wireshark](https://imgur.com/a/POi8SGe)
 - <b>Scanning and Recconaissance</b>
 - <b>Forensics</b>
 - <b>Password Cracking</b>
+  - [Hashcat](https://imgur.com/a/ExS7oUy)
 
 <h2>👨‍💻 Software Development Projects:</h2>
 
