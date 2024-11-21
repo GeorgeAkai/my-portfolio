@@ -16,9 +16,11 @@
 - <b>Network Traffict Analysis</b>
   - [Wireshark](https://imgur.com/a/POi8SGe)
 - <b>Scanning and Recconaissance</b>
+  - NMAP, ARMITAGE, NETCAT, TRUECRYPT
 - <b>Forensics</b>
 - <b>Password Cracking</b>
   - [Hashcat](https://imgur.com/a/ExS7oUy)
+  - John the Ripper
 
 <h2>👨‍💻 Software Development Projects:</h2>
 
