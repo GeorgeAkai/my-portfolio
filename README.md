@@ -4,8 +4,6 @@
 
   - [National Cyber League Certificate](https://imgur.com/a/NPr7xDk)
   - <img alt="George Akai NCL Badge" width="150px" src="https://mcusercontent.com/5cc685d37bf49db795c715427/images/3d6a88c7-fe50-5c79-210d-ea449834a6a2.png?mc_cid=70059fd037&mc_eid=9cd3361396" />
- 
-
 
 - <b>Google Cybersecurity Certificate</b>
   - [Certificate of Completion](https://imgur.com/a/0wY6SN7)
