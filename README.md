@@ -1,7 +1,10 @@
 <h1>Hi, I'm George! <br/><a href="https://github.com/GeorgeAkai">Programmer and Web Developer</a>, <a href="https://www.linkedin.com/in/george-akai-91a41022b">Cybersecurity Analyst</a></h1>
 <h2> Cybersecurity Practice </h2>
-- <b>Participated in the Fall 2024 National Cyber League:</b>
-<img alt="George Akai NCL Badge" width="150px" src="https://mcusercontent.com/5cc685d37bf49db795c715427/images/3d6a88c7-fe50-5c79-210d-ea449834a6a2.png?mc_cid=70059fd037&mc_eid=9cd3361396" />
+- <b>Participated in the Fall 2024 National Cyber League</b>
+
+  - [National Cyber League Certificate](https://imgur.com/a/NPr7xDk)
+  - <img alt="George Akai NCL Badge" width="150px" src="https://mcusercontent.com/5cc685d37bf49db795c715427/images/3d6a88c7-fe50-5c79-210d-ea449834a6a2.png?mc_cid=70059fd037&mc_eid=9cd3361396" />
+ 
 
 
 - <b>Google Cybersecurity Certificate</b>
