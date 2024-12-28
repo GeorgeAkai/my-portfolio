@@ -30,6 +30,7 @@
 
 <h2> Web Development</h2>
 - <b>Kenrish Collection Web Application for Beatury Services and Products</b>
+  - [Website Image](https://imgur.com/a/xsQ47Tp)
 - <b>E-Commerce Web App</b>
 
 <h2> 🤳 Connect with me:</h2>
