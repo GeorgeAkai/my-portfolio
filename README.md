@@ -1,4 +1,4 @@
-<h1>Hi, I'm George! <br/><a href="https://github.com/GeorgeAkai">Programmer and Web Developer</a>, <a href="https://www.linkedin.com/in/george-akai-91a41022b">Cybersecurity Analyst</a></h1>
+<h1>Hi, I'm George! <br/><a href="https://github.com/GeorgeAkai">Programmer and Web Developer</a>, <a href="https://www.linkedin.com/in/george-akai-91a41022b">Cybersecurity Analyst</a> </h1>
 
 <h2>Cybersecurity Practice</h2>
 <ul>
