@@ -2,25 +2,25 @@
 <h2> Cybersecurity Practice </h2>
 - <b>Participated in the Fall 2024 National Cyber League</b>
 
-  - [National Cyber League Certificate](https://imgur.com/a/NPr7xDk)
-  - <img alt="George Akai NCL Badge" width="150px" src="https://mcusercontent.com/5cc685d37bf49db795c715427/images/3d6a88c7-fe50-5c79-210d-ea449834a6a2.png?mc_cid=70059fd037&mc_eid=9cd3361396" />
+   ![National Cyber League Certificate](https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true)
+   <img alt="George Akai NCL Badge" width="150px" src="https://mcusercontent.com/5cc685d37bf49db795c715427/images/3d6a88c7-fe50-5c79-210d-ea449834a6a2.png?mc_cid=70059fd037&mc_eid=9cd3361396" />
 
 - <b>Google Cybersecurity Certificate</b>
-  - [Certificate of Completion](https://imgur.com/a/0wY6SN7)
+  - ![Certificate of Completion](https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-11-20%20004035.png?raw=true)
 - <b>Control & Compliance Checklist </b>
   - [Checklist of Compliance Assessment](https://imgur.com/a/ToLYuIl)
 - <b>Security Risk Assessment Report</b>
   - [Risk Assessment](https://imgur.com/a/44Ou1Nx)
 - <b>Open Source Intelligence</b>
 - <b>Log Analysis</b>
-  - [Log Analysis](https://imgur.com/a/fWjRAHB)
+   ![Log Analysis](https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-11-20%20222736.png?raw=true)
 - <b>Network Traffict Analysis</b>
-  - [Wireshark](https://imgur.com/a/POi8SGe)
+   ![Wireshark](https://github.com/GeorgeAkai/my-portfolio/blob/main/Network%20Traffic%20Analysis.png?raw=true)
 - <b>Scanning and Recconaissance</b>
   - NMAP, ARMITAGE, NETCAT, TRUECRYPT
 - <b>Forensics</b>
 - <b>Password Cracking</b>
-  - [Hashcat](https://imgur.com/a/ExS7oUy)
+   ![Hashcat](https://github.com/GeorgeAkai/my-portfolio/blob/main/password%20cracking.png?raw=true)
   - John the Ripper
 
 <h2>👨‍💻 Software Development Projects:</h2>
