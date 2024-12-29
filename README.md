@@ -1,50 +1,63 @@
 <h1>Hi, I'm George! <br/><a href="https://github.com/GeorgeAkai">Programmer and Web Developer</a>, <a href="https://www.linkedin.com/in/george-akai-91a41022b">Cybersecurity Analyst</a></h1>
-<h2> Cybersecurity Practice </h2>
-- <b>Participated in the Fall 2024 National Cyber League</b>
 
-   ![National Cyber League Certificate](https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true)
-   <img alt="George Akai NCL Badge" width="150px" src="https://mcusercontent.com/5cc685d37bf49db795c715427/images/3d6a88c7-fe50-5c79-210d-ea449834a6a2.png?mc_cid=70059fd037&mc_eid=9cd3361396" />
+<h2>Cybersecurity Practice</h2>
+<ul>
+  <li><b>Participated in the Fall 2024 National Cyber League</b></li>
+  <img alt="National Cyber League Certificate" width="140px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" style="margin: 10px 0;" />
+  <img alt="George Akai NCL Badge" width="140px" src="https://mcusercontent.com/5cc685d37bf49db795c715427/images/3d6a88c7-fe50-5c79-210d-ea449834a6a2.png?mc_cid=70059fd037&mc_eid=9cd3361396" style="margin: 100px 0;" />
 
-- <b>Google Cybersecurity Certificate</b>
-  - ![Certificate of Completion](https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-11-20%20004035.png?raw=true)
- <br> <br>
-    
-- <b>Control & Compliance Checklist </b>
-  - [Checklist of Compliance Assessment](https://imgur.com/a/ToLYuIl)
-- <b>Security Risk Assessment Report</b>
-  - [Risk Assessment](https://imgur.com/a/44Ou1Nx)
-- <b>Open Source Intelligence</b>
-- <b>Log Analysis</b>
-   ![Log Analysis](https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-11-20%20222736.png?raw=true)
-- <b>Network Traffict Analysis</b>
-   ![Wireshark](https://github.com/GeorgeAkai/my-portfolio/blob/main/Network%20Traffic%20Analysis.png?raw=true)
-- <b>Scanning and Recconaissance</b>
-  - NMAP, ARMITAGE, NETCAT, TRUECRYPT
-- <b>Forensics</b>
-- <b>Password Cracking</b>
-   ![Hashcat](https://github.com/GeorgeAkai/my-portfolio/blob/main/password%20cracking.png?raw=true)
-  - John the Ripper
+  <li><b>Google Cybersecurity Certificate</b></li>
+  <img alt="Certificate of Completion" width="140px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-11-20%20004035.png?raw=true" style="margin: 10px 0;" />
+
+  <li><b>Control & Compliance Checklist</b></li>
+  <a href="https://github.com/GeorgeAkai/my-portfolio/blob/main/Controls%20and%20compliance%20checklist.pdf">See the checklist</a>
+
+  <li><b>Security Risk Assessment Report</b></li>
+  <a href="https://github.com/GeorgeAkai/my-portfolio/blob/main/Security%20risk%20assessment%20report.pdf">See Report</a>
+
+  <li><b>Open Source Intelligence</b></li>
+  <img alt="OSINT" width="140px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/image.png?raw=true" style="margin: 10px 0;" />
+
+  <li><b>Log Analysis</b></li>
+  <img alt="Log Analysis" width="140px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-11-20%20222736.png?raw=true" style="margin: 10px 0;" />
+
+  <li><b>Network Traffic Analysis</b></li>
+  <img alt="Wireshark" width="140px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Network%20Traffic%20Analysis.png?raw=true" style="margin: 10px 0;" />
+
+  <li><b>Scanning and Reconnaissance</b></li>
+  <p>NMAP, ARMITAGE, NETCAT, TRUECRYPT</p>
+
+  <li><b>Threat Intelligence using the CVEs website, and OSINT sources.</b></li>
+
+  <li><b>Password Cracking</b></li>
+  <img alt="Hashcat" width="140px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/password%20cracking.png?raw=true" style="margin: 10px 0;" />
+  <li><b>John the Ripper</b></li>
+</ul>
 
 <h2>👨‍💻 Software Development Projects:</h2>
+<ul>
+  <li><b>Data Structures and Algorithms</b></li>
+  <li><b>Object Oriented Programming</b></li>
+</ul>
 
-- <b>Data Structures and Algorithms</b>
-- <b>Object Oriented Programming</b>
+<h2>&lt;/&gt;Web Development</h2>
+<ul>
+  <li><b>Kenrish Collection Web Application for Beauty Services and Products</b></li>
+  <img alt="Website Image" width="140px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-12-28%20144616.png?raw=true" style="margin: 10px 0;" />
 
-## Web Development
+  <!-- <li><b>E-Commerce Web App</b></li> -->
+</ul>
 
-- **Kenrish Collection Web Application for Beauty Services and Products**  
-  ![Website Image](https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-12-28%20144616.png?raw=true)
+<h2>🔭 I’m currently working on</h2>
+<p>I am learning to get ready to take the <b>CompTIA Security+ Exam </b> before the Spring 2025 semester begins.</p>
 
-- **E-Commerce Web App**
-
-
-<h2> 🤳 Connect with me:</h2>
-
-[<img align="left" alt="George Akai | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
-[<img align="left" alt="George Akai | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />][instagram]
-
-[instagram]: https://www.instagram.com/georgeakai_infosec
-[linkedin]: https://www.linkedin.com/in/george-akai-91a41022b
+<h2>🤳 Connect with me:</h2>
+<a href="https://www.linkedin.com/in/george-akai-91a41022b">
+  <img alt="George Akai | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" style="margin-right: 10px;" />
+</a>
+<a href="https://www.instagram.com/georgeakai_infosec">
+  <img alt="George Akai | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" style="margin-right: 10px;" />
+</a>
 
 <!--
 **GeorgeAkai/my-portfolio** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
