@@ -28,11 +28,13 @@
 - <b>Data Structures and Algorithms</b>
 - <b>Object Oriented Programming</b>
 
-<h2> Web Development</h2>
- <b>Kenrish Collection Web Application for Beatury Services and Products</b>
-  - [Website Image](Screenshot 2024-12-28 144616.png?raw=true)
-  
-- <b>E-Commerce Web App</b>
+## Web Development
+
+- **Kenrish Collection Web Application for Beauty Services and Products**  
+  ![Website Image](https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-12-28%20144616.png?raw=true)
+
+- **E-Commerce Web App**
+
 
 <h2> 🤳 Connect with me:</h2>
 
