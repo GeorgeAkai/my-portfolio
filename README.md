@@ -7,6 +7,8 @@
 
 - <b>Google Cybersecurity Certificate</b>
   - ![Certificate of Completion](https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-11-20%20004035.png?raw=true)
+ <br> <br>
+    
 - <b>Control & Compliance Checklist </b>
   - [Checklist of Compliance Assessment](https://imgur.com/a/ToLYuIl)
 - <b>Security Risk Assessment Report</b>
