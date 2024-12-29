@@ -4,13 +4,14 @@
 <ul>
  <li><b>Participated in the Fall 2024 National Cyber League</b></li>
 <div style="display: flex; gap: 20px; align-items: center;">
-  <img alt="National Cyber League Certificate" width="140px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" />
-  <img alt="George Akai NCL Badge" width="140px" src="https://mcusercontent.com/5cc685d37bf49db795c715427/images/3d6a88c7-fe50-5c79-210d-ea449834a6a2.png?mc_cid=70059fd037&mc_eid=9cd3361396" />
+  <img alt="National Cyber League Certificate" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" />
+  <img alt="George Akai NCL Badge" width="250px" src="https://mcusercontent.com/5cc685d37bf49db795c715427/images/3d6a88c7-fe50-5c79-210d-ea449834a6a2.png?mc_cid=70059fd037&mc_eid=9cd3361396" />
 </div>
   <br>
   <li><b>Google Cybersecurity Certificate</b></li>
   <p>Learned about Networks, Risks & Assets Management, NIST CyberSecurity Framework, Linux, SQL, Python, and Incident and Response Events and Tools </p>
-  <img alt="Certificate of Completion" width="140px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-11-20%20004035.png?raw=true" style="margin: 10px 0;" />
+  <img alt="Certificate of Completion" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-11-20%20004035.png?raw=true" style="margin: 10px 0;" />
+  <img alt="Certificate of Completion" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true" style="margin: 10px 0;" />
   <br>
   <li><b>Control & Compliance Checklist</b></li>
   <p>Cheking security policies and controls so that compliance with laws and regulations is achieved.</p>
@@ -22,15 +23,15 @@
   <br>
   <li><b>Open Source Intelligence</b></li>
   <p>Conducted searches online in order to find information useful to solve challenges presented.</p>
-  <img alt="OSINT" width="140px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/image.png?raw=true" style="margin: 10px 0;" />
+  <img alt="OSINT" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-12-28%20225022.png?raw=true" style="margin: 10px 0;" />
   <br>
   <li><b>Log Analysis</b></li>
   <p> Familiar with Windows logs in the event viewer and Linux logs in syslogs</p>
-  <img alt="Log Analysis" width="140px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-11-20%20222736.png?raw=true" style="margin: 10px 0;" />
+  <img alt="Log Analysis" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-11-20%20222736.png?raw=true" style="margin: 10px 0;" />
   <br>
   <li><b>📡Network Traffic Analysis</b></li>
   <p>Analysed network packets using Wireshark to see what is happening in the network.</p>
-  <img alt="Wireshark" width="140px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Network%20Traffic%20Analysis.png?raw=true" style="margin: 10px 0;" />
+  <img alt="Wireshark" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Network%20Traffic%20Analysis.png?raw=true" style="margin: 10px 0;" />
 
   <li><b>Vulnerability Scanning and Reconnaissance</b></li>
   <ul>
@@ -39,10 +40,10 @@
    <li>Netcat: Used for port scanning and banner grabbing to establish connection with a system. As a security analyst, monitoring its use, unusual connections done by netcat are things to look out for.</li>
   </ul> <br>
   <li><b>Threat Intelligence using the CVEs website, and OSINT sources.</b></li>
-    <img alt="CVE.png" width: "140px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/cves.png?raw=true" style="margin: 10px 0;" />
+    <img alt="CVE.png" width: "300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/cves.png?raw=true" style="margin: 10px 0;" />
     <br>
   <li><b>🔒Password Cracking using Tools such as Hashcat and John The Ripper</b></li>
-  <img alt="Hashcat" width="140px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/password%20cracking.png?raw=true" style="margin: 10px 0;" />
+  <img alt="Hashcat" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/password%20cracking.png?raw=true" style="margin: 10px 0;" />
   <br>
 </ul>
 
@@ -64,9 +65,9 @@
 <h2>&lt;/&gt;Web Development</h2>
 <ul>
   <li><b>Kenrish Collection Web Application for Beauty Services and Products</b></li>
-  <img alt="Website Image" width="140px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-12-28%20144616.png?raw=true" style="margin: 10px 0;" />
-  <img alt="Website Image" width="140px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/rish.png?raw=true" style="margin: 10px 0;" /> 
-  <img width="Web IMg" alt="image" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true" style="margin: 10px 0;" />
+  <img alt="Website Image" width="250px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-12-28%20144616.png?raw=true" style="margin: 10px 0;" />
+  <img alt="Website Image" width="250px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/rish.png?raw=true" style="margin: 10px 0;" /> 
+  <img width="250px" alt="img" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true" style="margin: 10px 0;" />
 
   <!-- <li><b>E-Commerce Web App</b></li> -->
 </ul>
