@@ -29,8 +29,9 @@
 - <b>Object Oriented Programming</b>
 
 <h2> Web Development</h2>
-- <b>Kenrish Collection Web Application for Beatury Services and Products</b>
-  - [Website Image](https://imgur.com/a/xsQ47Tp)
+ <b>Kenrish Collection Web Application for Beatury Services and Products</b>
+  - [Website Image](Screenshot 2024-12-28 144616.png?raw=true)
+  
 - <b>E-Commerce Web App</b>
 
 <h2> 🤳 Connect with me:</h2>
