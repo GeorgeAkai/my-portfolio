@@ -37,6 +37,11 @@
             width: 100%;
             border-radius: 8px;
             margin-bottom: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .card img:hover {
+            transform: scale(1.05);
         }
         .card h3 {
             color: #222;
@@ -54,6 +59,24 @@
         }
         .card a:hover {
             text-decoration: underline;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
         }
     </style>
 </head>
@@ -128,7 +151,7 @@
             </div>
             <div class="card">
                 <h3>Kenrish Collection Web App</h3>
-                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true" alt="Kenrish Collection">
+                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true" alt="Kenrish Collection" onclick="openLightbox(this)">
                 <ul>
                     <li>Developed a web application for beauty services and product management.</li>
                 </ul>
@@ -148,6 +171,25 @@
             </div>
         </div>
     </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Enlarged image">
+    </div>
+
+    <script>
+        function openLightbox(imgElement) {
+            var lightbox = document.getElementById('lightbox');
+            var lightboxImg = document.getElementById('lightbox-img');
+            lightbox.style.display = 'flex';
+            lightboxImg.src = imgElement.src;
+        }
+
+        function closeLightbox() {
+            var lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
