@@ -37,6 +37,7 @@
             width: 100%;
             border-radius: 8px;
             margin-bottom: 10px;
+            cursor: pointer;
         }
         .card h3 {
             color: #222;
@@ -58,6 +59,40 @@
         .card a:hover {
             text-decoration: underline;
         }
+
+        /* Modal styles */
+        #imageModal {
+            display: none; 
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow: auto;
+            padding-top: 60px;
+        }
+        #modalImage {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+        }
+        #closeBtn {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        #closeBtn:hover {
+            color: #f1f1f1;
+        }
     </style>
 </head>
 <body>
@@ -71,7 +106,7 @@
             <div class="grid-container">
                 <div class="card">
                     <h3>National Cyber League</h3>
-                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" alt="NCL Certificate">
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" alt="NCL Certificate" class="project-image">
                     <ul>
                         <li>Participated in open-source intelligence (OSINT) challenges.</li>
                         <li>Conducted cryptography and password cracking exercises.</li>
@@ -81,7 +116,7 @@
                 </div>
                 <div class="card">
                     <h3>Google Cybersecurity Certificate</h3>
-                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true" alt="Google Certificate">
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true" alt="Google Certificate" class="project-image">
                     <ul>
                         <li>Studied the NIST Cybersecurity Framework (CSF).</li>
                         <li>Gained an understanding of the TCP/IP and OSI models.</li>
@@ -90,38 +125,37 @@
                     </ul>
                 </div>
                 <div class="card">
-                    <h3>Compliance & Risk Assessment</h3>
+                    <h3>Compliance and Risk Assessment</h3>
+                    <p>Evaluates an organization's security posture and recommends improvements. I have experience in:</p>
                     <ul>
-                        <li>Worked as an Information Security Analyst Student Assistant.</li>
-                        <li>Inventorying sensitive data to ensure compliance with security standards.</li>
-                        <li>Identified and mitigated risks in sensitive data management.</li>
+                        <li>Inventorying sensitive data while working as an Information Security Analyst Student Assistant.</li>
+                        <li>Ensuring compliance and assessing vulnerabilities across different platforms.</li>
                     </ul>
+                    <a href="https://github.com/GeorgeAkai/my-portfolio/blob/main/Security%20risk%20assessment%20report.pdf">See Report</a>
                 </div>
                 <div class="card">
-                    <h3>Open Source Intelligence</h3>
-                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/cves.png?raw=true" alt="Threat Intelligence">
+                    <h3>Open Source Intelligence (OSINT)</h3>
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/cves.png?raw=true" alt="Threat Intelligence" class="project-image">
                     <ul>
-                        <li>Performed online searches to analyze publicly available data.</li>
-                        <li>Used OSINT techniques to gather information for solving security challenges.</li>
+                        <li>Performed online searches to look for publicly available information to solve challenges.</li>
+                        <li>Used various OSINT tools and techniques for gathering threat data and vulnerabilities.</li>
                     </ul>
                 </div>
                 <div class="card">
                     <h3>Network Traffic Analysis</h3>
-                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Network%20Traffic%20Analysis.png?raw=true" alt="Wireshark">
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Network%20Traffic%20Analysis.png?raw=true" alt="Wireshark" class="project-image">
                     <ul>
-                        <li>Applied networking concepts such as protocols, TCP, and HTTP.</li>
-                        <li>Used Wireshark to capture and analyze network packets.</li>
-                        <li>Identified security risks within network traffic.</li>
+                        <li>Used Wireshark to analyze network packets and detect potential security threats.</li>
+                        <li>Applied knowledge of networking concepts such as protocols, TCP, and HTTP to identify risks in the network.</li>
                     </ul>
                 </div>
                 <div class="card">
                     <h3>Vulnerability Management</h3>
-                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/password%20cracking.png?raw=true" alt="Hashcat">
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/qualys.png?raw=true" alt="Qualys Vulnerability Management" class="project-image">
                     <ul>
-                        <li>Completed Qualys Vulnerability Management (VM) certification training.</li>
-                        <li>Performed vulnerability assessments using Qualys VM tools.</li>
-                        <li>Analyzed security risks in various system configurations.</li>
-                        <li>Developed solutions for addressing identified vulnerabilities.</li>
+                        <li>Gained hands-on experience in identifying and mitigating vulnerabilities in systems using Qualys VM software.</li>
+                        <li>Performed risk assessments and conformance checks to ensure third-party vendors adhere to security standards.</li>
+                        <li>Completed certifications and training for Qualys VM.</li>
                     </ul>
                 </div>
             </div>
@@ -136,25 +170,19 @@
                 <div class="card">
                     <h3>C++ Data Structures & Algorithms</h3>
                     <ul>
-                        <li>Implemented sorting algorithms (e.g., bubble sort, quicksort).</li>
-                        <li>Developed binary search trees for efficient searching.</li>
-                        <li>Created priority queues for optimized task management.</li>
-                        <li>Utilized dynamic array methods for memory efficiency.</li>
-                        <li>Implemented hashing algorithms to optimize data retrieval.</li>
+                        <li>Implemented Graph Algorithms, Binary Trees, Sorting Algorithms, Hashing Techniques, and more.</li>
                     </ul>
                 </div>
                 <div class="card">
                     <h3>Hash Table Implementation</h3>
                     <ul>
-                        <li>Developed a hash table with chaining and resizing features in C++.</li>
-                        <li>Ensured collision handling for efficient data insertion and retrieval.</li>
+                        <li>Developed a hash table with chaining and resizing features in C++ to manage large datasets efficiently.</li>
                     </ul>
                 </div>
                 <div class="card">
                     <h3>Airport Simulation (Priority Queues)</h3>
                     <ul>
-                        <li>Simulated airport runway management using priority queues.</li>
-                        <li>Scheduled arrivals and departures with optimized flight handling.</li>
+                        <li>Simulated airport runway management using priority queues to schedule arrivals and departures.</li>
                     </ul>
                 </div>
             </div>
@@ -167,30 +195,19 @@
             <h2>🌐 Web Development Projects</h2>
             <div class="grid-container">
                 <div class="card">
+                    <h3>Kenrish Collection Web App</h3>
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true" alt="Kenrish Collection" class="project-image">
+                    <ul>
+                        <li>Developed a web application for beauty services and products.</li>
+                        <li>Worked on HTML, CSS, and JavaScript for responsive and dynamic user experience.</li>
+                    </ul>
+                </div>
+                <div class="card">
                     <h3>Django Fullstack Chess Application</h3>
                     <ul>
-                        <li>Developed user authentication (login, join, and logout) for secure access.</li>
-                        <li>Created a dynamic, full-stack web application using Django.</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>HTML, CSS & JS Chess Application</h3>
-                    <ul>
-                        <li>Built an interactive chess game with modern web technologies.</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Database Management</h3>
-                    <ul>
-                        <li>Designed and optimized relational database models for efficient data storage and retrieval.</li>
-                        <li>Utilized SQL for complex queries and data manipulation.</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Kenrish Collection Web App</h3>
-                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true" alt="Kenrish Collection">
-                    <ul>
-                        <li>Developed a web application for beauty services and product management.</li>
+                        <li>Developed a Django-based web app for playing chess, featuring login, join, and logout functionalities.</li>
+                        <li>Integrated HTML, CSS, and JavaScript for front-end development and built a database model to store user data securely.</li>
+                        <li>Gained proficiency in relational database models and database management systems (DBMS).</li>
                     </ul>
                 </div>
             </div>
@@ -211,6 +228,40 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal for Image View -->
+    <div id="imageModal">
+        <span id="closeBtn">&times;</span>
+        <img id="modalImage" src="" alt="Expanded Image">
+    </div>
+
+    <script>
+        // Get all images with the class "project-image"
+        const images = document.querySelectorAll('.project-image');
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeBtn = document.getElementById('closeBtn');
+
+        // When any image is clicked
+        images.forEach(image => {
+            image.addEventListener('click', function() {
+                modal.style.display = 'block';
+                modalImage.src = this.src;
+            });
+        });
+
+        // Close the modal when the close button is clicked
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // Close the modal if the user clicks anywhere outside the modal image
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
 
 </body>
 </html>
