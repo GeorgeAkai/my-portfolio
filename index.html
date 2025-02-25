@@ -3,144 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybersecurity & Development Portfolio</title>
+    <title>George Akai: Portfolio</title>
     <style>
-        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 20px;
-        }
-
-        h2 {
-            color: #2c3e50;
             text-align: center;
         }
-
-        /* Grid Layout */
+        h1 {
+            color: #333;
+        }
+        .section {
+            margin-top: 40px;
+        }
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
+            padding: 20px;
             max-width: 1200px;
             margin: auto;
-            padding: 20px;
         }
-
-        /* Card Style */
         .card {
             background: white;
-            border-radius: 12px;
             padding: 20px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
         }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-        }
-
         .card img {
             width: 100%;
             border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .card h3 {
+            color: #222;
+        }
+        .card p {
+            color: #555;
+        }
+        .card a {
+            display: inline-block;
             margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
         }
-
-        .card ul {
-            padding-left: 20px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            .grid-container {
-                grid-template-columns: 1fr;
-            }
+        .card a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-<h2>🛡️ Cybersecurity & Software Development Portfolio</h2>
+    <h1>🛡️ My Cybersecurity Portfolio</h1>
 
-<div class="grid-container">
-    
-    <!-- National Cyber League -->
-    <div class="card">
-        <h3>🏆 National Cyber League</h3>
-        <p>Participated in the Fall 2024 NCL, solving cybersecurity challenges.</p>
-        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" alt="NCL Certificate">
+    <!-- Cybersecurity Projects Section -->
+    <div class="section">
+        <h2>🔐 Cybersecurity Projects</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>National Cyber League</h3>
+                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" alt="NCL Certificate">
+                <p>Participated in challenges including open-source intelligence, cryptography, password cracking, forensics, enumeration and exploitation, and network traffic analysis.</p>
+            </div>
+            <div class="card">
+                <h3>Google Cybersecurity Certificate</h3>
+                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true" alt="Google Certificate">
+                <p>Learned about the NIST CSF framework, the TCP/IP and OSI models, Linux, SQL, SOC operations, asset management, and risk management.</p>
+            </div>
+            <div class="card">
+                <h3>Compliance and Risk Assessment</h3>
+                <p>Worked as an Information Security Analyst Student Assistant, inventorying sensitive data to ensure compliance and risk mitigation.</p>
+            </div>
+            <div class="card">
+                <h3>Open Source Intelligence</h3>
+                <p>Performed online searches to find publicly available information and solve OSINT challenges.</p>
+            </div>
+            <div class="card">
+                <h3>Network Traffic Analysis</h3>
+                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Network%20Traffic%20Analysis.png?raw=true" alt="Wireshark">
+                <p>Utilized networking concepts such as protocols, TCP, and HTTP to identify security risks within network traffic.</p>
+            </div>
+            <div class="card">
+                <h3>Vulnerability Management</h3>
+                <p>Analyzed security risks using Qualys VM and performed assessments to identify vulnerabilities. Certified in training for Qualys VM.</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Google Cybersecurity Certificate -->
-    <div class="card">
-        <h3>📜 Google Cybersecurity Certificate</h3>
-        <p>Gained expertise in networks, risk assessment, Linux, SQL, and Python.</p>
-        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true" alt="Google Certificate">
+    <!-- Software Development Projects Section -->
+    <div class="section">
+        <h2>💻 Software Development Projects</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>C++ Data Structures & Algorithms</h3>
+                <p>Implemented Sorting Algorithms, Binary Search Trees, Priority Queues, Dynamic Array methods, and Hashing Algorithms.</p>
+            </div>
+            <div class="card">
+                <h3>Hash Table Implementation</h3>
+                <p>Developed a hash table with chaining and resizing features in C++.</p>
+            </div>
+            <div class="card">
+                <h3>Airport Simulation (Priority Queues)</h3>
+                <p>Simulated airport runway management using priority queues for scheduling arrivals and departures.</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Compliance & Risk Assessment -->
-    <div class="card">
-        <h3>✅ Compliance & Risk Assessment</h3>
-        <p>Conducted security risk assessments and compliance audits.</p>
-        <a href="https://github.com/GeorgeAkai/my-portfolio/blob/main/Security%20risk%20assessment%20report.pdf">View Report</a>
+    <!-- Web Development Projects Section -->
+    <div class="section">
+        <h2>🌐 Web Development Projects</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Django Fullstack Chess Application</h3>
+                <p>Implemented user authentication features including join, login, and logout functionalities for security.</p>
+            </div>
+            <div class="card">
+                <h3>HTML, CSS & JS Chess Application</h3>
+                <p>Developed an interactive chess game using web technologies.</p>
+            </div>
+            <div class="card">
+                <h3>Database Management</h3>
+                <p>Designed and optimized relational database models (DBMS) for efficient data storage and retrieval.</p>
+            </div>
+            <div class="card">
+                <h3>Kenrish Collection Web App</h3>
+                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true" alt="Kenrish Collection">
+                <p>Developed a web application for beauty services and products.</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Open Source Intelligence -->
-    <div class="card">
-        <h3>🔍 OSINT Research</h3>
-        <p>Conducted Open Source Intelligence investigations for cybersecurity challenges.</p>
-        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-12-28%20225022.png?raw=true" alt="OSINT Screenshot">
+    <!-- Current Learning Section -->
+    <div class="section">
+        <h2>🎯 Currently Learning</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Preparing for CompTIA Security+</h3>
+                <p>Studying core security concepts and best practices for the Security+ certification exam.</p>
+            </div>
+        </div>
     </div>
-
-    <!-- Network Traffic Analysis -->
-    <div class="card">
-        <h3>📡 Network Traffic Analysis</h3>
-        <p>Analyzed Wireshark captures to detect anomalies in network traffic.</p>
-        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Network%20Traffic%20Analysis.png?raw=true" alt="Wireshark Analysis">
-    </div>
-
-    <!-- Password Cracking -->
-    <div class="card">
-        <h3>🔒 Password Cracking</h3>
-        <p>Performed security assessments using Hashcat and John the Ripper.</p>
-        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/password%20cracking.png?raw=true" alt="Password Cracking">
-    </div>
-
-    <!-- Vulnerability Management -->
-    <div class="card">
-        <h3>🛡️ Vulnerability Management</h3>
-        <ul>
-            <li>Used <b>Qualys VM</b> for vulnerability scanning.</li>
-            <li>Conducted <b>Nmap</b> scans for OS fingerprinting.</li>
-            <li>Utilized <b>OpenVAS</b> for security vulnerability assessments.</li>
-        </ul>
-    </div>
-
-    <!-- C++ Data Structures & Algorithms -->
-    <div class="card">
-        <h3>💻 C++ Data Structures</h3>
-        <ul>
-            <li>Implemented BFS, DFS, and Dijkstra's algorithms.</li>
-            <li>Worked with heaps, priority queues, and hash tables.</li>
-        </ul>
-    </div>
-
-    <!-- Web Development Project -->
-    <div class="card">
-        <h3>🌐 Web Development</h3>
-        <p>Developed <b>Kenrish Collection</b>, a beauty service web app.</p>
-        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-12-28%20144616.png?raw=true" alt="Kenrish Web App">
-    </div>
-
-    <!-- Current Learning -->
-    <div class="card">
-        <h3>📖 Current Learning</h3>
-        <p>Preparing for the <b>CompTIA Security+ Exam</b> before Spring 2025.</p>
-    </div>
-
-</div>
 
 </body>
 </html>
+
