@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>George Akai - Portfolio</title>
+    <title>My Cybersecurity Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -37,11 +37,16 @@
             width: 100%;
             border-radius: 8px;
             margin-bottom: 10px;
+            cursor: pointer;
         }
         .card h3 {
             color: #222;
         }
         .card p {
+            color: #555;
+        }
+        .card ul {
+            padding-left: 20px;
             color: #555;
         }
         .card a {
@@ -54,89 +59,109 @@
         .card a:hover {
             text-decoration: underline;
         }
+
+        /* Modal styles */
+        #imageModal {
+            display: none; 
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow: auto;
+            padding-top: 60px;
+        }
+        #modalImage {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+        }
+        #closeBtn {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        #closeBtn:hover {
+            color: #f1f1f1;
+        }
     </style>
 </head>
 <body>
-    <h1>Hi, I'm George! <br/><a href="https://www.linkedin.com/in/george-akai-91a41022b">🕵️‍♂️Cybersecurity Analyst</a>, <a href="https://github.com/GeorgeAkai">Programmer and Web Developer</a>  </h1>
+
     <h1>🛡️ My Cybersecurity Portfolio</h1>
 
     <!-- Cybersecurity Projects Section -->
     <div class="section">
-        <h2>🔐 Cybersecurity Projects</h2>
-        <div class="grid-container">
-            <div class="card">
-                <h3>National Cyber League</h3>
-                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" alt="NCL Certificate">
-            </div>
-            <div class="card">
-                <h3>Google Cybersecurity Certificate</h3>
-                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true" alt="Google Certificate">
-                <p>Learned about Networks, Risk Management, Linux, SQL, Python, and Incident Response.</p>
-            </div>
-            <div class="card">
-                <h3>Security Risk Assessment Report</h3>
-                <p>Evaluates an organization's security posture and recommends improvements.</p>
-                <a href="https://github.com/GeorgeAkai/my-portfolio/blob/main/Security%20risk%20assessment%20report.pdf">See Report</a>
-            </div>
-            <div class="card">
-                <h3>Threat Intelligence</h3>
-                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/cves.png?raw=true" alt="Threat Intelligence">
-                <p>Using CVE databases and OSINT sources for cybersecurity intelligence.</p>
-            </div>
-            <div class="card">
-                <h3>Network Traffic Analysis</h3>
-                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Network%20Traffic%20Analysis.png?raw=true" alt="Wireshark">
-                <p>Analyzed network packets using Wireshark to detect potential threats.</p>
-            </div>
-            <div class="card">
-                <h3>Password Cracking</h3>
-                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/password%20cracking.png?raw=true" alt="Hashcat">
-                <p>Used tools like Hashcat and John The Ripper for password security testing.</p>
+        <div class="card">
+            <h2>🔐 Cybersecurity Projects</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h3>National Cyber League</h3>
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" alt="NCL Certificate" class="project-image">
+                    <ul>
+                        <li>Participated in open-source intelligence (OSINT) challenges.</li>
+                        <li>Conducted cryptography and password cracking exercises.</li>
+                        <li>Worked on forensics, enumeration, and exploitation tasks.</li>
+                        <li>Performed network traffic analysis to detect security risks.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Google Cybersecurity Certificate</h3>
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true" alt="Google Certificate" class="project-image">
+                    <ul>
+                        <li>Studied the NIST Cybersecurity Framework (CSF).</li>
+                        <li>Gained an understanding of the TCP/IP and OSI models.</li>
+                        <li>Learned Linux, SQL, and SOC operations for cybersecurity tasks.</li>
+                        <li>Enhanced skills in asset management and risk management practices.</li>
+                    </ul>
+                </div>
+                <!-- Add more project cards as needed -->
             </div>
         </div>
     </div>
 
-    <!-- Software Development Projects Section -->
-    <div class="section">
-        <h2>💻 Software Development Projects</h2>
-        <div class="grid-container">
-            <div class="card">
-                <h3>C++ Data Structures & Algorithms</h3>
-                <p>Implemented Graph Algorithms, Binary Trees, Sorting Algorithms, Hashing Techniques, and more.</p>
-            </div>
-            <div class="card">
-                <h3>Hash Table Implementation</h3>
-                <p>Developed a hash table with chaining and resizing features in C++.</p>
-            </div>
-            <div class="card">
-                <h3>Airport Simulation (Priority Queues)</h3>
-                <p>Simulated airport runway management using priority queues for scheduling arrivals and departures.</p>
-            </div>
-        </div>
+    <!-- Modal for Image View -->
+    <div id="imageModal">
+        <span id="closeBtn">&times;</span>
+        <img id="modalImage" src="" alt="Expanded Image">
     </div>
 
-    <!-- Web Development Projects Section -->
-    <div class="section">
-        <h2>🌐 Web Development Projects</h2>
-        <div class="grid-container">
-            <div class="card">
-                <h3>Kenrish Collection Web App</h3>
-                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true" alt="Kenrish Collection">
-                <p>Developed a web application for beauty services and products.</p>
-            </div>
-        </div>
-    </div>
+    <script>
+        // Get all images with the class "project-image"
+        const images = document.querySelectorAll('.project-image');
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeBtn = document.getElementById('closeBtn');
 
-    <!-- Current Learning Section -->
-    <div class="section">
-        <h2>🎯 Currently Learning</h2>
-        <div class="grid-container">
-            <div class="card">
-                <h3>Preparing for CompTIA Security+</h3>
-                <p>Studying core security concepts and best practices for the Security+ certification exam.</p>
-            </div>
-        </div>
-    </div>
+        // When any image is clicked
+        images.forEach(image => {
+            image.addEventListener('click', function() {
+                modal.style.display = 'block';
+                modalImage.src = this.src;
+            });
+        });
+
+        // Close the modal when the close button is clicked
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        // Close the modal if the user clicks anywhere outside the modal image
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
 
 </body>
 </html>
