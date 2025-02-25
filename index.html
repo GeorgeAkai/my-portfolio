@@ -93,6 +93,19 @@
         #closeBtn:hover {
             color: #f1f1f1;
         }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .section .card {
+                padding: 10px;
+            }
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+            .section .grid-container .card {
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -169,18 +182,21 @@
             <div class="grid-container">
                 <div class="card">
                     <h3>C++ Data Structures & Algorithms</h3>
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Sorting.png?raw=true" alt="Sorting Algorithms" class="project-image">
                     <ul>
                         <li>Implemented Graph Algorithms, Binary Trees, Sorting Algorithms, Hashing Techniques, and more.</li>
                     </ul>
                 </div>
                 <div class="card">
                     <h3>Hash Table Implementation</h3>
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/hashtable.png?raw=true" alt="Hash Table Project" class="project-image">
                     <ul>
                         <li>Developed a hash table with chaining and resizing features in C++ to manage large datasets efficiently.</li>
                     </ul>
                 </div>
                 <div class="card">
                     <h3>Airport Simulation (Priority Queues)</h3>
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/priorityqueue%20project.png?raw=true" alt="Airport Simulation" class="project-image">
                     <ul>
                         <li>Simulated airport runway management using priority queues to schedule arrivals and departures.</li>
                     </ul>
@@ -204,6 +220,7 @@
                 </div>
                 <div class="card">
                     <h3>Django Fullstack Chess Application</h3>
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/chess.png?raw=true" alt="Django Chess App" class="project-image">
                     <ul>
                         <li>Developed a Django-based web app for playing chess, featuring login, join, and logout functionalities.</li>
                         <li>Integrated HTML, CSS, and JavaScript for front-end development and built a database model to store user data securely.</li>
