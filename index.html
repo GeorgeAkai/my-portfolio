@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>George Akai - A Portfolio</title>
+    <title>George Akai's Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,6 +14,18 @@
         }
         h1 {
             color: #333;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+            margin-top: 20px;
+        }
+        li {
+            margin-bottom: 20px;
         }
         .section {
             margin-top: 40px;
@@ -38,16 +50,6 @@
             border-radius: 8px;
             margin-bottom: 10px;
             cursor: pointer;
-        }
-        .card h3 {
-            color: #222;
-        }
-        .card p {
-            color: #555;
-        }
-        .card ul {
-            padding-left: 20px;
-            color: #555;
         }
         .card a {
             display: inline-block;
@@ -97,106 +99,121 @@
 </head>
 <body>
 
-    <h1>🛡️ My Cybersecurity Portfolio</h1>
-    <h1>Hi, I'm George! <br/><a href="https://www.linkedin.com/in/george-akai-91a41022b">🕵️‍♂️Cybersecurity Analyst</a>, <a href="#">Web Developer</a>  </h1>
+    <h1>Hi, I'm George! <br/><a href="https://www.linkedin.com/in/george-akai-91a41022b">🕵️‍♂️Cybersecurity Analyst</a>, <a href="https://github.com/GeorgeAkai">Programmer and Web Developer</a></h1>
 
-    <!-- Cybersecurity Projects Section -->
-    <div class="section">
-        <div class="card">
-            <h2>🔐 Cybersecurity Projects</h2>
-            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" alt="NCL Certificate" class="project-image">
-            <p>These are the key cybersecurity projects I’ve worked on:</p>
-            <ul>
-                <li>Participated in open-source intelligence (OSINT) challenges.</li>
-                <li>Conducted cryptography and password cracking exercises.</li>
-                <li>Worked on forensics, enumeration, and exploitation tasks.</li>
-                <li>Performed network traffic analysis to detect security risks.</li>
-                <li>Studied the NIST Cybersecurity Framework (CSF) and gained expertise in risk management and vulnerability assessment.</li>
-            </ul>
+    <!-- Cybersecurity Practice Section -->
+    <h2>🛡️ Cybersecurity Practice</h2>
+    <ul>
+        <li><b>Participated in the Fall 2024 National Cyber League</b></li>
+        <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+            <img alt="National Cyber League Certificate" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" />
+            <img alt="George Akai NCL Badge" width="250px" src="https://mcusercontent.com/5cc685d37bf49db795c715427/images/3d6a88c7-fe50-5c79-210d-ea449834a6a2.png?mc_cid=70059fd037&mc_eid=9cd3361396" />
         </div>
-    </div>
+
+        <li><b>Google Cybersecurity Certificate</b></li>
+        <p>Gained expertise in networks, risk and asset management, the NIST Cybersecurity Framework, Linux, SQL, Python, and incident response tools.</p>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <img alt="Certificate of Completion" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-11-20%20004035.png?raw=true" />
+            <img alt="Certificate of Completion" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true" />
+        </div>
+
+        <li><b>Control & Compliance Checklist</b></li>
+        <p>Assessed security policies and controls to ensure compliance with laws and regulations.</p>
+        <a href="https://github.com/GeorgeAkai/my-portfolio/blob/main/Controls%20and%20compliance%20checklist.pdf">View Checklist</a>
+
+        <li><b>Security Risk Assessment Report</b></li>
+        <p>Evaluated security postures and recommended remediation measures.</p>
+        <a href="https://github.com/GeorgeAkai/my-portfolio/blob/main/Security%20risk%20assessment%20report.pdf">View Report</a>
+
+        <li><b>Open Source Intelligence (OSINT)</b></li>
+        <p>Conducted OSINT investigations to gather intelligence for cybersecurity challenges.</p>
+        <img alt="OSINT" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-12-28%20225022.png?raw=true" />
+
+        <li><b>Log Analysis</b></li>
+        <p>Examined Windows event logs and Linux syslogs for security insights.</p>
+        <img alt="Log Analysis" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-11-20%20222736.png?raw=true" />
+
+        <li><b>📡 Network Traffic Analysis</b></li>
+        <p>Utilized Wireshark to analyze network packets and identify anomalies.</p>
+        <img alt="Wireshark" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Network%20Traffic%20Analysis.png?raw=true" />
+
+        <li><b>Vulnerability Management</b></li>
+        <ul>
+            <li>Utilized <b>Qualys Vulnerability Management</b> for security risk identification and mitigation.</li>
+            <li>Conducted network scans using <b>Nmap</b> for open ports and OS fingerprinting.</li>
+            <li>Used <b>OpenVAS</b> for graphical vulnerability scanning.</li>
+            <li>Leveraged <b>Netcat</b> for port scanning and security monitoring.</li>
+        </ul>
+
+        <li><b>Threat Intelligence</b></li>
+        <p>Analyzed cyber threat intelligence, including <b>CISA alerts, IOCs, and CVEs</b>, for proactive threat detection.</p>
+        <img alt="CVE" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/cves.png?raw=true" />
+
+        <li><b>🔒 Password Cracking</b></li>
+        <p>Performed password security assessments using <b>Hashcat</b> and <b>John the Ripper</b>.</p>
+        <img alt="Hashcat" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/password%20cracking.png?raw=true" />
+    </ul>
 
     <!-- Software Development Projects Section -->
-    <div class="section">
-        <div class="card">
-            <h2>💻 Software Development Projects</h2>
-            <p>Here are the software development projects I’ve completed:</p>
-            <ul>
-                <li>Implemented Graph Algorithms, Binary Trees, Sorting Algorithms, Hashing Techniques, and more in C++.</li>
-                <li>Developed a hash table with chaining and resizing features to manage large datasets efficiently in C++.</li>
-                <li>Simulated airport runway management using priority queues to schedule arrivals and departures.</li>
-                <li>Built and tested algorithms to improve system performance and optimize sorting and searching.</li>
-            </ul>
-        </div>
-    </div>
+    <h2>👨‍💻 Software Development Projects</h2>
+    <ul>
+        <li><b>C++ Data Structures and Algorithms</b></li>
+        <ul>
+            <li>Implemented graph algorithms (BFS, DFS, Dijkstra's, MSTs).</li>
+            <li>Developed binary search trees, heaps, and sorting algorithms.</li>
+            <li>Designed and optimized hashing techniques for fast lookups.</li>
+            <li>Worked with vectors, queues, and priority queues.</li>
+        </ul>
+    </ul>
 
-    <!-- Web Development Projects Section -->
-    <div class="section">
-        <div class="card">
-            <h2>🌐 Web Development Projects</h2>
-            <p>My web development experience includes:</p>
-            <ul>
-                <li>Developed a Django-based chess web app with user authentication (login, join, and logout features) and security measures.</li>
-                <li>Created dynamic and responsive web applications using HTML, CSS, and JavaScript.</li>
-                <li>Built a relational database model for the chess application, ensuring data integrity and efficiency in storing user information.</li>
-            </ul>
-            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true" alt="Kenrish Collection" class="project-image">
+    <!-- Web Development Section -->
+    <h2>&lt;/&gt; Web Development</h2>
+    <ul>
+        <li><b>Kenrish Collection Web Application</b></li>
+        <p>Developed a web platform for beauty services and product listings.</p>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <img alt="Website Image" width="250px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-12-28%20144616.png?raw=true" />
+            <img alt="Website Image" width="250px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/rish.png?raw=true" />
+            <img alt="Website Image" width="250px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true" />
         </div>
-    </div>
+    </ul>
 
     <!-- Current Learning Section -->
-    <div class="section">
-        <div class="card">
-            <h2>🎯 Currently Learning</h2>
-            <p>At the moment, I am preparing for the CompTIA Security+ exam, focusing on:</p>
-            <ul>
-                <li>Core security concepts and best practices in cybersecurity.</li>
-                <li>Risk management and incident response procedures.</li>
-            </ul>
-        </div>
-    </div>
-    <br>
-    <h2>🤳 Connect with me:</h2>
-<a href="https://www.linkedin.com/in/george-akai-91a41022b">
-  <img alt="George Akai | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" style="margin-right: 10px;" />
-</a>
-<a href="https://www.instagram.com/georgeakai_infosec">
-  <img alt="George Akai | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" style="margin-right: 10px;" />
-</a>
+    <h2>🔭 Current Learning</h2>
+    <p>Preparing for the <b>CompTIA Security+</b> exam. Recently explored security monitoring, encryption, and threat analysis techniques.</p>
 
-    <!-- Modal for Image View -->
+    <!-- Contact Section -->
+    <h2>📧 Get in Touch</h2>
+    <p>If you'd like to discuss potential projects, internships, or collaboration, feel free to <a href="mailto:george.ak@cs.chico.edu">email me</a>.</p>
+
+    <!-- Modal for images -->
     <div id="imageModal">
         <span id="closeBtn">&times;</span>
-        <img id="modalImage" src="" alt="Expanded Image">
+        <img id="modalImage" src="" alt="Modal Image">
     </div>
 
     <script>
-        // Get all images with the class "project-image"
-        const images = document.querySelectorAll('.project-image');
+        const images = document.querySelectorAll('.card img');
         const modal = document.getElementById('imageModal');
         const modalImage = document.getElementById('modalImage');
         const closeBtn = document.getElementById('closeBtn');
 
-        // When any image is clicked
         images.forEach(image => {
-            image.addEventListener('click', function() {
+            image.addEventListener('click', () => {
                 modal.style.display = 'block';
-                modalImage.src = this.src;
+                modalImage.src = image.src;
             });
         });
 
-        // Close the modal when the close button is clicked
-        closeBtn.addEventListener('click', function() {
+        closeBtn.addEventListener('click', () => {
             modal.style.display = 'none';
         });
 
-        // Close the modal if the user clicks anywhere outside the modal image
-        window.addEventListener('click', function(event) {
+        window.addEventListener('click', (event) => {
             if (event.target === modal) {
                 modal.style.display = 'none';
             }
         });
     </script>
-
 </body>
 </html>
