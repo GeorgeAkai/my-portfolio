@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>George Akai's Portfolio</title>
+    <title>My Cybersecurity Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,24 +15,12 @@
         h1 {
             color: #333;
         }
-        h2 {
-            color: #2c3e50;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-            text-align: left;
-            margin-top: 20px;
-        }
-        li {
-            margin-bottom: 20px;
-        }
         .section {
             margin-top: 40px;
         }
         .grid-container {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
             padding: 20px;
             max-width: 1200px;
@@ -49,7 +37,16 @@
             width: 100%;
             border-radius: 8px;
             margin-bottom: 10px;
-            cursor: pointer;
+        }
+        .card h3 {
+            color: #222;
+        }
+        .card p {
+            color: #555;
+        }
+        .card ul {
+            padding-left: 20px;
+            color: #555;
         }
         .card a {
             display: inline-block;
@@ -61,159 +58,159 @@
         .card a:hover {
             text-decoration: underline;
         }
-
-        /* Modal styles */
-        #imageModal {
-            display: none; 
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            overflow: auto;
-            padding-top: 60px;
-        }
-        #modalImage {
-            margin: auto;
-            display: block;
-            max-width: 80%;
-            max-height: 80%;
-        }
-        #closeBtn {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            background-color: transparent;
-            border: none;
-            cursor: pointer;
-        }
-        #closeBtn:hover {
-            color: #f1f1f1;
-        }
     </style>
 </head>
 <body>
 
-    <h1>Hi, I'm George! <br/><a href="https://www.linkedin.com/in/george-akai-91a41022b">🕵️‍♂️Cybersecurity Analyst</a>, <a href="https://github.com/GeorgeAkai">Programmer and Web Developer</a></h1>
+    <h1>🛡️ My Cybersecurity Portfolio</h1>
 
-    <!-- Cybersecurity Practice Section -->
-    <h2>🛡️ Cybersecurity Practice</h2>
-    <ul>
-        <li><b>Participated in the Fall 2024 National Cyber League</b></li>
-        <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
-            <img alt="National Cyber League Certificate" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" />
-            <img alt="George Akai NCL Badge" width="250px" src="https://mcusercontent.com/5cc685d37bf49db795c715427/images/3d6a88c7-fe50-5c79-210d-ea449834a6a2.png?mc_cid=70059fd037&mc_eid=9cd3361396" />
+    <!-- Cybersecurity Projects Section -->
+    <div class="section">
+        <div class="card">
+            <h2>🔐 Cybersecurity Projects</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h3>National Cyber League</h3>
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" alt="NCL Certificate">
+                    <ul>
+                        <li>Participated in open-source intelligence (OSINT) challenges.</li>
+                        <li>Conducted cryptography and password cracking exercises.</li>
+                        <li>Worked on forensics, enumeration, and exploitation tasks.</li>
+                        <li>Performed network traffic analysis to detect security risks.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Google Cybersecurity Certificate</h3>
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true" alt="Google Certificate">
+                    <ul>
+                        <li>Studied the NIST Cybersecurity Framework (CSF).</li>
+                        <li>Gained an understanding of the TCP/IP and OSI models.</li>
+                        <li>Learned Linux, SQL, and SOC operations for cybersecurity tasks.</li>
+                        <li>Enhanced skills in asset management and risk management practices.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Compliance & Risk Assessment</h3>
+                    <ul>
+                        <li>Worked as an Information Security Analyst Student Assistant.</li>
+                        <li>Inventorying sensitive data to ensure compliance with security standards.</li>
+                        <li>Identified and mitigated risks in sensitive data management.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Open Source Intelligence</h3>
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/cves.png?raw=true" alt="Threat Intelligence">
+                    <ul>
+                        <li>Performed online searches to analyze publicly available data.</li>
+                        <li>Used OSINT techniques to gather information for solving security challenges.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Network Traffic Analysis</h3>
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Network%20Traffic%20Analysis.png?raw=true" alt="Wireshark">
+                    <ul>
+                        <li>Applied networking concepts such as protocols, TCP, and HTTP.</li>
+                        <li>Used Wireshark to capture and analyze network packets.</li>
+                        <li>Identified security risks within network traffic.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Vulnerability Management</h3>
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/password%20cracking.png?raw=true" alt="Hashcat">
+                    <ul>
+                        <li>Completed Qualys Vulnerability Management (VM) certification training.</li>
+                        <li>Performed vulnerability assessments using Qualys VM tools.</li>
+                        <li>Analyzed security risks in various system configurations.</li>
+                        <li>Developed solutions for addressing identified vulnerabilities.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
-        <li><b>Google Cybersecurity Certificate</b></li>
-        <p>Gained expertise in networks, risk and asset management, the NIST Cybersecurity Framework, Linux, SQL, Python, and incident response tools.</p>
-        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-            <img alt="Certificate of Completion" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-11-20%20004035.png?raw=true" />
-            <img alt="Certificate of Completion" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true" />
-        </div>
-
-        <li><b>Control & Compliance Checklist</b></li>
-        <p>Assessed security policies and controls to ensure compliance with laws and regulations.</p>
-        <a href="https://github.com/GeorgeAkai/my-portfolio/blob/main/Controls%20and%20compliance%20checklist.pdf">View Checklist</a>
-
-        <li><b>Security Risk Assessment Report</b></li>
-        <p>Evaluated security postures and recommended remediation measures.</p>
-        <a href="https://github.com/GeorgeAkai/my-portfolio/blob/main/Security%20risk%20assessment%20report.pdf">View Report</a>
-
-        <li><b>Open Source Intelligence (OSINT)</b></li>
-        <p>Conducted OSINT investigations to gather intelligence for cybersecurity challenges.</p>
-        <img alt="OSINT" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-12-28%20225022.png?raw=true" />
-
-        <li><b>Log Analysis</b></li>
-        <p>Examined Windows event logs and Linux syslogs for security insights.</p>
-        <img alt="Log Analysis" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-11-20%20222736.png?raw=true" />
-
-        <li><b>📡 Network Traffic Analysis</b></li>
-        <p>Utilized Wireshark to analyze network packets and identify anomalies.</p>
-        <img alt="Wireshark" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Network%20Traffic%20Analysis.png?raw=true" />
-
-        <li><b>Vulnerability Management</b></li>
-        <ul>
-            <li>Utilized <b>Qualys Vulnerability Management</b> for security risk identification and mitigation.</li>
-            <li>Conducted network scans using <b>Nmap</b> for open ports and OS fingerprinting.</li>
-            <li>Used <b>OpenVAS</b> for graphical vulnerability scanning.</li>
-            <li>Leveraged <b>Netcat</b> for port scanning and security monitoring.</li>
-        </ul>
-
-        <li><b>Threat Intelligence</b></li>
-        <p>Analyzed cyber threat intelligence, including <b>CISA alerts, IOCs, and CVEs</b>, for proactive threat detection.</p>
-        <img alt="CVE" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/cves.png?raw=true" />
-
-        <li><b>🔒 Password Cracking</b></li>
-        <p>Performed password security assessments using <b>Hashcat</b> and <b>John the Ripper</b>.</p>
-        <img alt="Hashcat" width="300px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/password%20cracking.png?raw=true" />
-    </ul>
-
-    <!-- Software Development Projects Section -->
-    <h2>👨‍💻 Software Development Projects</h2>
-    <ul>
-        <li><b>C++ Data Structures and Algorithms</b></li>
-        <ul>
-            <li>Implemented graph algorithms (BFS, DFS, Dijkstra's, MSTs).</li>
-            <li>Developed binary search trees, heaps, and sorting algorithms.</li>
-            <li>Designed and optimized hashing techniques for fast lookups.</li>
-            <li>Worked with vectors, queues, and priority queues.</li>
-        </ul>
-    </ul>
-
-    <!-- Web Development Section -->
-    <h2>&lt;/&gt; Web Development</h2>
-    <ul>
-        <li><b>Kenrish Collection Web Application</b></li>
-        <p>Developed a web platform for beauty services and product listings.</p>
-        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-            <img alt="Website Image" width="250px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot%202024-12-28%20144616.png?raw=true" />
-            <img alt="Website Image" width="250px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/rish.png?raw=true" />
-            <img alt="Website Image" width="250px" src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true" />
-        </div>
-    </ul>
-
-    <!-- Current Learning Section -->
-    <h2>🔭 Current Learning</h2>
-    <p>Preparing for the <b>CompTIA Security+</b> exam. Recently explored security monitoring, encryption, and threat analysis techniques.</p>
-
-    <!-- Contact Section -->
-    <h2>📧 Get in Touch</h2>
-    <p>If you'd like to discuss potential projects, internships, or collaboration, feel free to <a href="mailto:george.ak@cs.chico.edu">email me</a>.</p>
-
-    <!-- Modal for images -->
-    <div id="imageModal">
-        <span id="closeBtn">&times;</span>
-        <img id="modalImage" src="" alt="Modal Image">
     </div>
 
-    <script>
-        const images = document.querySelectorAll('.card img');
-        const modal = document.getElementById('imageModal');
-        const modalImage = document.getElementById('modalImage');
-        const closeBtn = document.getElementById('closeBtn');
+    <!-- Software Development Projects Section -->
+    <div class="section">
+        <div class="card">
+            <h2>💻 Software Development Projects</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h3>C++ Data Structures & Algorithms</h3>
+                    <ul>
+                        <li>Implemented sorting algorithms (e.g., bubble sort, quicksort).</li>
+                        <li>Developed binary search trees for efficient searching.</li>
+                        <li>Created priority queues for optimized task management.</li>
+                        <li>Utilized dynamic array methods for memory efficiency.</li>
+                        <li>Implemented hashing algorithms to optimize data retrieval.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Hash Table Implementation</h3>
+                    <ul>
+                        <li>Developed a hash table with chaining and resizing features in C++.</li>
+                        <li>Ensured collision handling for efficient data insertion and retrieval.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Airport Simulation (Priority Queues)</h3>
+                    <ul>
+                        <li>Simulated airport runway management using priority queues.</li>
+                        <li>Scheduled arrivals and departures with optimized flight handling.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        images.forEach(image => {
-            image.addEventListener('click', () => {
-                modal.style.display = 'block';
-                modalImage.src = image.src;
-            });
-        });
+    <!-- Web Development Projects Section -->
+    <div class="section">
+        <div class="card">
+            <h2>🌐 Web Development Projects</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h3>Django Fullstack Chess Application</h3>
+                    <ul>
+                        <li>Developed user authentication (login, join, and logout) for secure access.</li>
+                        <li>Created a dynamic, full-stack web application using Django.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>HTML, CSS & JS Chess Application</h3>
+                    <ul>
+                        <li>Built an interactive chess game with modern web technologies.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Database Management</h3>
+                    <ul>
+                        <li>Designed and optimized relational database models for efficient data storage and retrieval.</li>
+                        <li>Utilized SQL for complex queries and data manipulation.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Kenrish Collection Web App</h3>
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true" alt="Kenrish Collection">
+                    <ul>
+                        <li>Developed a web application for beauty services and product management.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        closeBtn.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
+    <!-- Current Learning Section -->
+    <div class="section">
+        <div class="card">
+            <h2>🎯 Currently Learning</h2>
+            <div class="grid-container">
+                <div class="card">
+                    <h3>Preparing for CompTIA Security+</h3>
+                    <ul>
+                        <li>Studying core security concepts and best practices for the Security+ certification exam.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-    </script>
 </body>
 </html>
