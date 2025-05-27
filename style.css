@@ -161,3 +161,63 @@ h1 {
         max-width: none; 
     }
 }
+
+/* Styles for new content in about.html */
+.about-card {
+    background-color: #ffffff; /* White background for the card */
+    border: 1px solid #dddddd; /* Light grey border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the card */
+    margin-bottom: 20px; /* Space between cards */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    text-align: left; /* Override body text-align: center for card content */
+}
+
+.about-card h1 {
+    font-size: 2em; /* Large for main title */
+    color: #333333;
+    margin-bottom: 0.5em;
+}
+
+.about-card h2 {
+    font-size: 1.5em; /* Medium for section titles */
+    color: #444444;
+    margin-top: 0; /* Remove default top margin if it's the first element */
+    margin-bottom: 0.75em;
+    border-bottom: 1px solid #eeeeee; /* Optional: a light separator line */
+    padding-bottom: 0.25em; /* Space for the separator line */
+}
+
+.about-card h3 {
+    font-size: 1.2em; /* Smaller for sub-section titles */
+    color: #555555;
+    margin-bottom: 0.5em;
+}
+
+.about-card p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333333;
+    margin-bottom: 1em; /* Space after paragraphs */
+}
+
+.about-card ul {
+    list-style-position: outside; /* Bullets outside the text flow */
+    padding-left: 20px; /* Indent for the bullets */
+    margin-bottom: 1em; /* Space after lists */
+    color: #333333; /* Ensure list text color matches paragraph text */
+}
+
+.about-card li {
+    margin-bottom: 0.5em; /* Space between list items */
+    line-height: 1.5;
+}
+
+/* Specific styles for intro card titles in #img1-content */
+#img1-content p em { /* Styles the emphasized text in paragraphs */
+    font-style: normal; /* Remove italics if not desired for these titles */
+    font-weight: bold; /* Make them bold */
+    color: #555;
+    display: block; /* Make each title take its own line */
+    margin-bottom: 0.25em;
+}
