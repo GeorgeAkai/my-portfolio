@@ -188,7 +188,6 @@ h1 {
 
 .about-card h2 {
     font-size: 1.5em; /* Medium for section titles */
-
     color: #007bff; /* Blue text color */
     margin-top: 0; /* Remove default top margin if it's the first element */
     margin-bottom: 0.75em;
@@ -227,6 +226,8 @@ h1 {
     color: #555;
     display: block; /* Make each title take its own line */
     margin-bottom: 0.25em;
+}
+
 
 /* Styles for links within .about-card to match index.html card links */
 .about-card a {
@@ -239,3 +240,13 @@ h1 {
     text-decoration: underline; /* Underline on hover */
 }
 
+/* Styles for .project-item elements within about.html */
+.project-item {
+    background-color: #ffffff; /* White background for the inner card */
+    border-radius: 8px;        /* Rounded corners for inner cards */
+    padding: 15px;             /* Padding inside inner cards */
+    margin-top: 15px;          /* Space above inner cards */
+    margin-bottom: 15px;       /* Space below inner cards */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12); /* Subtle shadow for inner cards */
+    /* Consider adding a light border if more distinction is needed, e.g., border: 1px solid #eeeeee; */
+}
