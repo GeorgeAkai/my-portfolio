@@ -33,6 +33,7 @@
     <main class="container my-5">
         <h1 class="text-center text-primary">Thanks for visiting my Portfolio</h1>
 
+        <!-- Cybersecurity Projects Section -->
         <section class="section bg-white p-4 rounded shadow my-4">
             <h2 class="text-secondary text-center">Cybersecurity Projects and Coursework</h2>
             <div class="row">
@@ -41,7 +42,7 @@
                         <h3>National Cyber League</h3>
                         <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" class="img-fluid rounded" alt="NCL Certificate">
                         <ul>
-                            <li>OSINT challenges</li>
+                            <li>Participated in OSINT challenges</li>
                             <li>Cryptography exercises</li>
                             <li>Network traffic analysis</li>
                         </ul>
@@ -60,16 +61,17 @@
             </div>
         </section>
 
+        <!-- Software Development Projects Section -->
         <section class="section bg-white p-4 rounded shadow my-4">
             <h2 class="text-secondary text-center">Software Development Projects</h2>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="card p-3 shadow-sm">
                         <h3>C++ Data Structures & Algorithms</h3>
                         <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Sorting.png?raw=true" class="img-fluid rounded" alt="Sorting Algorithms">
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="card p-3 shadow-sm">
                         <h3>Airport Simulation (Priority Queues)</h3>
                         <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/priorityqueue%20project.png?raw=true" class="img-fluid rounded" alt="Airport Simulation">
@@ -78,6 +80,35 @@
             </div>
         </section>
 
+        <!-- Web Development Projects Section -->
+        <section class="section bg-white p-4 rounded shadow my-4">
+            <h2 class="text-secondary text-center">Web Development Projects</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card p-3 shadow-sm">
+                        <h3>Kenrish Collection Web App</h3>
+                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true" class="img-fluid rounded" alt="Kenrish Collection">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-3 shadow-sm">
+                        <h3>Django Chess Application</h3>
+                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/chess.png?raw=true" class="img-fluid rounded" alt="Chess App">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Learning Section -->
+        <section class="section bg-white p-4 rounded shadow my-4">
+            <h2 class="text-secondary text-center">Currently Learning</h2>
+            <div class="text-center">
+                <h3>Preparing for CompTIA Security+</h3>
+                <p>Studying core security concepts and best practices.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
         <section class="section bg-white p-4 rounded shadow my-4">
             <h2 class="text-secondary text-center">Connect with Me</h2>
             <div class="text-center">
@@ -88,6 +119,72 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const images = document.querySelectorAll('.project-image');
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeBtn = document.getElementById('closeBtn');
+        let previouslyFocusedElement;
 
+        function openModal(imageElement) {
+            previouslyFocusedElement = document.activeElement;
+            modalImage.src = imageElement.src;
+            modalImage.alt = imageElement.alt; // Set alt text for modal image
+            modal.style.display = 'block';
+            closeBtn.focus(); // Move focus to the close button
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            if (previouslyFocusedElement) {
+                previouslyFocusedElement.focus(); // Return focus to the element that opened the modal
+            }
+        }
+
+        images.forEach(image => {
+            image.addEventListener('click', function() {
+                openModal(this);
+            });
+
+            image.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault(); // Prevent page scroll on Space
+                    openModal(this);
+                }
+            });
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+
+        // Close the modal if the user clicks anywhere outside the modal image (optional, consider if this is confusing for keyboard users)
+        // window.addEventListener('click', function(event) {
+        //     if (event.target === modal) {
+        //         closeModal();
+        //     }
+        // });
+
+        // Close modal with Escape key
+        window.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                closeModal();
+            }
+        });
+
+        // Visually hidden class for screen reader only text
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .visually-hidden {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                margin: -1px;
+                padding: 0;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                border: 0;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
