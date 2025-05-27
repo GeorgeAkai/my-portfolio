@@ -188,6 +188,7 @@ h1 {
 
 .about-card h2 {
     font-size: 1.5em; /* Medium for section titles */
+
     color: #007bff; /* Blue text color */
     margin-top: 0; /* Remove default top margin if it's the first element */
     margin-bottom: 0.75em;
@@ -226,7 +227,6 @@ h1 {
     color: #555;
     display: block; /* Make each title take its own line */
     margin-bottom: 0.25em;
-}
 
 /* Styles for links within .about-card to match index.html card links */
 .about-card a {
@@ -238,3 +238,4 @@ h1 {
 .about-card a:hover {
     text-decoration: underline; /* Underline on hover */
 }
+
