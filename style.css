@@ -1,0 +1,233 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+nav {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px; /* Keep padding on nav for background */
+    font-size: 18px;
+}
+
+nav ul {
+    list-style-type: none; /* Removes bullets */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+    display: flex; /* Aligns items in a row */
+    justify-content: center; /* Centers items, similar to original */
+    gap: 20px; /* Matches original gap in nav */
+}
+
+nav ul li {
+    display: inline; /* Not strictly necessary with flex on ul, but good practice */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+nav a:hover {
+    background-color: #555;
+}
+
+/* Styles primarily for index.html */
+h1 {
+    color: #333;
+}
+.section {
+    margin-top: 40px;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.card h3 {
+    color: #222;
+}
+.card p {
+    color: #555;
+}
+.card ul {
+    padding-left: 20px;
+    color: #555;
+}
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.card a:hover {
+    text-decoration: underline;
+}
+#imageModal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+    padding-top: 60px;
+}
+#modalImage {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+#closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+#closeBtn:hover {
+    color: #f1f1f1;
+}
+.project-image {
+    width: 100%; 
+    height: auto; 
+    max-width: 100%; 
+}
+#headerImg {
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Styles primarily for about.html */
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.image-container img {
+    width: 100%; 
+    max-width: 1200px; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    /* From index.html */
+    .section .card {
+        padding: 10px;
+    }
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .section .grid-container .card {
+        margin-bottom: 20px;
+    }
+    /* From about.html */
+    .image-container img { 
+        width: 95%; 
+        max-width: none; 
+    }
+}
+
+/* Styles for new content in about.html */
+.about-card {
+    background-color: #ffffff; /* White background for the card */
+    /* border: 1px solid #dddddd; */ /* Border removed */
+    border-radius: 10px; /* Rounded corners to match index.html */
+    padding: 20px; /* Padding inside the card */
+    margin-bottom: 20px; /* Space between cards */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    text-align: left; /* Override body text-align: center for card content */
+}
+
+.about-card h1 {
+    font-size: 2em; /* Large for main title */
+    color: #333333;
+    margin-bottom: 0.5em;
+}
+
+.about-card h2 {
+    font-size: 1.5em; /* Medium for section titles */
+    color: #007bff; /* Blue text color */
+    margin-top: 0; /* Remove default top margin if it's the first element */
+    margin-bottom: 0.75em;
+    /* border-bottom and padding-bottom removed */
+}
+
+.about-card h3 {
+    font-size: 1.2em; /* Smaller for sub-section titles */
+    color: #555555;
+    margin-bottom: 0.5em;
+}
+
+.about-card p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333333;
+    margin-bottom: 1em; /* Space after paragraphs */
+}
+
+.about-card ul {
+    list-style-position: outside; /* Bullets outside the text flow */
+    padding-left: 20px; /* Indent for the bullets */
+    margin-bottom: 1em; /* Space after lists */
+    color: #333333; /* Ensure list text color matches paragraph text */
+}
+
+.about-card li {
+    margin-bottom: 0.5em; /* Space between list items */
+    line-height: 1.5;
+}
+
+/* Specific styles for intro card titles in #img1-content */
+#img1-content p em { /* Styles the emphasized text in paragraphs */
+    font-style: normal; /* Remove italics if not desired for these titles */
+    font-weight: bold; /* Make them bold */
+    color: #555;
+    display: block; /* Make each title take its own line */
+    margin-bottom: 0.25em;
+}
+
+/* Styles for links within .about-card to match index.html card links */
+.about-card a {
+    color: #007bff; /* Standard blue link color */
+    text-decoration: none; /* No underline by default */
+    font-weight: normal; /* Normal weight for links within list items */
+}
+
+.about-card a:hover {
+    text-decoration: underline; /* Underline on hover */
+}

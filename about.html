@@ -5,79 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <link rel="icon" type="image/x-icon" href="https://github.com/GeorgeAkai/my-portfolio/blob/main/9004738_lock_security_padlock_secure_icon.png?raw=true">
-    <style>
-        /* General page styling */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        /* Navigation styling */
-        nav {
-            background-color: #333;
-            color: white;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            font-size: 18px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: #555;
-        }
-
-        /* Image styling */
-        .image-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .image-container img {
-            width: 100%; /* Take up full width of the screen */
-            max-width: 1200px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Media queries for mobile responsiveness */
-        @media (max-width: 768px) {
-            .image-container img {
-                width: 95%; /* Slightly smaller margin for mobile */
-                max-width: none; /* Remove the max-width restriction */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+        </ul>
     </nav>
 
-    <!-- Images section -->
-    <div class="image-container">
-        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/1.png?raw=true" alt="Image 1">
-        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/2.png?raw=true" alt="Image 2">
-        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/3.png?raw=true" alt="Image 3">
-        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/4.png?raw=true" alt="Image 4">
-        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/5.png?raw=true" alt="Image 5">
-    </div>
+    <main>
+        <section id="img1-content" class="about-card"> <!-- Added class for styling -->
+            <h1>George Akai</h1> <!-- Main name as H1 -->
+            <p><em>Computer Information Systems & Cybersecurity Student</em></p> <!-- Role/Title -->
+            <p><em>Information Security Assistant @ Chico State</em></p> <!-- Role/Title -->
+            <p><em>Aspiring Cybersecurity Analyst</em></p> <!-- Role/Title -->
+        </section> <!-- End of img1-content -->
+        <section id="img2-background" class="about-card">
+            <h2>Background</h2>
+            <ul>
+                <li>International student from Kenya.</li>
+                <li>I have been pursuing Computer Information Systems for 4 years now.</li>
+                <li>Started getting interested in Cybersecurity 3 years ago.</li>
+                <li>Pursued the Google Cybersecurity Certificate in 2023 and 2024.</li>
+                <li>I participated in the National Cyber League where I got red team security knowledge while also understanding defense strategies.</li>
+                <li>Joined the USR0 cybersecurity club.</li>
+                <li>Work with the Information Security Department on Campus.</li>
+            </ul>
+        </section> <!-- End of img2-background -->
+        <section id="img3-projects" class="about-card">
+            <h2>Projects and Achievements</h2>
+            <p>I have gained some invaluable experience while working with the Information Security Department, spearheading some department’s projects. Below are the projects details and how we achieved our desired outcomes.</p>
+            
+            <div class="project-item"> <!-- Wrapper for a project/achievement -->
+                <h3>User Access Reviews</h3>
+                <p>I spearheaded the 2025 Annual User Access Reviews. The objective was to obtain information from campus MPPs so we could have an updated user access documentation.</p>
+            </div>
+
+            <div class="project-item">
+                <h3>Asset Management</h3>
+                <p>Scanned assets like servers and web applications for vulnerability and followed up with the asset owners regarding remediation of the vulnerabilities found.</p>
+            </div>
+
+            <div class="project-item">
+                <h3>Vulnerability Management</h3>
+                <ul> 
+                    <li>Used Qualys vulnerability scanner to scan servers, websites, compliance, and End-Of-Life applications to ensure that every asset is up to date to keep our security posture high.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <h3>Ticket Management</h3>
+                <p>I managed tickets sent through Team Dynamix to remediate or respond to issues or concerns, and also to facilitate follow-up regarding user access reviews and vulnerability management.</p>
+            </div>
+        </section> <!-- End of img3-projects -->
+        <section id="img4-objectives" class="about-card">
+            <h2>Objectives</h2>
+            <p>This slide outlines the core objectives of my information security experience, emphasizing my expertise in risk assessment, systems security and secure web applications.</p>
+            
+            <div class="objective-item"> <!-- Wrapper for an objective -->
+                <h3>Risk Assessment</h3>
+                <p>Conducting risk assessment is crucial because it outlines the assets that are most at risk, while also balancing business needs with information security needs.</p>
+            </div>
+
+            <div class="objective-item">
+                <h3>Systems Security / Vulnerability Remediation</h3> <!-- Using a more descriptive heading based on context -->
+                <p>Ensuring that identified vulnerabilities in servers and other assets are remediated is central to the security of the organization.</p>
+            </div>
+
+            <div class="objective-item">
+                <h3>Secure Web Development</h3>
+                <p>Building and deploying web application that are secure, and avoid exploitation of the top 10 OWASP for example, SQL injection and Cross-Site Request Forgery (CSRF).</p>
+            </div>
+        </section> <!-- End of img4-objectives -->
+        <section id="img5-thankyou" class="about-card">
+            <h2>THANK YOU!</h2>
+            <ul>
+                <li>George Akai</li>
+                <li>Information Security Assistant</li>
+                <li><a href="https://www.linkedin.com/in/george-akai-91a41022b/" target="_blank" rel="noopener noreferrer">My LinkedIn Page</a></li> <!-- Added target="_blank" for external link -->
+                <li>Chico, CA, USA</li>
+            </ul>
+        </section>
+    </main>
 </body>
 </html>
