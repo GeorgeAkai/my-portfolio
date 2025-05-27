@@ -6,231 +6,88 @@
     <title>George Akai - A Portfolio</title>
     <link rel="icon" type="image/x-icon" href="https://github.com/GeorgeAkai/my-portfolio/blob/main/9004738_lock_security_padlock_secure_icon.png?raw=true">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-        </ul>
+<body class="bg-light">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
 
-<header id="headerImg" class="section">
-    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Blue%20And%20Yellow%20Modern%20Cybersecurity%20Specialist%20LinkedIn%20Banner%20(1).png?raw=true" alt="George Akai - Cybersecurity Specialist - LinkedIn Banner" class="header-banner-img">
+    <header id="headerImg" class="text-center py-5">
+        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Blue%20And%20Yellow%20Modern%20Cybersecurity%20Specialist%20LinkedIn%20Banner%20(1).png?raw=true"
+             class="img-fluid rounded shadow-lg" alt="George Akai - Cybersecurity Specialist">
+    </header>
 
-</header>
-    <h1>🛡️ Thanks for visiting my Portfolio</h1>
+    <main class="container my-5">
+        <h1 class="text-center text-primary">Thanks for visiting my Portfolio</h1>
 
-    <!-- Cybersecurity Projects Section -->
-    <section class="section">
-        <h2>🔐 Cybersecurity Projects and Coursework</h2>
-        <div class="grid-container">
-            <article class="card">
-                <h3>National Cyber League</h3>
-                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" alt="National Cyber League Fall 2024 Certificate" class="project-image" tabindex="0">
-                <ul>
-                    <li>Participated in open-source intelligence (OSINT) challenges.</li>
-                    <li>Conducted cryptography and password cracking exercises.</li>
-                    <li>Worked on forensics, enumeration, and exploitation tasks.</li>
-                    <li>Performed network traffic analysis to detect security risks.</li>
-                </ul>
-            </article>
-            <article class="card">
-                <h3>Google Cybersecurity Certificate</h3>
-                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true" alt="Google Cybersecurity Certificate - Badge" class="project-image" tabindex="0">
-                <ul>
-                    <li>Studied the NIST Cybersecurity Framework (CSF).</li>
-                    <li>Gained an understanding of the TCP/IP and OSI models.</li>
-                    <li>Learned Linux, SQL, and SOC operations for cybersecurity tasks.</li>
-                    <li>Enhanced skills in asset management and risk management practices.</li>
-                </ul>
-            </article>
-            <article class="card">
-                <h3>Compliance and Risk Assessment</h3>
-                <p>Evaluates an organization's security posture and recommends improvements. I have experience in:</p>
-                <ul>
-                    <li>Inventorying sensitive data while working as an Information Security Analyst Student Assistant.</li>
-                    <li>Ensuring compliance and assessing vulnerabilities across different platforms.</li>
-                </ul>
-                <a href="https://github.com/GeorgeAkai/my-portfolio/blob/main/Security%20risk%20assessment%20report.pdf">See Report</a>
-            </article>
-            <article class="card">
-                <h3>Open Source Intelligence (OSINT)</h3>
-                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/cves.png?raw=true" alt="Collage of CVE (Common Vulnerabilities and Exposures) logos and information" class="project-image" tabindex="0">
-                <ul>
-                    <li>Performed online searches to look for publicly available information to solve challenges.</li>
-                    <li>Used various OSINT tools and techniques for gathering threat data and vulnerabilities.</li>
-                </ul>
-            </article>
-            <article class="card">
-                <h3>Network Traffic Analysis</h3>
-                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Network%20Traffic%20Analysis.png?raw=true" alt="Wireshark interface displaying network traffic analysis" class="project-image" tabindex="0">
-                <ul>
-                    <li>Used Wireshark to analyze network packets and detect potential security threats.</li>
-                    <li>Applied knowledge of networking concepts such as protocols, TCP, and HTTP to identify risks in the network.</li>
-                </ul>
-            </article>
-            <article class="card">
-                <h3>Qualys Vulnerability Management</h3>
-                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Qualys%20Foundation.png?raw=true" alt="Qualys Vulnerability Management Foundation Course Certificate" class="project-image" tabindex="0">
-                <ul>
-                    <li>Gained hands-on experience in identifying and mitigating vulnerabilities in systems using Qualys VM software.</li>
-                    <li>Performed risk assessments and conformance checks to ensure third-party vendors adhere to security standards.</li>
-                    <li>Completed certifications and training for Qualys VM.</li>
-                </ul>
-            </article>
-        </div>
-    </section>
+        <section class="section bg-white p-4 rounded shadow my-4">
+            <h2 class="text-secondary text-center">Cybersecurity Projects and Coursework</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card p-3 shadow-sm">
+                        <h3>National Cyber League</h3>
+                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" class="img-fluid rounded" alt="NCL Certificate">
+                        <ul>
+                            <li>OSINT challenges</li>
+                            <li>Cryptography exercises</li>
+                            <li>Network traffic analysis</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-3 shadow-sm">
+                        <h3>Google Cybersecurity Certificate</h3>
+                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true" class="img-fluid rounded" alt="Google Cybersecurity Certificate">
+                        <ul>
+                            <li>Studied NIST CSF</li>
+                            <li>Linux, SQL, and SOC operations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Software Development Projects Section -->
-    <section class="section">
-        <h2>💻 Software Development Projects</h2>
-        <div class="grid-container">
-            <article class="card">
-                <h3>C++ Data Structures & Algorithms</h3>
-                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Sorting.png?raw=true" alt="Illustration of different sorting algorithms" class="project-image" tabindex="0">
-                <ul>
-                    <li>Implemented Graph Algorithms, Binary Trees, Sorting Algorithms, Hashing Techniques, and more.</li>
-                </ul>
-            </article>
-            <article class="card">
-                <h3>Hash Table Implementation</h3>
-                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/hashtable.png?raw=true" alt="Visual representation of a hash table structure" class="project-image" tabindex="0">
-                <ul>
-                    <li>Developed a hash table with chaining and resizing features in C++ to manage large datasets efficiently.</li>
-                </ul>
-            </article>
-            <article class="card">
-                <h3>Airport Simulation (Priority Queues)</h3>
-                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/priorityqueue%20project.png?raw=true" alt="Screenshot of an airport simulation project using priority queues" class="project-image" tabindex="0">
-                <ul>
-                    <li>Simulated airport runway management using priority queues to schedule arrivals and departures.</li>
-                </ul>
-            </article>
-        </div>
-    </section>
+        <section class="section bg-white p-4 rounded shadow my-4">
+            <h2 class="text-secondary text-center">Software Development Projects</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card p-3 shadow-sm">
+                        <h3>C++ Data Structures & Algorithms</h3>
+                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Sorting.png?raw=true" class="img-fluid rounded" alt="Sorting Algorithms">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 shadow-sm">
+                        <h3>Airport Simulation (Priority Queues)</h3>
+                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/priorityqueue%20project.png?raw=true" class="img-fluid rounded" alt="Airport Simulation">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Web Development Projects Section -->
-    <section class="section">
-        <h2>🌐 Web Development Projects</h2>
-        <div class="grid-container">
-            <article class="card">
-                <h3>Kenrish Collection Web App</h3>
-                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true" alt="Screenshot of Kenrish Collection website services page" class="project-image" tabindex="0">
-                <ul>
-                    <li>Developed a web application for beauty services and products.</li>
-                    <li>Worked on HTML, CSS, and JavaScript for responsive and dynamic user experience.</li>
-                </ul>
-            </article>
-            <article class="card">
-                <h3>Django Fullstack Chess Application</h3>
-                <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/chess.png?raw=true" alt="Screenshot of a Django-based chess application interface" class="project-image" tabindex="0">
-                <ul>
-                    <li>Developed a Django-based web app for playing chess, featuring login, join, and logout functionalities.</li>
-                    <li>Integrated HTML, CSS, and JavaScript for front-end development and built a database model to store user data securely.</li>
-                    <li>Gained proficiency in relational database models and database management systems (DBMS).</li>
-                </ul>
-            </article>
-        </div>
-    </section>
+        <section class="section bg-white p-4 rounded shadow my-4">
+            <h2 class="text-secondary text-center">Connect with Me</h2>
+            <div class="text-center">
+                <a href="https://www.linkedin.com/in/george-akai-91a41022b" class="btn btn-primary">LinkedIn</a>
+                <a href="https://www.instagram.com/georgeakai_infosec" class="btn btn-danger">Instagram</a>
+            </div>
+        </section>
+    </main>
 
-    <!-- Current Learning Section -->
-    <section class="section">
-        <h2>🎯 Currently Learning</h2>
-        <div class="grid-container">
-            <article class="card">
-                <h3>Preparing for CompTIA Security+</h3>
-                <ul>
-                    <li>Studying core security concepts and best practices for the Security+ certification exam.</li>
-                </ul>
-            </article>
-        </div>
-    </section>
-
-<footer>
-    <h2>🤳 Connect with me:</h2>
-    <a href="https://www.linkedin.com/in/george-akai-91a41022b">
-      <img alt="George Akai | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" style="margin-right: 10px;" />
-    </a>
-    <a href="https://www.instagram.com/georgeakai_infosec">
-      <img alt="George Akai | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" style="margin-right: 10px;" />
-    </a>
-</footer>
-
-    <!-- Modal for Image View -->
-    <div id="imageModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display: none;">
-        <h2 id="modalTitle" class="visually-hidden">Image Preview</h2>
-        <button id="closeBtn" aria-label="Close image preview">&times;</button>
-        <img id="modalImage" src="" alt="Expanded Image">
-    </div>
-
-    <script>
-        const images = document.querySelectorAll('.project-image');
-        const modal = document.getElementById('imageModal');
-        const modalImage = document.getElementById('modalImage');
-        const closeBtn = document.getElementById('closeBtn');
-        let previouslyFocusedElement;
-
-        function openModal(imageElement) {
-            previouslyFocusedElement = document.activeElement;
-            modalImage.src = imageElement.src;
-            modalImage.alt = imageElement.alt; // Set alt text for modal image
-            modal.style.display = 'block';
-            closeBtn.focus(); // Move focus to the close button
-        }
-
-        function closeModal() {
-            modal.style.display = 'none';
-            if (previouslyFocusedElement) {
-                previouslyFocusedElement.focus(); // Return focus to the element that opened the modal
-            }
-        }
-
-        images.forEach(image => {
-            image.addEventListener('click', function() {
-                openModal(this);
-            });
-
-            image.addEventListener('keydown', function(event) {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault(); // Prevent page scroll on Space
-                    openModal(this);
-                }
-            });
-        });
-
-        closeBtn.addEventListener('click', closeModal);
-
-        // Close the modal if the user clicks anywhere outside the modal image (optional, consider if this is confusing for keyboard users)
-        // window.addEventListener('click', function(event) {
-        //     if (event.target === modal) {
-        //         closeModal();
-        //     }
-        // });
-
-        // Close modal with Escape key
-        window.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && modal.style.display === 'block') {
-                closeModal();
-            }
-        });
-
-        // Visually hidden class for screen reader only text
-        const style = document.createElement('style');
-        style.innerHTML = `
-            .visually-hidden {
-                position: absolute;
-                width: 1px;
-                height: 1px;
-                margin: -1px;
-                padding: 0;
-                overflow: hidden;
-                clip: rect(0, 0, 0, 0);
-                border: 0;
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
