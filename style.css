@@ -118,7 +118,7 @@ h1 {
 }
 .project-image {
     width: 100%; 
-    height: auto; 
+    height: 100px; 
     max-width: 100%; 
 }
 #headerImg {
