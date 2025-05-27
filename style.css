@@ -126,6 +126,12 @@ h1 {
     margin: 0px;
 }
 
+.header-banner-img {
+    width: 100%;
+    height: auto;
+    display: block; /* Ensures it behaves as a block, helps avoid extra space below */
+}
+
 /* Styles primarily for about.html */
 .image-container {
     display: flex;
@@ -165,11 +171,11 @@ h1 {
 /* Styles for new content in about.html */
 .about-card {
     background-color: #ffffff; /* White background for the card */
-
     /* border: 1px solid #dddddd; */ /* Border removed */
     border-radius: 10px; /* Rounded corners to match index.html */
     padding: 20px; /* Padding inside the card */
-    margin-bottom: 20px; /* Space between cards */
+    margin: 20px auto; /* Updated margin for centering */
+    max-width: 900px; /* Added max-width */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
     text-align: left; /* Override body text-align: center for card content */
 }
@@ -187,7 +193,6 @@ h1 {
     margin-top: 0; /* Remove default top margin if it's the first element */
     margin-bottom: 0.75em;
     /* border-bottom and padding-bottom removed */
-
 }
 
 .about-card h3 {
@@ -234,4 +239,3 @@ h1 {
     text-decoration: underline; /* Underline on hover */
 }
 
-css-a11y
