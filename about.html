@@ -119,6 +119,72 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const images = document.querySelectorAll('.project-image');
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeBtn = document.getElementById('closeBtn');
+        let previouslyFocusedElement;
 
+        function openModal(imageElement) {
+            previouslyFocusedElement = document.activeElement;
+            modalImage.src = imageElement.src;
+            modalImage.alt = imageElement.alt; // Set alt text for modal image
+            modal.style.display = 'block';
+            closeBtn.focus(); // Move focus to the close button
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            if (previouslyFocusedElement) {
+                previouslyFocusedElement.focus(); // Return focus to the element that opened the modal
+            }
+        }
+
+        images.forEach(image => {
+            image.addEventListener('click', function() {
+                openModal(this);
+            });
+
+            image.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault(); // Prevent page scroll on Space
+                    openModal(this);
+                }
+            });
+        });
+
+        closeBtn.addEventListener('click', closeModal);
+
+        // Close the modal if the user clicks anywhere outside the modal image (optional, consider if this is confusing for keyboard users)
+        // window.addEventListener('click', function(event) {
+        //     if (event.target === modal) {
+        //         closeModal();
+        //     }
+        // });
+
+        // Close modal with Escape key
+        window.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                closeModal();
+            }
+        });
+
+        // Visually hidden class for screen reader only text
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .visually-hidden {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                margin: -1px;
+                padding: 0;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                border: 0;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
