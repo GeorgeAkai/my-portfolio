@@ -7,29 +7,38 @@
   --darker: #023859;
   --white: #fff;
   --black: #000;
+  --modern-font: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
 }
+
+/* Import modern font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 /* Body and backgrounds */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-    text-align: center;
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: var(--white);
+  color: var(--dark);
+  font-family: var(--modern-font);
+  text-align: center;
 }
 
 body.bg-light {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--white) 100%);
+  background: var(--white); /* Keep background white */
   color: var(--dark);
 }
 
-.section {
-  background: var(--white);
-  border: 1px solid var(--accent);
-}
-
-.section {
-    margin-top: 40px;
+/* Card backgrounds and blending */
+.section,
+.card,
+.about-card,
+.project-item,
+.objective-item {
+  background: linear-gradient(135deg, var(--accent) 60%, var(--secondary) 100%);
+  border: 1.5px solid var(--primary);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px 0 rgba(2, 56, 89, 0.10);
+  color: var(--dark);
 }
 
 .shadow, .shadow-sm {
@@ -48,6 +57,12 @@ nav {
   background: var(--dark) !important;
 }
 
+.navbar-brand, .nav-link {
+  color: var(--accent) !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
 nav ul {
     list-style-type: none; /* Removes bullets */
     padding: 0; /* Removes default padding */
@@ -57,14 +72,8 @@ nav ul {
     gap: 20px; /* Matches original gap in nav */
 }
 
-.navbar-brand, .nav-link {
-  color: var(--accent) !important;
-  font-weight: 600;
-  letter-spacing: 1px;
-}
-
-nav ul li {
-    display: inline; /* Not strictly necessary with flex on ul, but good practice */
+.nav-link.active, .nav-link:hover {
+  color: var(--secondary) !important;
 }
 
 nav a {
@@ -75,74 +84,58 @@ nav a {
     transition: background-color 0.3s ease;
 }
 
-.nav-link.active, .nav-link:hover {
-  color: var(--secondary) !important;
-}
-
 nav a:hover {
     background-color: #555;
 }
 
 /* Headings */
 h1, h2, h3 {
-  color: var(--primary);
   font-family: 'Segoe UI', 'Arial', sans-serif;
 }
 
-h2.text-secondary {
-  color: var(--secondary) !important;
+h1, .about-card h1 {
+  color: var(--primary);
+}
+
+h2, .about-card h2, .section h2, .card h2 {
+  color: var(--darker);
+}
+
+h3, .about-card h3, .card h3, .project-item h3, .objective-item h3 {
+  color: var(--white);
+  background: var(--primary);
+  padding: 0.4em 0.8em;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 0.7em;
+  margin-top: 0.3em;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 /* Cards */
 .card {
-  border: 1px solid var(--secondary);
-  background: var(--white);
   transition: box-shadow 0.2s, border-color 0.2s;
+  padding: 20px;
+  text-align: left;
 }
 
-.card:hover {
-  border-color: var(--primary);
+.card:hover, .about-card:hover, .project-item:hover, .objective-item:hover {
+  border-color: var(--darker);
   box-shadow: 0 8px 32px 0 rgba(2, 56, 89, 0.18);
 }
 
-.card {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
-
-.card img {
+.card img, .about-card img {
     width: 100%;
     border-radius: 8px;
     margin-bottom: 10px;
-    cursor: pointer;
+    border: 2px solid var(--accent);
+    background: var(--white);
+    box-shadow: 0 2px 8px rgba(2, 56, 89, 0.08);
 }
 
-.card h3 {
-    color: #222;
-}
-
-.card p {
-    color: #555;
-}
-
-.card ul {
-    padding-left: 20px;
-    color: #555;
-}
-
-.card a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.card a:hover {
-    text-decoration: underline;
+.card p, .about-card p, .card ul, .about-card ul {
+    color: var(--dark);
 }
 
 /* Buttons */
@@ -177,27 +170,91 @@ li strong {
   color: var(--primary);
 }
 
-/* Images */
-img.rounded {
-  border: 2px solid var(--accent);
-  background: var(--white);
-}
-
 /* Header image */
 #headerImg {
+  border-radius: 2rem;
+  margin-bottom: 0;
+  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
   background: var(--primary);
   padding: 2rem 0;
 }
 
 #headerImg img {
-  border: 4px solid var(--accent);
-  background: var(--white);
+  border-radius: 1.5rem;
+  width: 100%;
   max-width: 100%;
   height: auto;
-  box-shadow: 0 4px 24px 0 rgba(2, 56, 89, 0.12);
+  object-fit: cover;
 }
 
-/* Modal styles */
+/* About-card specifics */
+.about-card {
+    margin: 20px auto;
+    max-width: 900px;
+    text-align: left;
+    padding: 24px 28px;
+}
+
+.about-card h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.about-card h2 {
+    font-size: 1.5em;
+    margin-top: 0;
+    margin-bottom: 0.75em;
+}
+
+.about-card h3 {
+    font-size: 1.2em;
+}
+
+.about-card p, .about-card ul {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.about-card ul {
+    list-style-position: outside;
+    padding-left: 20px;
+    margin-bottom: 1em;
+}
+
+.about-card li {
+    margin-bottom: 0.5em;
+    line-height: 1.5;
+}
+
+#img1-content p em {
+    font-style: normal;
+    font-weight: bold;
+    color: var(--darker);
+    display: block;
+    margin-bottom: 0.25em;
+}
+
+/* Project and objective items */
+.project-item, .objective-item {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+}
+
+/* Links */
+.about-card a, .card a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.about-card a:hover, .card a:hover {
+    text-decoration: underline;
+}
+
+/* Modal styles (unchanged) */
 #imageModal {
     display: none; 
     position: fixed;
@@ -231,142 +288,60 @@ img.rounded {
     color: #f1f1f1;
 }
 
-/* Mobile responsiveness */
+/* Make nav and header corners smooth and full width */
+.navbar,
+#headerImg {
+  border-radius: 0 0 2rem 2rem;
+  margin-bottom: 0;
+  width: 100vw;
+  max-width: 100vw;
+  left: 0;
+  right: 0;
+  position: relative;
+}
+
+/* Add spacing between cards in rows */
+.row > .col-md-6 {
+  margin-bottom: 2rem;
+}
+
+/* Prevent last row from having extra margin */
+.row > .col-md-6:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive: reduce gap on mobile */
 @media (max-width: 768px) {
-    /* From index.html */
-    .section .card {
-        padding: 10px;
-    }
-    .grid-container {
-        grid-template-columns: 1fr;
-    }
-    .section .grid-container .card {
-        margin-bottom: 20px;
-    }
-    /* From about.html */
-    .image-container img { 
-        width: 95%; 
-        max-width: none; 
-    }
-}
-
-/* Styles primarily for index.html */
-h1 {
-    color: #333;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* Styles primarily for about.html */
-.image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.image-container img {
-    width: 100%; 
-    max-width: 1200px; 
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Styles for new content in about.html */
-.about-card {
-    background-color: #ffffff; /* White background for the card */
-    /* border: 1px solid #dddddd; */ /* Border removed */
-    border-radius: 10px; /* Rounded corners to match index.html */
-    padding: 20px; /* Padding inside the card */
-    margin: 20px auto; /* Updated margin for centering */
-    max-width: 900px; /* Added max-width */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-    text-align: left; /* Override body text-align: center for card content */
-}
-
-.about-card h1 {
-    font-size: 2em; /* Large for main title */
-    color: #333333;
-    margin-bottom: 0.5em;
-}
-
-.about-card h2 {
-    font-size: 1.5em; /* Medium for section titles */
-    color: #007bff; /* Blue text color */
-    margin-top: 0; /* Remove default top margin if it's the first element */
-    margin-bottom: 0.75em;
-    /* border-bottom and padding-bottom removed */
-}
-
-.about-card h3 {
-    font-size: 1.2em; /* Smaller for sub-section titles */
-    color: #555555;
-    margin-bottom: 0.5em;
-}
-
-.about-card p {
-    font-size: 1em;
-    line-height: 1.6;
-    color: #333333;
-    margin-bottom: 1em; /* Space after paragraphs */
-}
-
-.about-card ul {
-    list-style-position: outside; /* Bullets outside the text flow */
-    padding-left: 20px; /* Indent for the bullets */
-    margin-bottom: 1em; /* Space after lists */
-    color: #333333; /* Ensure list text color matches paragraph text */
-}
-
-.about-card li {
-    margin-bottom: 0.5em; /* Space between list items */
-    line-height: 1.5;
-}
-
-/* Specific styles for intro card titles in #img1-content */
-#img1-content p em { /* Styles the emphasized text in paragraphs */
-    font-style: normal; /* Remove italics if not desired for these titles */
-    font-weight: bold; /* Make them bold */
-    color: #555;
-    display: block; /* Make each title take its own line */
-    margin-bottom: 0.25em;
-}
-
-
-/* Styles for links within .about-card to match index.html card links */
-.about-card a {
-    color: #007bff; /* Standard blue link color */
-    text-decoration: none; /* No underline by default */
-    font-weight: normal; /* Normal weight for links within list items */
-}
-
-.about-card a:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
-/* Styles for .project-item elements within about.html */
-.project-item {
-    background-color: #ffffff; /* White background for the inner card */
-    border-radius: 8px;        /* Rounded corners for inner cards */
-    padding: 15px;             /* Padding inside inner cards */
-    margin-top: 15px;          /* Space above inner cards */
-    margin-bottom: 15px;       /* Space below inner cards */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12); /* Subtle shadow for inner cards */
-    /* Consider adding a light border if more distinction is needed, e.g., border: 1px solid #eeeeee; */
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .card {
-    margin-bottom: 1.5rem;
+  .row > .col-md-6 {
+    margin-bottom: 1.2rem;
+  }
+  .navbar,
+  #headerImg {
+    border-radius: 0 0 1.2rem 1.2rem;
+  }
+  #headerImg {
+    padding: 1rem 0;
+    border-radius: 1.2rem;
+  }
+  #headerImg img {
+    border-radius: 1rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  .section,
+  .card,
+  .about-card,
+  .project-item,
+  .objective-item {
+    border-radius: 1rem;
+    padding: 1rem !important;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+  }
+  .row {
+    margin-left: 0;
+    margin-right: 0;
   }
 }

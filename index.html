@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
-        <div class="container">
+<body class="bg-light" style="padding:0; margin:0;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow rounded-bottom-4" style="border-radius: 0 0 2rem 2rem; margin-bottom:0;">
+        <div class="container-fluid px-0">
             <a class="navbar-brand fw-bold" href="#">My Portfolio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -26,15 +26,17 @@
         </div>
     </nav>
 
-    <header id="headerImg" class="text-center py-5">
-        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/banner.png?raw=true" class="img-fluid rounded shadow-lg border border-4" alt="George Akai - Cybersecurity Specialist">
+    <header id="headerImg" class="text-center py-5 rounded-4" style="border-radius: 2rem; margin-bottom:0; width:100vw; max-width:100vw; overflow:hidden;">
+        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/banner.png?raw=true"
+             class="img-fluid rounded-4 shadow-lg border border-4"
+             alt="George Akai - Cybersecurity Specialist"
+             style="max-width:100%; border-radius: 1.5rem;">
     </header>
 
-    <main class="container my-5">
-        <h1 class="text-center" style="color: var(--primary);">Thanks for visiting my Portfolio</h1>
+    <main class="container-fluid px-0" style="max-width:100vw;">
+        <h1 class="text-center" style="color: var(--primary); margin-top:2rem;">Thanks for visiting my Portfolio</h1>
 
-        <!-- Content updated above here -->
-         <!-- Cybersecurity Projects Section -->
+        <!-- Cybersecurity Projects Section -->
         <section class="section bg-white p-4 rounded shadow my-4">
             <h2 class="text-secondary text-center">Cybersecurity Projects and Coursework</h2>
             <div class="row">
@@ -172,6 +174,57 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Create modal elements
+    const modal = document.createElement('div');
+    modal.id = 'imgModal';
+    modal.style.display = 'none';
+    modal.style.position = 'fixed';
+    modal.style.zIndex = '9999';
+    modal.style.left = '0';
+    modal.style.top = '0';
+    modal.style.width = '100vw';
+    modal.style.height = '100vh';
+    modal.style.background = 'rgba(0,0,0,0.85)';
+    modal.style.justifyContent = 'center';
+    modal.style.alignItems = 'center';
+
+    const modalImg = document.createElement('img');
+    modalImg.style.maxWidth = '90vw';
+    modalImg.style.maxHeight = '90vh';
+    modalImg.style.borderRadius = '16px';
+    modalImg.style.boxShadow = '0 8px 32px rgba(2,56,89,0.25)';
+    modal.appendChild(modalImg);
+
+    const closeBtn = document.createElement('span');
+    closeBtn.innerHTML = '&times;';
+    closeBtn.style.position = 'absolute';
+    closeBtn.style.top = '30px';
+    closeBtn.style.right = '50px';
+    closeBtn.style.fontSize = '3rem';
+    closeBtn.style.color = '#fff';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.style.fontWeight = 'bold';
+    closeBtn.style.zIndex = '10000';
+    modal.appendChild(closeBtn);
+
+    document.body.appendChild(modal);
+
+    // Show modal on image click
+    document.querySelectorAll('.card img.img-fluid').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function() {
+            modalImg.src = this.src;
+            modal.style.display = 'flex';
+        });
+    });
+
+    // Close modal on click
+    closeBtn.onclick = () => modal.style.display = 'none';
+    modal.onclick = (e) => {
+        if (e.target === modal) modal.style.display = 'none';
+    };
+    </script>
 </body>
 
 </html>
