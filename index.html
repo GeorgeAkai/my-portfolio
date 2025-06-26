@@ -4,175 +4,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>George Akai - A Portfolio</title>
+    <title>George Akai - Cybersecurity Portfolio</title>
     <link rel="icon" type="image/x-icon" href="https://github.com/GeorgeAkai/my-portfolio/blob/main/9004738_lock_security_padlock_secure_icon.png?raw=true">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 
-<body class="bg-light" style="padding:0; margin:0;">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow rounded-bottom-4" style="border-radius: 0 0 2rem 2rem; margin-bottom:0;">
-        <div class="container-fluid px-0">
-            <a class="navbar-brand fw-bold" href="#">My Portfolio</a>
+<body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow rounded-bottom-4" style="border-radius: 0 0 2rem 2rem;">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand fw-bold" href="#">George Akai</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header id="headerImg" class="text-center py-5 rounded-4" style="border-radius: 2rem; margin-bottom:0; width:100vw; max-width:100vw; overflow:hidden;">
-        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/banner.png?raw=true"
-             class="img-fluid rounded-4 shadow-lg border border-4"
-             alt="George Akai - Cybersecurity Specialist"
-             style="max-width:100%; border-radius: 1.5rem;">
+    <!-- Hero/Header -->
+    <header id="headerImg" class="text-center py-5 rounded-4" style="border-radius: 2rem; width:100vw; max-width:100vw; overflow:hidden;">
+        <div class="container">
+            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/banner.png?raw=true"
+                class="img-fluid rounded-4 shadow-lg border border-4 mb-3"
+                alt="George Akai - Cybersecurity Specialist"
+                style="max-width:100%; border-radius: 1.5rem;">
+            <h1 class="fw-bold" style="color: var(--primary); margin-top:1rem;">Cybersecurity & Software Portfolio</h1>
+            <p class="lead" style="color: var(--darker);">Student · Security Assistant · Developer</p>
+            <a href="#contact" class="btn btn-primary btn-lg mt-2">Connect with Me</a>
+        </div>
     </header>
 
-    <main class="container-fluid px-0" style="max-width:100vw;">
-        <h1 class="text-center" style="color: var(--primary); margin-top:2rem;">Thanks for visiting my Portfolio</h1>
-
-        <!-- Cybersecurity Projects Section -->
-        <section class="section bg-white p-4 rounded shadow my-4">
-            <h2 class="text-secondary text-center">Cybersecurity Projects and Coursework</h2>
-            <div class="row">
-                <div class="col-md-6 d-flex align-items-stretch">
-                    <div class="card p-3 shadow-sm w-100 h-100">
-                        <h3>National Cyber League</h3>
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" class="img-fluid rounded" alt="NCL Certificate">
-                        <ul>
-                            <li><strong>Participated in OSINT challenges</strong> and utilized investigative tools such as the Open Source Intelligence Framework to uncover publicly available information.</li>
-                            <li><strong>Completed cryptography exercises</strong> involving encryption and decryption techniques to solve security puzzles and challenges.</li>
-                            <li><strong>Performed network traffic analysis</strong> to inspect data packets and identify patterns, anomalies, or potential vulnerabilities within the network.</li>
-                            <li><strong>Conducted system enumeration</strong> to probe and identify open ports, services, and potential exploits in pursuit of capture-the-flag objectives.</li>
-                            <li><strong>Engaged in password cracking challenges</strong> to decrypt password hashes using tools and techniques, successfully retrieving hidden flags.</li>
-                        </ul>
-                    </div>
+    <!-- Main Content -->
+    <main class="container py-5">
+        <!-- About Summary -->
+        <section class="section mb-5 p-4">
+            <div class="row align-items-center">
+                <div class="col-md-8 text-md-start text-center">
+                    <h2 class="text-secondary mb-3">Welcome!</h2>
+                    <p>
+                        I’m <b>George Akai</b>, a Computer Information Systems & Cybersecurity student and Information Security Assistant at Chico State. I’m passionate about building secure systems, solving technical challenges, and helping organizations protect their digital assets.
+                    </p>
                 </div>
-                <div class="col-md-6 d-flex align-items-stretch">
-                    <div class="card p-3 shadow-sm w-100 h-100">
-                        <h3>Google Cybersecurity Certificate</h3>
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true" class="img-fluid rounded" alt="Google Cybersecurity Certificate">
-                        <ul>
-                            <li><strong>Acquired foundational skills</strong> in the cybersecurity field, including principles of confidentiality, integrity, and availability.</li>
-                            <li><strong>Studied the NIST Cybersecurity Framework</strong> to understand best practices in identifying, protecting, detecting, responding to, and recovering from cyber threats.</li>
-                            <li><strong>Gained hands-on experience</strong> with Linux commands, SQL queries, and Security Operations Center (SOC) workflows.</li>
-                            <li><strong>Learned vulnerability assessment techniques</strong> using Suricata to detect threats and analyze network traffic.</li>
-                            <li><strong>Explored risk management and digital asset protection</strong>, focusing on identifying vulnerabilities and implementing mitigation strategies.</li>
-                            <li><strong>Developed basic security automation skills</strong> by writing Python scripts to streamline common security tasks.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 d-flex align-items-stretch">
-                    <div class="card p-3 shadow-sm w-100 h-100">
-                        <h3>Annual User Access Reviews</h3>
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ChatGPT%20Image%20Jun%203%2C%202025%2C%2008_25_39%20AM.png?raw=true" class="img-fluid rounded" alt="User Access Review">
-                        <ul>
-                            <li><strong>Created and managed ticket workflows</strong> to coordinate user access reviews in collaboration with Campus MPPs (Management Personnel Plan members).</li>
-                            <li><strong>Followed up with campus managers</strong> to collect and validate user access information, ensuring timely and accurate reporting.</li>
-                            <li><strong>Documented review outcomes</strong> and collaborated with team members to record results in the Configuration Management Database (CMDB).</li>
-                            <li><strong>Distributed certification requests via Adobe Sign</strong> to obtain formal approvals and signatures from campus stakeholders.</li>
-                            <li><strong>Utilized tools such as Microsoft Excel and Adobe Acrobat</strong> to organize data, edit documentation, and streamline administrative tasks.</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6 d-flex align-items-stretch">
-                    <div class="card p-3 shadow-sm w-100 h-100">
-                        <h3>KnowledgeBase Article Review</h3>
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/data_inv.png?raw=true" class="img-fluid rounded" alt="KnowledgeBase">
-                        <ul>
-                            <li><strong>Researched and authored a knowledgebase article</strong> explaining the purpose and significance of the Sensitive Data Inventory Survey.</li>
-                            <li><strong>Highlighted the importance of identifying and protecting sensitive data</strong> to promote compliance and reduce risk exposure across campus departments.</li>
-                            <li><strong>Encouraged campus managers to complete the survey</strong> by clearly outlining its benefits and impact in the article.</li>
-                            <li><strong>Contributed to security awareness initiatives</strong> by creating clear, accessible documentation that supported informed decision-making among campus personnel.</li>
-                        </ul>
-                    </div>
+                <div class="col-md-4 text-center">
+                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/9004738_lock_security_padlock_secure_icon.png?raw=true"
+                        alt="Profile Icon" class="img-fluid rounded-circle shadow" style="width:120px; background:var(--white); padding:10px;">
                 </div>
             </div>
         </section>
-        <!-- Include all remaining sections: Software, Web Development, Learning, Contact -->
 
-        <!-- Software Development Projects Section -->
-        <section class="section bg-white p-4 rounded shadow my-4">
-            <h2 class="text-secondary text-center">Software Development Projects</h2>
-            <div class="row">
-                <div class="col-md-6 d-flex align-items-stretch">
-                    <div class="card p-3 shadow-sm w-100 h-100">
-                        <h3>C++ Data Structures & Algorithms</h3>
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Sorting.png?raw=true" class="img-fluid rounded" alt="Sorting Algorithms">
-                        <ul>
-                            <li><strong>Utilized sorting algorithms</strong> such as Bubble Sort, Selection Sort, Insertion Sort, Quick Sort, and Heap Sort to develop efficient data processing programs.</li>
-                            <li><strong>Implemented Binary Search Trees (BSTs) and AVL Trees</strong> to solve problems requiring dynamic and balanced data organization.</li>
-                            <li><strong>Developed priority queue implementations</strong> to manage and prioritize dynamic tasks, improving overall program efficiency and responsiveness.</li>
-                            <li><strong>Applied graph traversal algorithms</strong> including Prim’s and Dijkstra’s algorithms, as well as Breadth-First Search (BFS) and Depth-First Search (DFS), to navigate and analyze graph-based data structures.</li>
-                        </ul>
+        <!-- Projects Grid -->
+        <section class="section mb-5 p-4">
+            <h2 class="text-secondary text-center mb-4">Featured Projects</h2>
+            <div class="row g-4">
+                <!-- Cybersecurity Project -->
+                <div class="col-lg-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" class="img-fluid rounded-top" alt="NCL Certificate">
+                        <div class="card-body">
+                            <h3 class="card-title">National Cyber League</h3>
+                            <ul>
+                                <li><strong>OSINT challenges</strong> using investigative tools to uncover public info.</li>
+                                <li><strong>Cryptography exercises</strong> with encryption/decryption techniques.</li>
+                                <li><strong>Network traffic analysis</strong> to spot anomalies and vulnerabilities.</li>
+                                <li><strong>System enumeration</strong> for open ports, services, and exploits.</li>
+                                <li><strong>Password cracking</strong> to decrypt hashes and retrieve flags.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 d-flex align-items-stretch">
-                    <div class="card p-3 shadow-sm w-100 h-100">
-                        <h3>Airport Simulation (Priority Queues)</h3>
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/priorityqueue%20project.png?raw=true" class="img-fluid rounded" alt="Airport Simulation">
-                        <ul>
-                            <li><strong>Utilized priority queues</strong> to assign planes to runways based on priority values, simulating real-time scheduling in an airport control system.</li>
-                            <li><strong>Implemented heap data structures</strong> to efficiently manage and sort incoming and outgoing flights, optimizing the performance of the airport simulation.</li>
-                        </ul>
+                <!-- Cybersecurity Certificate -->
+                <div class="col-lg-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true" class="img-fluid rounded-top" alt="Google Cybersecurity Certificate">
+                        <div class="card-body">
+                            <h3 class="card-title">Google Cybersecurity Certificate</h3>
+                            <ul>
+                                <li><strong>Cybersecurity foundations</strong> including CIA triad and NIST Framework.</li>
+                                <li><strong>Hands-on Linux, SQL, SOC workflows.</strong></li>
+                                <li><strong>Vulnerability assessment</strong> with Suricata and risk management.</li>
+                                <li><strong>Security automation</strong> using Python scripting.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- User Access Review -->
+                <div class="col-lg-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ChatGPT%20Image%20Jun%203%2C%202025%2C%2008_25_39%20AM.png?raw=true" class="img-fluid rounded-top" alt="User Access Review">
+                        <div class="card-body">
+                            <h3 class="card-title">Annual User Access Reviews</h3>
+                            <ul>
+                                <li><strong>Managed ticket workflows</strong> for user access reviews with campus MPPs.</li>
+                                <li><strong>Validated user access</strong> and documented outcomes in the CMDB.</li>
+                                <li><strong>Distributed certification requests</strong> via Adobe Sign.</li>
+                                <li><strong>Used Excel & Acrobat</strong> for data and documentation.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- KnowledgeBase Article -->
+                <div class="col-lg-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/data_inv.png?raw=true" class="img-fluid rounded-top" alt="KnowledgeBase">
+                        <div class="card-body">
+                            <h3 class="card-title">KnowledgeBase Article Review</h3>
+                            <ul>
+                                <li><strong>Authored article</strong> on the Sensitive Data Inventory Survey.</li>
+                                <li><strong>Promoted data protection</strong> and compliance awareness.</li>
+                                <li><strong>Supported security initiatives</strong> with clear documentation.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Web Development Projects Section -->
-        <section class="section bg-white p-4 rounded shadow my-4">
-            <h2 class="text-secondary text-center">Web Development Projects</h2>
-            <div class="row">
-                <div class="col-md-6 d-flex align-items-stretch">
-                    <div class="card p-3 shadow-sm w-100 h-100">
-                        <h3>C++ Data Structures & Algorithms</h3>
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Sorting.png?raw=true" class="img-fluid rounded" alt="Sorting Algorithms">
-                        <ul>
-                            <li><strong>Utilized sorting algorithms</strong> such as Bubble Sort, Selection Sort, Insertion Sort, Quick Sort, and Heap Sort to develop efficient data processing programs.</li>
-                            <li><strong>Implemented Binary Search Trees (BSTs) and AVL Trees</strong> to solve problems requiring dynamic and balanced data organization.</li>
-                            <li><strong>Developed priority queue implementations</strong> to manage and prioritize dynamic tasks, improving overall program efficiency and responsiveness.</li>
-                            <li><strong>Applied graph traversal algorithms</strong> including Prim’s and Dijkstra’s algorithms, as well as Breadth-First Search (BFS) and Depth-First Search (DFS), to navigate and analyze graph-based data structures.</li>
-                        </ul>
+        <!-- Software Projects -->
+        <section class="section mb-5 p-4">
+            <h2 class="text-secondary text-center mb-4">Software Development</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Sorting.png?raw=true" class="img-fluid rounded-top" alt="Sorting Algorithms">
+                        <div class="card-body">
+                            <h3 class="card-title">C++ Data Structures & Algorithms</h3>
+                            <ul>
+                                <li><strong>Sorting algorithms:</strong> Bubble, Selection, Insertion, Quick, Heap Sort.</li>
+                                <li><strong>BSTs & AVL Trees</strong> for dynamic data organization.</li>
+                                <li><strong>Priority queues</strong> for task management.</li>
+                                <li><strong>Graph algorithms:</strong> Prim’s, Dijkstra’s, BFS, DFS.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6 d-flex align-items-stretch">
-                    <div class="card p-3 shadow-sm w-100 h-100">
-                        <h3>Airport Simulation (Priority Queues)</h3>
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/priorityqueue%20project.png?raw=true" class="img-fluid rounded" alt="Airport Simulation">
-                        <ul>
-                            <li><strong>Utilized priority queues</strong> to assign planes to runways based on priority values, simulating real-time scheduling in an airport control system.</li>
-                            <li><strong>Implemented heap data structures</strong> to efficiently manage and sort incoming and outgoing flights, optimizing the performance of the airport simulation.</li>
-                        </ul>
+                <div class="col-lg-6">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/priorityqueue%20project.png?raw=true" class="img-fluid rounded-top" alt="Airport Simulation">
+                        <div class="card-body">
+                            <h3 class="card-title">Airport Simulation (Priority Queues)</h3>
+                            <ul>
+                                <li><strong>Simulated real-time scheduling</strong> with priority queues.</li>
+                                <li><strong>Heap data structures</strong> for efficient flight management.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Currently Learning Section -->
-        <section class="section bg-white p-4 rounded shadow my-4 border border-2" style="border-color: var(--accent);">
-            <h2 class="text-secondary text-center">Currently Learning</h2>
+        <!-- Currently Learning -->
+        <section class="section mb-5 p-4">
+            <h2 class="text-secondary text-center mb-3">Currently Learning</h2>
             <div class="text-center">
                 <h3 class="fw-bold" style="color: var(--primary);">Preparing for CompTIA Security+</h3>
                 <p>Studying core security concepts and best practices.</p>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="section bg-white p-4 rounded shadow my-4 border border-2" style="border-color: var(--accent);">
-            <h2 class="text-secondary text-center">Connect with Me</h2>
+        <!-- Contact -->
+        <section class="section mb-4 p-4" id="contact">
+            <h2 class="text-secondary text-center mb-3">Connect with Me</h2>
             <div class="text-center">
-                <a href="https://www.linkedin.com/in/george-akai-91a41022b" class="btn btn-primary me-2">LinkedIn</a>
-                <a href="https://www.instagram.com/georgeakai_infosec" class="btn btn-danger">Instagram</a>
+                <a href="https://www.linkedin.com/in/george-akai-91a41022b" class="btn btn-primary me-2" target="_blank">LinkedIn</a>
+                <a href="https://www.instagram.com/georgeakai_infosec" class="btn btn-danger" target="_blank">Instagram</a>
             </div>
         </section>
     </main>
 
+    <!-- Image Modal Script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
     // Create modal elements
