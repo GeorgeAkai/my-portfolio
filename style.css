@@ -163,13 +163,16 @@ main.container, main.container-fluid {
 
 .card img {
   width: 100%;
+  height: auto;
+  max-height: 260px;
+  object-fit: contain; /* Changed from cover to contain */
   border-radius: 14px 14px 0 0;
   margin-bottom: 0;
   border-bottom: 1.5px solid var(--accent);
   background: var(--white);
   box-shadow: none;
-  object-fit: cover;
-  max-height: 220px;
+  display: block;
+  padding: 12px 0; /* Optional: adds space above/below image */
 }
 
 .card-body {
