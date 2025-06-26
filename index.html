@@ -11,9 +11,9 @@
 </head>
 
 <body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
         <div class="container">
-            <a class="navbar-brand" href="#">My Portfolio</a>
+            <a class="navbar-brand fw-bold" href="#">My Portfolio</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,11 +27,11 @@
     </nav>
 
     <header id="headerImg" class="text-center py-5">
-        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/banner.png?raw=true" class="img-fluid rounded shadow-lg" alt="George Akai - Cybersecurity Specialist">
+        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/banner.png?raw=true" class="img-fluid rounded shadow-lg border border-4" alt="George Akai - Cybersecurity Specialist">
     </header>
 
     <main class="container my-5">
-        <h1 class="text-center text-primary">Thanks for visiting my Portfolio</h1>
+        <h1 class="text-center" style="color: var(--primary);">Thanks for visiting my Portfolio</h1>
 
         <!-- Content updated above here -->
          <!-- Cybersecurity Projects Section -->
@@ -129,28 +129,23 @@
             <div class="row">
                 <div class="col-md-6 d-flex align-items-stretch">
                     <div class="card p-3 shadow-sm w-100 h-100">
-                        <h3>Kenrish Collection Web App</h3>
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true" class="img-fluid rounded" alt="Kenrish Collection">
+                        <h3>C++ Data Structures & Algorithms</h3>
+                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Sorting.png?raw=true" class="img-fluid rounded" alt="Sorting Algorithms">
                         <ul>
-                            <li><strong>Implemented user authentication</strong> to manage secure login, registration, and session handling.</li>
-                            <li><strong>Developed product views</strong> to display item details and support dynamic rendering based on user interaction.</li>
-                            <li><strong>Built a management console</strong> with full <strong>CRUD functionality</strong> (Create, Read, Update, Delete) for administrative users.</li>
-                            <li><strong>Designed distinct Django models</strong> with relationships defined via foreign keys to ensure efficient and normalized database structure.</li>
-                            <li><strong>Applied responsive design principles</strong> to create a mobile-first layout that adapts to various screen sizes and devices.</li>
-                            <li><strong>Crafted a sleek user interface</strong> focused on usability and intuitive navigation to enhance overall user experience (UX).</li>
-                            <li><strong>Project currently in progress</strong>, with ongoing feature expansion and optimization.</li>
+                            <li><strong>Utilized sorting algorithms</strong> such as Bubble Sort, Selection Sort, Insertion Sort, Quick Sort, and Heap Sort to develop efficient data processing programs.</li>
+                            <li><strong>Implemented Binary Search Trees (BSTs) and AVL Trees</strong> to solve problems requiring dynamic and balanced data organization.</li>
+                            <li><strong>Developed priority queue implementations</strong> to manage and prioritize dynamic tasks, improving overall program efficiency and responsiveness.</li>
+                            <li><strong>Applied graph traversal algorithms</strong> including Prim’s and Dijkstra’s algorithms, as well as Breadth-First Search (BFS) and Depth-First Search (DFS), to navigate and analyze graph-based data structures.</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-md-6 d-flex align-items-stretch">
                     <div class="card p-3 shadow-sm w-100 h-100">
-                        <h3>Django Chess Application</h3>
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/chess.png?raw=true" class="img-fluid rounded" alt="Chess App">
+                        <h3>Airport Simulation (Priority Queues)</h3>
+                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/priorityqueue%20project.png?raw=true" class="img-fluid rounded" alt="Airport Simulation">
                         <ul>
-                            <li><strong>Leveraged server-side HTML templating</strong> to dynamically render web pages, ensuring efficient content delivery and separation of concerns.</li>
-                            <li><strong>Developed a robust backend using Django</strong>, implementing a structured table model to manage application logic and data integrity.</li>
-                            <li><strong>Utilized Django’s built-in SQLite3 database</strong> to persist and manage game board pieces, streamlining development and minimizing overhead.</li>
-                            <li><strong>Conducted thorough regression testing</strong> to ensure application stability, and <strong>successfully deployed the system on Google Cloud Platform (GCP)</strong> for scalable, cloud-based access.</li>
+                            <li><strong>Utilized priority queues</strong> to assign planes to runways based on priority values, simulating real-time scheduling in an airport control system.</li>
+                            <li><strong>Implemented heap data structures</strong> to efficiently manage and sort incoming and outgoing flights, optimizing the performance of the airport simulation.</li>
                         </ul>
                     </div>
                 </div>
@@ -158,19 +153,19 @@
         </section>
 
         <!-- Currently Learning Section -->
-        <section class="section bg-white p-4 rounded shadow my-4">
+        <section class="section bg-white p-4 rounded shadow my-4 border border-2" style="border-color: var(--accent);">
             <h2 class="text-secondary text-center">Currently Learning</h2>
             <div class="text-center">
-                <h3>Preparing for CompTIA Security+</h3>
+                <h3 class="fw-bold" style="color: var(--primary);">Preparing for CompTIA Security+</h3>
                 <p>Studying core security concepts and best practices.</p>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section class="section bg-white p-4 rounded shadow my-4">
+        <section class="section bg-white p-4 rounded shadow my-4 border border-2" style="border-color: var(--accent);">
             <h2 class="text-secondary text-center">Connect with Me</h2>
             <div class="text-center">
-                <a href="https://www.linkedin.com/in/george-akai-91a41022b" class="btn btn-primary">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/george-akai-91a41022b" class="btn btn-primary me-2">LinkedIn</a>
                 <a href="https://www.instagram.com/georgeakai_infosec" class="btn btn-danger">Instagram</a>
             </div>
         </section>
