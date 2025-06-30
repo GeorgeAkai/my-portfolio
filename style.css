@@ -2,7 +2,7 @@
 :root {
   --muted: #e6ecec;        /* Soft, fresh background */
   --secondary: #b3c6c6;    /* Muted blue-gray for accents */
-  --accent: #a3bcb6;       /* Muted teal for sections */
+  --accent: #b4c4c0;       /* Muted teal for sections */
   --highlight: #97a1a1;    /* Muted green-blue for highlights */
   --primary: #555e5f;      /* Deep, calm blue-green for cards/nav */
   --gray: #7a8c8e;         /* Muted gray for text/buttons */
@@ -25,7 +25,7 @@ html, body {
 }
 
 body, body.bg-light {
-  background: var(--muted) !important;
+  background: var(--white) !important;
   color: var(--primary);
 }
 
@@ -134,9 +134,9 @@ main.container, main.container-fluid {
 
 /* === Card Grid and Cards === */
 .card {
-  background: var(--white);
+  background: var(--grey);
   border: 1.5px solid var(--highlight);
-  color: var(--primary);
+  color: var(--black);
   border-radius: 14px;
   box-shadow: 0 4px 24px 0 rgba(61, 90, 90, 0.10);
   transition: box-shadow 0.2s, border-color 0.2s;
@@ -180,7 +180,7 @@ main.container, main.container-fluid {
 }
 
 .card-title {
-  color: var(--highlight);
+  color: var(--black);
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 1rem;
