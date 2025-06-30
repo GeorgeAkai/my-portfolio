@@ -1,10 +1,10 @@
 /* === Base Colors and Font === */
 :root {
-  --primary: #0d1f23;
+  --muted: #0d1f23;
   --secondary: #132e35;
   --accent: #2d4a53;
   --highlight: #69818d;
-  --muted: #afb3b7;
+  --primary: #afb3b7;
   --gray: #5a636a;
   --white: #fff;
   --black: #000;
