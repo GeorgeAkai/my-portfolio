@@ -8,11 +8,229 @@
     <link rel="icon" type="image/x-icon" href="https://github.com/GeorgeAkai/my-portfolio/blob/main/9004738_lock_security_padlock_secure_icon.png?raw=true">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+    :root {
+        --primary: #7338A0;
+        --secondary: #924dbf;
+        --accent: #9e72c3;
+        --deep: #4a2574;
+        --dark: #0f0529;
+        --black: #000;
+        --white: #fff;
+        --modern-font: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+    }
+    body, body.bg-light {
+        background: linear-gradient(135deg, var(--accent) 0%, var(--white) 100%);
+        color: var(--dark);
+        font-family: var(--modern-font);
+        margin: 0;
+        padding: 0;
+    }
+    .navbar {
+        background: var(--deep) !important;
+        border-radius: 0 0 2rem 2rem;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 24px 0 rgba(74, 37, 116, 0.12);
+    }
+    .navbar-brand, .nav-link {
+        color: var(--accent) !important;
+        font-weight: 600;
+        letter-spacing: 1px;
+        font-family: var(--modern-font);
+    }
+    .nav-link.active, .nav-link:hover {
+        color: var(--white) !important;
+    }
+    #headerImg {
+        background: linear-gradient(120deg, var(--primary) 60%, var(--secondary) 100%);
+        border-radius: 2rem;
+        margin-bottom: 0;
+        width: 100vw;
+        max-width: 100vw;
+        overflow: hidden;
+        color: var(--white);
+        box-shadow: 0 4px 24px 0 rgba(115, 56, 160, 0.10);
+    }
+    #headerImg img {
+        border-radius: 1.5rem;
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        object-fit: contain;
+        border: 4px solid var(--accent);
+        background: var(--white);
+        box-shadow: 0 4px 24px 0 rgba(115, 56, 160, 0.12);
+    }
+    #headerImg h1 {
+        color: var(--white);
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-family: var(--modern-font);
+        text-shadow: 0 2px 8px rgba(15,5,41,0.12);
+    }
+    #headerImg .lead {
+        color: var(--accent);
+        font-size: 1.25rem;
+    }
+    #headerImg .btn-primary {
+        margin-top: 1rem;
+        font-size: 1.1rem;
+        padding: 0.7em 2em;
+        border-radius: 2em;
+        background: var(--secondary);
+        border: none;
+        color: var(--white);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+    #headerImg .btn-primary:hover {
+        background: var(--primary);
+        color: var(--white);
+    }
+    main.container {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    .section {
+        background: var(--white);
+        border: 2px solid var(--accent);
+        border-radius: 18px;
+        box-shadow: 0 4px 24px 0 rgba(115, 56, 160, 0.08);
+        color: var(--dark);
+        margin-bottom: 2.5rem !important;
+        padding: 2rem 1.5rem;
+    }
+    .section h2 {
+        color: var(--primary);
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+    }
+    .card {
+        background: linear-gradient(120deg, var(--accent) 60%, var(--white) 100%);
+        border: 1.5px solid var(--primary);
+        border-radius: 14px;
+        box-shadow: 0 4px 24px 0 rgba(115, 56, 160, 0.10);
+        color: var(--dark);
+        transition: box-shadow 0.2s, border-color 0.2s;
+        padding: 0;
+        text-align: left;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .card:hover {
+        border-color: var(--secondary);
+        box-shadow: 0 8px 32px 0 rgba(74, 37, 116, 0.18);
+    }
+    .card img {
+        width: 100%;
+        height: auto;
+        max-height: 220px;
+        object-fit: contain;
+        border-radius: 14px 14px 0 0;
+        margin-bottom: 0;
+        border-bottom: 1.5px solid var(--secondary);
+        background: var(--white);
+        box-shadow: none;
+        display: block;
+        padding: 12px 0;
+    }
+    .card-body {
+        padding: 1.2rem;
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .card-title {
+        color: var(--primary);
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: none;
+        padding: 0;
+        border-radius: 0;
+        display: block;
+        letter-spacing: 0.5px;
+    }
+    .card ul {
+        padding-left: 1.2rem;
+        margin-bottom: 0;
+    }
+    .card li {
+        margin-bottom: 0.5em;
+        color: var(--deep);
+        font-size: 1rem;
+    }
+    .card li strong {
+        color: var(--secondary);
+    }
+    .img-fluid.rounded-circle {
+        border: 3px solid var(--accent);
+        background: var(--white);
+        box-shadow: 0 2px 8px rgba(115, 56, 160, 0.08);
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .btn-primary {
+        background: var(--primary);
+        color: var(--white);
+        border: none;
+    }
+    .btn-primary:hover, .btn-primary:focus {
+        background: var(--secondary);
+        color: var(--white);
+    }
+    .btn-danger {
+        background: var(--deep);
+        color: var(--white);
+        border: none;
+    }
+    .btn-danger:hover, .btn-danger:focus {
+        background: var(--primary);
+        color: var(--white);
+    }
+    @media (max-width: 768px) {
+        #headerImg {
+            border-radius: 1.2rem;
+            padding: 1.2rem 0 1rem 0;
+        }
+        #headerImg img {
+            border-radius: 1rem;
+            max-width: 98vw;
+        }
+        .section {
+            border-radius: 1rem;
+            padding: 1rem 0.2rem;
+            margin-left: 0.1rem;
+            margin-right: 0.1rem;
+            margin-bottom: 1.2rem !important;
+        }
+        .card {
+            border-radius: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        .row.g-4 {
+            gap: 1rem 0;
+        }
+        .img-fluid.rounded-circle {
+            width: 80px !important;
+            height: 80px !important;
+        }
+    }
+    </style>
 </head>
 
 <body class="bg-light">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow rounded-bottom-4" style="border-radius: 0 0 2rem 2rem;">
+    <nav class="navbar navbar-expand-lg navbar-dark shadow rounded-bottom-4">
         <div class="container-fluid px-4">
             <a class="navbar-brand fw-bold" href="#">George Akai</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -28,14 +246,14 @@
     </nav>
 
     <!-- Hero/Header -->
-    <header id="headerImg" class="text-center py-5 rounded-4" style="border-radius: 2rem; width:100vw; max-width:100vw; overflow:hidden;">
+    <header id="headerImg" class="text-center py-5 rounded-4">
         <div class="container">
             <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/banner.png?raw=true"
                 class="img-fluid rounded-4 shadow-lg border border-4 mb-3"
                 alt="George Akai - Cybersecurity Specialist"
-                style="max-width:400px; width:100%; height:auto; border-radius: 1.5rem;">
-            <h1 class="fw-bold" style="color: var(--primary); margin-top:1rem;">Cybersecurity & Software Portfolio</h1>
-            <p class="lead" style="color: var(--darker);">Student · Security Assistant · Developer</p>
+                style="max-width:350px; width:100%; height:auto; border-radius: 1.5rem;">
+            <h1 class="fw-bold">Cybersecurity & Software Portfolio</h1>
+            <p class="lead">Student · Security Assistant · Developer</p>
             <a href="#contact" class="btn btn-primary btn-lg mt-2">Connect with Me</a>
         </div>
     </header>
@@ -46,10 +264,10 @@
         <section class="section mb-5 p-4">
             <div class="row align-items-center">
                 <div class="col-md-8 text-md-start text-center">
-                    <h2 class="text-secondary mb-3">Welcome!</h2>
+                    <h2 class="mb-3">Welcome!</h2>
                     <p>
                         I’m <b>George Akai</b>, a Computer Information Systems & Cybersecurity student and Information Security Assistant at Chico State.<br>
-                        <span style="font-weight:600; color:var(--highlight);">
+                        <span style="font-weight:600; color:var(--secondary);">
                             Currently, I work in IT Support Services as a Temporary Computer Deployment Technician,
                             where I help deploy, configure, and support computers and technology for the campus community.
                         </span>
@@ -66,7 +284,7 @@
 
         <!-- Projects Grid -->
         <section class="section mb-5 p-4">
-            <h2 class="text-secondary text-center mb-4">Featured Projects</h2>
+            <h2 class="text-center mb-4">Featured Projects</h2>
             <div class="row g-4">
                 <!-- Cybersecurity Project -->
                 <div class="col-lg-6">
@@ -133,7 +351,7 @@
 
         <!-- Software Projects -->
         <section class="section mb-5 p-4">
-            <h2 class="text-secondary text-center mb-4">Software Development</h2>
+            <h2 class="text-center mb-4">Software Development</h2>
             <div class="row g-4">
                 <div class="col-lg-6">
                     <div class="card h-100 shadow-sm">
@@ -166,7 +384,7 @@
 
         <!-- Web Development Projects -->
         <section class="section mb-5 p-4">
-            <h2 class="text-secondary text-center mb-4">Web Development</h2>
+            <h2 class="text-center mb-4">Web Development</h2>
             <div class="row g-4">
                 <div class="col-lg-6">
                     <div class="card h-100 shadow-sm">
@@ -200,7 +418,7 @@
 
         <!-- Currently Learning -->
         <section class="section mb-5 p-4">
-            <h2 class="text-secondary text-center mb-3">Currently Learning</h2>
+            <h2 class="text-center mb-3">Currently Learning</h2>
             <div class="text-center">
                 <h3 class="fw-bold" style="color: var(--primary);">Preparing for CompTIA Security+</h3>
                 <p>Studying core security concepts and best practices.</p>
@@ -209,7 +427,7 @@
 
         <!-- Contact -->
         <section class="section mb-4 p-4" id="contact">
-            <h2 class="text-secondary text-center mb-3">Connect with Me</h2>
+            <h2 class="text-center mb-3">Connect with Me</h2>
             <div class="text-center">
                 <a href="https://www.linkedin.com/in/george-akai-91a41022b" class="btn btn-primary me-2" target="_blank">LinkedIn</a>
                 <a href="https://www.instagram.com/georgeakai_infosec" class="btn btn-danger" target="_blank">Instagram</a>
@@ -238,7 +456,7 @@
     modalImg.style.maxWidth = '90vw';
     modalImg.style.maxHeight = '90vh';
     modalImg.style.borderRadius = '16px';
-    modalImg.style.boxShadow = '0 8px 32px rgba(2,56,89,0.25)';
+    modalImg.style.boxShadow = '0 8px 32px rgba(74,37,116,0.25)';
     modal.appendChild(modalImg);
 
     const closeBtn = document.createElement('span');
