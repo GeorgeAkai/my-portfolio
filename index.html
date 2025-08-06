@@ -1,497 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>George Akai - Cybersecurity Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="https://github.com/GeorgeAkai/my-portfolio/blob/main/9004738_lock_security_padlock_secure_icon.png?raw=true">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <style>
-    :root {
-        --primary: #21acec;
-        --secondary: #3093ac;
-        --accent: #23b4e0;
-        --deep: #066a92;
-        --dark: #0f0529;
-        --black: #000;
-        --white: #fff;
-        --modern-font: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
-    }
-    body, body.bg-light {
-        background: linear-gradient(135deg, var(--accent) 0%, var(--white) 100%);
-        color: var(--dark);
-        font-family: var(--modern-font);
-        margin: 0;
-        padding: 0;
-    }
-    .navbar {
-        background: var(--deep) !important;
-        border-radius: 0 0 2rem 2rem;
-        font-size: 1.1rem;
-        box-shadow: 0 4px 24px 0 rgba(74, 37, 116, 0.12);
-    }
-    .navbar-brand, .nav-link {
-        color: var(--accent) !important;
-        font-weight: 600;
-        letter-spacing: 1px;
-        font-family: var(--modern-font);
-    }
-    .nav-link.active, .nav-link:hover {
-        color: var(--white) !important;
-    }
-    #headerImg {
-        background: linear-gradient(120deg, var(--primary) 60%, var(--secondary) 100%);
-        border-radius: 2rem;
-        margin-bottom: 0;
-        width: 100vw;
-        max-width: 100vw;
-        overflow: hidden;
-        color: var(--white);
-        box-shadow: 0 4px 24px 0 rgba(115, 56, 160, 0.10);
-    }
-    #headerImg img {
-        border-radius: 1.5rem;
-        width: 100%;
-        max-width: 350px;
-        height: auto;
-        object-fit: contain;
-        border: 4px solid var(--accent);
-        background: var(--white);
-        box-shadow: 0 4px 24px 0 rgba(115, 56, 160, 0.12);
-    }
-    #headerImg h1 {
-        color: var(--white);
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-top: 1.5rem;
-        margin-bottom: 0.5rem;
-        font-family: var(--modern-font);
-        text-shadow: 0 2px 8px rgba(15,5,41,0.12);
-    }
-    #headerImg .lead {
-        color: var(--accent);
-        font-size: 1.25rem;
-    }
-    #headerImg .btn-primary {
-        margin-top: 1rem;
-        font-size: 1.1rem;
-        padding: 0.7em 2em;
-        border-radius: 2em;
-        background: var(--secondary);
-        border: none;
-        color: var(--white);
-        font-weight: 600;
-        letter-spacing: 0.5px;
-    }
-    #headerImg .btn-primary:hover {
-        background: var(--primary);
-        color: var(--white);
-    }
-    main.container {
-        max-width: 1200px;
-        width: 100%;
-        margin: 0 auto;
-        padding-left: 0.5rem !important;
-        padding-right: 0.5rem !important;
-    }
-    .section {
-        background: var(--white);
-        border: 2px solid var(--accent);
-        border-radius: 18px;
-        box-shadow: 0 4px 24px 0 rgba(115, 56, 160, 0.08);
-        color: var(--dark);
-        margin-bottom: 2.5rem !important;
-        padding: 2rem 1.5rem;
-    }
-    .section h2 {
-        color: var(--primary);
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom: 1.2rem;
-    }
-    .card {
-        background: rgba(192, 236, 241, 0.795);
-        border: 1.5px solid var(--primary);
-        border-radius: 14px;
-        box-shadow: 0 4px 24px 0 rgba(115, 56, 160, 0.10);
-        color: var(--dark);
-        transition: box-shadow 0.2s, border-color 0.2s;
-        padding: 0;
-        text-align: left;
-        margin-bottom: 2rem;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-    .card:hover {
-        border-color: var(--secondary);
-        box-shadow: 0 8px 32px 0 rgba(74, 37, 116, 0.18);
-    }
-    .card img {
-        width: 100%;
-        height: auto;
-        max-height: 220px;
-        object-fit: contain;
-        border-radius: 14px 14px 0 0;
-        margin-bottom: 0;
-        border-bottom: 1.5px solid var(--secondary);
-        background: var(--white);
-        box-shadow: none;
-        display: block;
-        padding: 12px 0;
-    }
-    .card-body {
-        padding: 1.2rem;
-        flex: 1 1 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-    .card-title {
-        color: var(--dark);
-        font-size: 1.3rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        background: none;
-        padding: 0;
-        border-radius: 0;
-        display: block;
-        letter-spacing: 0.5px;
-    }
-    .card ul {
-        padding-left: 1.2rem;
-        margin-bottom: 0;
-    }
-    .card li {
-        margin-bottom: 0.5em;
-        color: var(--dark);
-        font-size: 1rem;
-    }
-    .card li strong {
-        color: var(--secondary);
-    }
-    .img-fluid.rounded-circle {
-        border: 3px solid var(--accent);
-        background: var(--white);
-        box-shadow: 0 2px 8px rgba(115, 56, 160, 0.08);
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-    .btn-primary {
-        background: var(--primary);
-        color: var(--white);
-        border: none;
-    }
-    .btn-primary:hover, .btn-primary:focus {
-        background: var(--secondary);
-        color: var(--white);
-    }
-    .btn-danger {
-        background: var(--deep);
-        color: var(--white);
-        border: none;
-    }
-    .btn-danger:hover, .btn-danger:focus {
-        background: var(--primary);
-        color: var(--white);
-    }
-    @media (max-width: 768px) {
-        #headerImg {
-            border-radius: 1.2rem;
-            padding: 1.2rem 0 1rem 0;
-        }
-        #headerImg img {
-            border-radius: 1rem;
-            max-width: 98vw;
-        }
-        .section {
-            border-radius: 1rem;
-            padding: 1rem 0.2rem;
-            margin-left: 0.1rem;
-            margin-right: 0.1rem;
-            margin-bottom: 1.2rem !important;
-        }
-        .card {
-            border-radius: 1rem;
-            margin-bottom: 1.2rem;
-        }
-        .row.g-4 {
-            gap: 1rem 0;
-        }
-        .img-fluid.rounded-circle {
-            width: 80px !important;
-            height: 80px !important;
-        }
-    }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>George Akai - Cybersecurity Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <script>
+    const theme = localStorage.getItem('theme');
+    if (theme === 'dark') document.documentElement.classList.replace('light', 'dark');
+  </script>
 </head>
+<body class="bg-gradient-to-tr from-blue-100 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-slate-800 dark:text-gray-100 font-sans">
+  <nav class="sticky top-0 z-50 bg-blue-800 dark:bg-gray-900 text-white py-4 shadow-md">
+    <div class="container mx-auto flex justify-between px-4 items-center">
+      <h1 class="text-xl font-bold tracking-wide">George Akai</h1>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="#" class="hover:underline">About Me</a>
+        <button onclick="toggleDarkMode()" class="text-sm px-3 py-1 bg-blue-700 hover:bg-blue-600 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-full transition">Toggle Mode</button>
+      </div>
+    </div>
+  </nav>
 
-<body class="bg-light">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark shadow rounded-bottom-4">
-        <div class="container-fluid px-4">
-            <a class="navbar-brand fw-bold" href="#">George Akai</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
-                </ul>
-            </div>
+  <header class="text-center py-12 bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-900 dark:to-blue-800 text-white">
+    <div class="container mx-auto px-4">
+      <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/banner.png?raw=true" alt="George Akai Icon" class="mx-auto rounded-2xl border-4 border-blue-200 bg-white p-2 max-w-xs" />
+      <h2 class="text-3xl font-bold mt-4">About Me</h2>
+      <p class="text-lg mt-2">Student · Security Assistant · Developer</p>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-10">
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-blue-700 dark:text-blue-300 mb-4">George Akai</h2>
+      <p class="font-semibold mb-2">Computer Information Systems & Cybersecurity Student</p>
+      <p class="font-semibold mb-2">Information Security Assistant @ Chico State</p>
+      <p class="font-semibold mb-4">Aspiring Cybersecurity Analyst</p>
+      <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/9004738_lock_security_padlock_secure_icon.png?raw=true" alt="Profile Icon" class="mx-auto w-24 h-24 rounded-full border-4 border-blue-300 bg-white p-2 shadow" />
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-blue-700 dark:text-blue-300 mb-4">Background</h2>
+      <ul class="space-y-2">
+        <li class="bg-blue-100 dark:bg-gray-800 p-3 rounded-lg">International student from Kenya.</li>
+        <li class="bg-blue-100 dark:bg-gray-800 p-3 rounded-lg">I have been pursuing Computer Information Systems for 4 years now.</li>
+        <li class="bg-blue-100 dark:bg-gray-800 p-3 rounded-lg">Started getting interested in Cybersecurity 3 years ago.</li>
+        <li class="bg-blue-100 dark:bg-gray-800 p-3 rounded-lg">Pursued the Google Cybersecurity Certificate in 2023 and 2024.</li>
+        <li class="bg-blue-100 dark:bg-gray-800 p-3 rounded-lg">I participated in the National Cyber League, learning red team security knowledge.</li>
+        <li class="bg-blue-100 dark:bg-gray-800 p-3 rounded-lg">Joined the USR0 cybersecurity club.</li>
+        <li class="bg-blue-100 dark:bg-gray-800 p-3 rounded-lg">Work with the Information Security Department on Campus.</li>
+      </ul>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-blue-700 dark:text-blue-300 mb-4">Projects and Achievements</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-blue-300 dark:border-gray-700 shadow">
+          <h3 class="text-lg font-semibold text-blue-700 dark:text-blue-300">User Access Reviews</h3>
+          <p>Led the 2025 Annual User Access Reviews to ensure up-to-date user access documentation.</p>
         </div>
-    </nav>
-
-    <!-- Hero/Header -->
-    <header id="headerImg" class="text-center py-5 rounded-4">
-        <div class="container">
-            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/banner.png?raw=true"
-                class="img-fluid rounded-4 shadow-lg border border-4 mb-3"
-                alt="George Akai - Cybersecurity Specialist"
-                style="max-width:350px; width:100%; height:auto; border-radius: 1.5rem;">
-            <h1 class="fw-bold">Cybersecurity & Software Portfolio</h1>
-            <p class="lead">Student · Security Assistant · Developer</p>
-            <a href="#contact" class="btn btn-primary btn-lg mt-2">Connect with Me</a>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-blue-300 dark:border-gray-700 shadow">
+          <h3 class="text-lg font-semibold text-blue-700 dark:text-blue-300">Asset Management</h3>
+          <p>Scanned assets for vulnerabilities and coordinated remediation efforts.</p>
         </div>
-    </header>
+      </div>
+    </section>
 
-    <!-- Main Content -->
-    <main class="container py-5">
-        <!-- About Summary -->
-        <section class="section mb-5 p-4">
-            <div class="row align-items-center">
-                <div class="col-md-8 text-md-start text-center">
-                    <h2 class="mb-3">Welcome!</h2>
-                    <p>
-                        I’m <b>George Akai</b>, a Computer Information Systems & Cybersecurity student and Information Security Assistant at Chico State.<br>
-                        <span style="font-weight:600; color:var(--secondary);">
-                            Currently, I work in IT Support Services as a Temporary Computer Deployment Technician,
-                            where I help deploy, configure, and support computers and technology for the campus community.
-                        </span>
-                        <br>
-                        I’m passionate about building secure systems, solving technical challenges, and helping organizations protect their digital assets.
-                    </p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/9004738_lock_security_padlock_secure_icon.png?raw=true"
-                        alt="Profile Icon" class="img-fluid rounded-circle shadow" style="width:100px; background:var(--white); padding:10px;">
-                </div>
-            </div>
-        </section>
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-blue-700 dark:text-blue-300 mb-4">Objectives</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-blue-300 dark:border-gray-700 shadow">
+          <h3 class="text-lg font-semibold text-blue-700 dark:text-blue-300">Risk Assessment</h3>
+          <p>Balancing business needs with security requirements through risk assessment.</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-blue-300 dark:border-gray-700 shadow">
+          <h3 class="text-lg font-semibold text-blue-700 dark:text-blue-300">Systems Security</h3>
+          <p>Ensuring vulnerabilities in servers and assets are remediated.</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-blue-300 dark:border-gray-700 shadow">
+          <h3 class="text-lg font-semibold text-blue-700 dark:text-blue-300">Secure Web Development</h3>
+          <p>Building secure applications that mitigate OWASP vulnerabilities.</p>
+        </div>
+      </div>
+    </section>
 
-        <!-- Projects Grid -->
-        <section class="section mb-5 p-4">
-            <h2 class="text-center mb-4">Featured Projects</h2>
-            <div class="row g-4">
-                <!-- Cybersecurity Project -->
-                <div class="col-lg-6">
-                    <div class="card h-100 shadow-sm">
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" class="img-fluid rounded-top" alt="NCL Certificate">
-                        <div class="card-body">
-                            <h3 class="card-title">National Cyber League</h3>
-                            <ul>
-                                <li><strong>OSINT challenges</strong> using investigative tools to uncover public info.</li>
-                                <li><strong>Cryptography exercises</strong> with encryption/decryption techniques.</li>
-                                <li><strong>Network traffic analysis</strong> to spot anomalies and vulnerabilities.</li>
-                                <li><strong>System enumeration</strong> for open ports, services, and exploits.</li>
-                                <li><strong>Password cracking</strong> to decrypt hashes and retrieve flags.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Cybersecurity Certificate -->
-                <div class="col-lg-6">
-                    <div class="card h-100 shadow-sm">
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true" class="img-fluid rounded-top" alt="Google Cybersecurity Certificate">
-                        <div class="card-body">
-                            <h3 class="card-title">Google Cybersecurity Certificate</h3>
-                            <ul>
-                                <li><strong>Cybersecurity foundations</strong> including CIA triad and NIST Framework.</li>
-                                <li><strong>Hands-on Linux, SQL, SOC workflows.</strong></li>
-                                <li><strong>Vulnerability assessment</strong> with Suricata and risk management.</li>
-                                <li><strong>Security automation</strong> using Python scripting.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- User Access Review -->
-                <div class="col-lg-6">
-                    <div class="card h-100 shadow-sm">
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ChatGPT%20Image%20Jun%203%2C%202025%2C%2008_25_39%20AM.png?raw=true" class="img-fluid rounded-top" alt="User Access Review">
-                        <div class="card-body">
-                            <h3 class="card-title">Annual User Access Reviews</h3>
-                            <ul>
-                                <li><strong>Managed ticket workflows</strong> for user access reviews with campus MPPs.</li>
-                                <li><strong>Validated user access</strong> and documented outcomes in the CMDB.</li>
-                                <li><strong>Distributed certification requests</strong> via Adobe Sign.</li>
-                                <li><strong>Used Excel & Acrobat</strong> for data and documentation.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- KnowledgeBase Article -->
-                <div class="col-lg-6">
-                    <div class="card h-100 shadow-sm">
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/data_inv.png?raw=true" class="img-fluid rounded-top" alt="KnowledgeBase">
-                        <div class="card-body">
-                            <h3 class="card-title">KnowledgeBase Article Review</h3>
-                            <ul>
-                                <li><strong>Authored article</strong> on the Sensitive Data Inventory Survey.</li>
-                                <li><strong>Promoted data protection</strong> and compliance awareness.</li>
-                                <li><strong>Supported security initiatives</strong> with clear documentation.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="mb-16 text-center">
+      <h2 class="text-2xl font-bold text-green-600 dark:text-green-400">THANK YOU!</h2>
+      <p class="font-bold">George Akai</p>
+      <p>Information Security Assistant</p>
+      <p>
+        <a href="https://www.linkedin.com/in/george-akai-91a41022b/" target="_blank" class="inline-block mt-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-full">My LinkedIn Page</a>
+      </p>
+      <p class="mt-1">Chico, CA, USA</p>
+    </section>
+    <section class="mb-12">
+    <h2 class="text-2xl font-bold text-center text-blue-700 dark:text-blue-300 mb-8">Featured Projects</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- National Cyber League -->
+<div class="bg-blue-100 dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg overflow-hidden transition-scale">
+  <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true" alt="National Cyber League" class="w-full object-contain max-h-64 cursor-pointer" onclick="openModal(this.src)">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-3 text-blue-900 dark:text-blue-300">National Cyber League</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>OSINT challenges using investigative tools to uncover public info.</li>
+      <li>Cryptography exercises with encryption/decryption techniques.</li>
+      <li>Network traffic analysis to spot anomalies and vulnerabilities.</li>
+      <li>System enumeration for open ports, services, and exploits.</li>
+      <li>Password cracking to decrypt hashes and retrieve flags.</li>
+    </ul>
+  </div>
+</div>
 
-        <!-- Software Projects -->
-        <section class="section mb-5 p-4">
-            <h2 class="text-center mb-4">Software Development</h2>
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <div class="card h-100 shadow-sm">
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Sorting.png?raw=true" class="img-fluid rounded-top" alt="Sorting Algorithms">
-                        <div class="card-body">
-                            <h3 class="card-title">C++ Data Structures & Algorithms</h3>
-                            <ul>
-                                <li><strong>Sorting algorithms:</strong> Bubble, Selection, Insertion, Quick, Heap Sort.</li>
-                                <li><strong>BSTs & AVL Trees</strong> for dynamic data organization.</li>
-                                <li><strong>Priority queues</strong> for task management.</li>
-                                <li><strong>Graph algorithms:</strong> Prim’s, Dijkstra’s, BFS, DFS.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card h-100 shadow-sm">
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/priorityqueue%20project.png?raw=true" class="img-fluid rounded-top" alt="Airport Simulation">
-                        <div class="card-body">
-                            <h3 class="card-title">Airport Simulation (Priority Queues)</h3>
-                            <ul>
-                                <li><strong>Simulated real-time scheduling</strong> with priority queues.</li>
-                                <li><strong>Heap data structures</strong> for efficient flight management.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- Google Cybersecurity Certificate -->
+<div class="bg-blue-100 dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg overflow-hidden transition-scale">
+  <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true" alt="Google Cybersecurity Certificate" class="w-full object-contain max-h-64 cursor-pointer" onclick="openModal(this.src)">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-3 text-blue-900 dark:text-blue-300">Google Cybersecurity Certificate</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Cybersecurity foundations including CIA triad and NIST Framework.</li>
+      <li>Hands-on Linux, SQL, SOC workflows.</li>
+      <li>Vulnerability assessment with Suricata and risk management.</li>
+      <li>Security automation using Python scripting.</li>
+    </ul>
+  </div>
+</div>
 
-        <!-- Web Development Projects -->
-        <section class="section mb-5 p-4">
-            <h2 class="text-center mb-4">Web Development</h2>
-            <div class="row g-4">
-                <div class="col-lg-6">
-                    <div class="card h-100 shadow-sm">
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true" class="img-fluid rounded-top" alt="Personal Portfolio Website">
-                        <div class="card-body">
-                            <h3 class="card-title">Personal Portfolio Website</h3>
-                            <ul>
-                                <li><strong>Responsive design</strong> using HTML, CSS, and Bootstrap.</li>
-                                <li><strong>Modern UI/UX</strong> with custom color palette and smooth navigation.</li>
-                                <li><strong>Showcases projects</strong> and professional experience.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card h-100 shadow-sm">
-                        <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/chess.png?raw=true" class="img-fluid rounded-top" alt="Secure Login App">
-                        <div class="card-body">
-                            <h3 class="card-title">Secure Login App</h3>
-                            <ul>
-                                <li><strong>Authentication system</strong> with hashed passwords.</li>
-                                <li><strong>Frontend:</strong> React.js, Bootstrap.</li>
-                                <li><strong>Backend:</strong> Node.js, Express, MongoDB.</li>
-                                <li><strong>Implements security best practices</strong> for user data.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- Annual User Access Reviews -->
+<div class="bg-blue-100 dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg overflow-hidden transition-scale">
+  <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ChatGPT%20Image%20Jun%203%2C%202025%2C%2008_25_39%20AM.png?raw=true" alt="Annual User Access Reviews" class="w-full object-contain max-h-64 cursor-pointer" onclick="openModal(this.src)">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-3 text-blue-900 dark:text-blue-300">Annual User Access Reviews</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Managed ticket workflows for user access reviews with campus MPPs.</li>
+      <li>Validated user access and documented outcomes in the CMDB.</li>
+      <li>Distributed certification requests via Adobe Sign.</li>
+      <li>Used Excel & Acrobat for data and documentation.</li>
+    </ul>
+  </div>
+</div>
 
-        <!-- Currently Learning -->
-        <section class="section mb-5 p-4">
-            <h2 class="text-center mb-3">Currently Learning</h2>
-            <div class="text-center">
-                <ul>
-                    <li>Preparing for CompTIA Security+</li>
-                    <li>Google Data Analytics.</li>
-                    <li>AWS Bedrock: Building Generative AI Applications</li>
-                </ul>
-            </div>
-        </section>
+<!-- KnowledgeBase Article Review -->
+<div class="bg-blue-100 dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg overflow-hidden transition-scale">
+  <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/data_inv.png?raw=true" alt="KnowledgeBase Article Review" class="w-full object-contain max-h-64 cursor-pointer" onclick="openModal(this.src)">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-3 text-blue-900 dark:text-blue-300">KnowledgeBase Article Review</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Authored article on the Sensitive Data Inventory Survey.</li>
+      <li>Promoted data protection and compliance awareness.</li>
+      <li>Supported security initiatives with clear documentation.</li>
+    </ul>
+  </div>
+</div>
 
-        <!-- Contact -->
-        <section class="section mb-4 p-4" id="contact">
-            <h2 class="text-center mb-3">Connect with Me</h2>
-            <div class="text-center">
-                <a href="https://www.linkedin.com/in/george-akai-91a41022b" class="btn btn-primary me-2 " style="color: var(--black);" target="_blank">LinkedIn</a>
-                <a href="https://www.instagram.com/georgeakai_infosec" class="btn btn-danger" style="background: rgb(219, 21, 186); color: black;" target="_blank">Instagram</a>
-            </div>
-        </section>
-    </main>
+<!-- C++ Data Structures & Algorithms -->
+<div class="bg-blue-100 dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg overflow-hidden transition-scale">
+  <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Sorting.png?raw=true" alt="C++ Data Structures & Algorithms" class="w-full object-contain max-h-64 cursor-pointer" onclick="openModal(this.src)">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-3 text-blue-900 dark:text-blue-300">C++ Data Structures & Algorithms</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Sorting algorithms: Bubble, Selection, Insertion, Quick, Heap Sort.</li>
+      <li>BSTs & AVL Trees for dynamic data organization.</li>
+      <li>Priority queues for task management.</li>
+      <li>Graph algorithms: Prim’s, Dijkstra’s, BFS, DFS.</li>
+    </ul>
+  </div>
+</div>
 
-    <!-- Image Modal Script -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-    // Create modal elements
-    const modal = document.createElement('div');
-    modal.id = 'imgModal';
-    modal.style.display = 'none';
-    modal.style.position = 'fixed';
-    modal.style.zIndex = '9999';
-    modal.style.left = '0';
-    modal.style.top = '0';
-    modal.style.width = '100vw';
-    modal.style.height = '100vh';
-    modal.style.background = 'rgba(0,0,0,0.85)';
-    modal.style.justifyContent = 'center';
-    modal.style.alignItems = 'center';
+<!-- Airport Simulation (Priority Queues) -->
+<div class="bg-blue-100 dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg overflow-hidden transition-scale">
+  <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/priorityqueue%20project.png?raw=true" alt="Airport Simulation (Priority Queues)" class="w-full object-contain max-h-64 cursor-pointer" onclick="openModal(this.src)">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-3 text-blue-900 dark:text-blue-300">Airport Simulation (Priority Queues)</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Simulated real-time scheduling with priority queues.</li>
+      <li>Heap data structures for efficient flight management.</li>
+      <li>Object-Oriented Programming where a class can be used to make objects.</li>
+    </ul>
+  </div>
+</div>
 
-    const modalImg = document.createElement('img');
-    modalImg.style.maxWidth = '90vw';
-    modalImg.style.maxHeight = '90vh';
-    modalImg.style.borderRadius = '16px';
-    modalImg.style.boxShadow = '0 8px 32px rgba(74,37,116,0.25)';
-    modal.appendChild(modalImg);
+<!-- Kenrish Collection Website -->
+<div class="bg-blue-100 dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg overflow-hidden transition-scale">
+  <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true" alt="Kenrish Collection Website" class="w-full object-contain max-h-64 cursor-pointer" onclick="openModal(this.src)">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-3 text-blue-900 dark:text-blue-300">Kenrish Collection Website</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Responsive design using HTML, CSS, and Bootstrap.</li>
+      <li>Modern UI/UX with custom color palette and smooth navigation.</li>
+      <li>Showcases projects and professional experience.</li>
+    </ul>
+  </div>
+</div>
 
-    const closeBtn = document.createElement('span');
-    closeBtn.innerHTML = '&times;';
-    closeBtn.style.position = 'absolute';
-    closeBtn.style.top = '30px';
-    closeBtn.style.right = '50px';
-    closeBtn.style.fontSize = '3rem';
-    closeBtn.style.color = '#fff';
-    closeBtn.style.cursor = 'pointer';
-    closeBtn.style.fontWeight = 'bold';
-    closeBtn.style.zIndex = '10000';
-    modal.appendChild(closeBtn);
+<!-- Chess Javascript App -->
+<div class="bg-blue-100 dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg overflow-hidden transition-scale">
+  <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/chess.png?raw=true" alt="Chess Javascript App" class="w-full object-contain max-h-64 cursor-pointer" onclick="openModal(this.src)">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold mb-3 text-blue-900 dark:text-blue-300">Chess Javascript App</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Frontend: Bootstrap, CSS, HTML, JavaScript, JQuery</li>
+      <li>Backend: Django, SQLite3</li>
+      <li>Implements security best practices for user and form validation, signup and login.</li>
+    </ul>
+  </div>
+</div>
+    </div>
+  </section>
 
-    document.body.appendChild(modal);
+</main>
 
-    // Show modal on image click
-    document.querySelectorAll('.card img.img-fluid').forEach(img => {
-        img.style.cursor = 'zoom-in';
-        img.addEventListener('click', function() {
-            modalImg.src = this.src;
-            modal.style.display = 'flex';
-        });
-    });
-
-    // Close modal on click
-    closeBtn.onclick = () => modal.style.display = 'none';
-    modal.onclick = (e) => {
-        if (e.target === modal) modal.style.display = 'none';
-    };
-    </script>
+  <script>
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      const isDark = html.classList.contains('dark');
+      html.classList.toggle('dark', !isDark);
+      html.classList.toggle('light', isDark);
+      localStorage.setItem('theme', !isDark ? 'dark' : 'light');
+    }
+  </script>
 </body>
-
 </html>
-
