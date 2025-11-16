@@ -5,26 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>George Akai - About Me</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+
+  <!-- Graphite Lake theme variables + tiny utilities (Tailwind v2-friendly) -->
+  <style>
+    :root{
+      --ink:#2F2A30;
+      --text:#000000;
+      --primary:#4B5C6E;
+      --accent:#5B7F95;
+      --muted:#9FA6AD;
+      --muted-2:#A1A8A6;
+      --page:#E5E9EB;
+      --card:#D1D6D8;
+      --card-2:#C2C9D3;
+      --white:#ffffff;
+      --black:#000000;
+    }
+    :root.dark{
+      --text:#E5E9EB;
+      --page:#0a0a0a;
+      --card:#1a1a1b;
+      --card-2:#2F2A30;
+      --muted:#A1A8A6;
+    }
+    /* Light/Dark page gradients */
+    .page-gradient{ background: linear-gradient(135deg, var(--page), #ffffff, var(--page)); }
+    .dark .page-gradient{ background: linear-gradient(135deg, #0b0b0b, #131316, #0b0b0b); }
+
+    /* Header band gradient */
+    .header-band{ background: linear-gradient(90deg, var(--ink), var(--primary)); }
+
+    /* Semantic theme utilities */
+    .bg-ink{ background-color: var(--ink); }
+    .bg-card{ background-color: var(--card); }
+    .bg-card2{ background-color: var(--card-2); }
+    .text-body{ color: var(--text); }
+    .text-primary{ color: var(--primary); }
+    .text-muted{ color: var(--muted); }
+    .border-card{ border-color: var(--card-2); }
+    .btn-primary{
+      background-color: var(--primary);
+      color: #fff;
+      border-radius: 9999px;
+    }
+    .btn-primary:hover{ background-color: #3f4f60; }
+    .btn-primary:focus{
+      outline: 2px solid transparent;
+      box-shadow:
+        0 0 0 2px var(--page),
+        0 0 0 4px var(--accent);
+    }
+    .chip{ background-color: var(--card); border: 1px solid var(--card-2); }
+    .dark .chip{ background-color: var(--card-2); border-color: rgba(75,92,110,.35); }
+    .img-frame{ border-color: var(--card-2) !important; }
+    .link-accent{ color: #ffffff; }
+    .link-accent:hover{ color: #f3f4f6; }
+  </style>
+
   <script>
+    // Respect saved theme
     const theme = localStorage.getItem('theme');
     if (theme === 'dark') document.documentElement.classList.replace('light', 'dark');
   </script>
 </head>
-<body class="bg-gradient-to-tr from-blue-100 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-slate-800 dark:text-gray-100 font-sans">
-  <nav class="sticky top-0 z-50 bg-blue-800 dark:bg-gray-900 text-white py-4 shadow-md">
+
+<body class="page-gradient text-body font-sans">
+  <nav class="sticky top-0 z-50 bg-ink dark:bg-black text-white py-4 shadow-md">
     <div class="container mx-auto flex justify-between px-4 items-center">
       <h1 class="text-xl font-bold tracking-wide">George Akai</h1>
       <div class="flex items-center gap-4">
-        <a href="index.html" class="hover:underline">Home</a>
-        <a href="#" class="hover:underline">About Me</a>
-        <button onclick="toggleDarkMode()" class="text-sm px-3 py-1 bg-blue-700 hover:bg-blue-600 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-full transition">Toggle Mode</button>
+        <a href="index.html" class="hover:underline underline-offset-4">Home</a>
+        <a href="#" class="hover:underline underline-offset-4">About Me</a>
+        <button onclick="toggleDarkMode()" class="text-sm px-3 py-1 btn-primary transition">Toggle Mode</button>
       </div>
     </div>
   </nav>
 
-  <header class="text-center py-12 bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-900 dark:to-blue-800 text-white">
+  <header class="text-center py-12 header-band text-white">
     <div class="container mx-auto px-4">
-      <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/dp.jpg?raw=true" alt="George Akai Icon" class="mx-auto rounded-2xl border-4 border-blue-200 bg-white p-2 max-w-xs" />
+      <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/dp.jpg?raw=true"
+           alt="George Akai Icon"
+           class="mx-auto rounded-2xl border-4 img-frame bg-white p-2 max-w-xs" />
       <h2 class="text-3xl font-bold mt-4">About Me</h2>
       <p class="text-lg mt-2">Chico State Student<strong> · </strong>ChatGPT Ambassador<strong> · </strong>Web and AI Solutions</p>
     </div>
@@ -32,80 +93,83 @@
 
   <main class="container mx-auto px-4 py-10">
     <section class="mb-12">
-      <h2 class="text-2xl font-bold text-blue-700 dark:text-blue-300 mb-4">George Akai</h2>
+      <h2 class="text-2xl font-bold text-primary mb-4">George Akai</h2>
       <p class="font-semibold mb-2">Computer Information Systems & Cybersecurity Student</p>
       <p class="font-semibold mb-2">ChatGPT Ambassador @ Chico State</p>
       <p class="font-semibold mb-4">Aspiring AI & Cybersecurity Analyst | AI Solutions Developer | Future AI Solutions Start-Up Founder</p>
-      <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/9004738_lock_security_padlock_secure_icon.png?raw=true" alt="Profile Icon" class="mx-auto w-24 h-24 rounded-full border-4 border-blue-300 bg-white p-2 shadow" />
+      <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/9004738_lock_security_padlock_secure_icon.png?raw=true"
+           alt="Profile Icon"
+           class="mx-auto w-24 h-24 rounded-full border-4 img-frame bg-white p-2 shadow" />
     </section>
 
     <section class="mb-12">
-      <h2 class="text-2xl font-bold text-blue-700 dark:text-blue-300 mb-4">Fun Facts</h2>
+      <h2 class="text-2xl font-bold text-primary mb-4">Fun Facts</h2>
       <ul class="space-y-2">
-        <li class="bg-blue-100 dark:bg-gray-800 p-3 rounded-lg">International student from Kenya -- not a great runner.</li>
-        <li class="bg-blue-100 dark:bg-gray-800 p-3 rounded-lg">I have been pursuing Computer Information Systems for 4 years now.</li>
-        <li class="bg-blue-100 dark:bg-gray-800 p-3 rounded-lg">Started getting interested in Cybersecurity 3 years ago and a few months now into AI Development</li>
-        <li class="bg-blue-100 dark:bg-gray-800 p-3 rounded-lg">Pursued the Google Cybersecurity Certificate in 2023 and 2024.</li>
-        <li class="bg-blue-100 dark:bg-gray-800 p-3 rounded-lg">I participated in the National Cyber League in Fall 2024, learning and applying red-team techniques.</li>
-        <li class="bg-blue-100 dark:bg-gray-800 p-3 rounded-lg">Joined the usr0 cybersecurity club.</li>
-        <li class="bg-blue-100 dark:bg-gray-800 p-3 rounded-lg">I am the Fall 2025 ChatGPT Ambassador for Chico State.</li>
-        <li class="bg-blue-100 dark:bg-gray-800 p-3 rounded-lg">Soccer is my favorite sport, I call it "football".</li>
+        <li class="chip p-3 rounded-lg">International student from Kenya -- not a great runner.</li>
+        <li class="chip p-3 rounded-lg">I have been pursuing Computer Information Systems for 4 years now.</li>
+        <li class="chip p-3 rounded-lg">Started getting interested in Cybersecurity 3 years ago and a few months now into AI Development</li>
+        <li class="chip p-3 rounded-lg">Pursued the Google Cybersecurity Certificate in 2023 and 2024.</li>
+        <li class="chip p-3 rounded-lg">I participated in the National Cyber League in Fall 2024, learning and applying red-team techniques.</li>
+        <li class="chip p-3 rounded-lg">Joined the usr0 cybersecurity club.</li>
+        <li class="chip p-3 rounded-lg">I am the Fall 2025 ChatGPT Ambassador for Chico State.</li>
+        <li class="chip p-3 rounded-lg">Soccer is my favorite sport, I call it "football".</li>
       </ul>
     </section>
 
-  <!-- My Objectives -->
-<section class="mb-12">
-  <h2 class="text-2xl font-bold text-blue-700 dark:text-blue-300 mb-4">Objectives</h2>
-  <div class="grid md:grid-cols-3 gap-6">
-    
-    <div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-blue-300 dark:border-gray-700 shadow">
-      <h3 class="text-lg font-semibold text-blue-700 dark:text-blue-300">Risk Assessment</h3>
-      <p>
-        Balancing business needs with security requirements to achieve maximum efficiency while keeping bad actors out of business systems. 
-        This involves identifying potential threats, evaluating their likelihood and impact, and prioritizing mitigation strategies. 
-        By aligning risk management with organizational goals, businesses can remain agile while maintaining strong defenses against evolving cyber threats.
-      </p>
-    </div>
-    
-    <div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-blue-300 dark:border-gray-700 shadow">
-      <h3 class="text-lg font-semibold text-blue-700 dark:text-blue-300">Systems Security</h3>
-      <p>
-        Helping businesses meet their goals by ensuring systems remain secure, available, recoverable, and resilient against constant advanced threats. 
-        This includes implementing layered security controls, monitoring for anomalies, and preparing disaster recovery plans. 
-        The objective is to create a robust environment where uptime and reliability are guaranteed, even in the face of sophisticated attacks.
-      </p>
-    </div>
-    
-    <div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-blue-300 dark:border-gray-700 shadow">
-      <h3 class="text-lg font-semibold text-blue-700 dark:text-blue-300">Secure Web Development</h3>
-      <p>
-        Building secure applications that are free of OWASP vulnerabilities while offering users great accessibility features. 
-        This means integrating secure coding practices, conducting regular penetration testing, and ensuring compliance with industry standards. 
-        At the same time, the focus remains on usability—delivering web solutions that are intuitive, inclusive, and optimized for performance.
-      </p>
-    </div>
-    
-    <div class="bg-white dark:bg-gray-800 p-4 rounded-xl border border-blue-300 dark:border-gray-700 shadow">
-      <h3 class="text-lg font-semibold text-blue-700 dark:text-blue-300">Secure AI Development</h3>
-      <p>
-        Building AI solutions that enhance UI/UX while protecting private data. 
-        This involves designing models with privacy-by-design principles, implementing ethical safeguards, and ensuring transparency in AI decision-making. 
-        The goal is to create intelligent systems that empower users, streamline workflows, and maintain trust by safeguarding sensitive information.
-      </p>
-    </div>
-    
-  </div>
-</section>
+    <!-- My Objectives -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-primary mb-4">Objectives</h2>
+      <div class="grid md:grid-cols-3 gap-6">
 
-<!-- Thanks Section-->
+        <div class="bg-card dark:bg-card2 p-4 rounded-xl border border-card shadow">
+          <h3 class="text-lg font-semibold text-primary">Risk Assessment</h3>
+          <p>
+            Balancing business needs with security requirements to achieve maximum efficiency while keeping bad actors out of business systems. 
+            This involves identifying potential threats, evaluating their likelihood and impact, and prioritizing mitigation strategies. 
+            By aligning risk management with organizational goals, businesses can remain agile while maintaining strong defenses against evolving cyber threats.
+          </p>
+        </div>
+
+        <div class="bg-card dark:bg-card2 p-4 rounded-xl border border-card shadow">
+          <h3 class="text-lg font-semibold text-primary">Systems Security</h3>
+          <p>
+            Helping businesses meet their goals by ensuring systems remain secure, available, recoverable, and resilient against constant advanced threats. 
+            This includes implementing layered security controls, monitoring for anomalies, and preparing disaster recovery plans. 
+            The objective is to create a robust environment where uptime and reliability are guaranteed, even in the face of sophisticated attacks.
+          </p>
+        </div>
+
+        <div class="bg-card dark:bg-card2 p-4 rounded-xl border border-card shadow">
+          <h3 class="text-lg font-semibold text-primary">Secure Web Development</h3>
+          <p>
+            Building secure applications that are free of OWASP vulnerabilities while offering users great accessibility features. 
+            This means integrating secure coding practices, conducting regular penetration testing, and ensuring compliance with industry standards. 
+            At the same time, the focus remains on usability—delivering web solutions that are intuitive, inclusive, and optimized for performance.
+          </p>
+        </div>
+
+        <div class="bg-card dark:bg-card2 p-4 rounded-xl border border-card shadow md:col-span-3">
+          <h3 class="text-lg font-semibold text-primary">Secure AI Development</h3>
+          <p>
+            Building AI solutions that enhance UI/UX while protecting private data. 
+            This involves designing models with privacy-by-design principles, implementing ethical safeguards, and ensuring transparency in AI decision-making. 
+            The goal is to create intelligent systems that empower users, streamline workflows, and maintain trust by safeguarding sensitive information.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Thanks Section-->
     <section class="mb-16 text-center">
-      <h2 class="text-2xl font-bold text-green-600 dark:text-green-400">THANK YOU!</h2>
+      <h2 class="text-2xl font-bold" style="color:#5B7F95">THANK YOU!</h2>
       <p class="font-bold">George Akai</p>
       <p>Let's build securely, let's secure boldly!</p>
       <p>
-        <a href="https://www.linkedin.com/in/george-akai-91a41022b/" target="_blank" class="inline-block mt-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-full">My LinkedIn Page</a>
+        <a href="https://www.linkedin.com/in/george-akai-91a41022b/" target="_blank"
+           class="inline-block mt-2 px-4 py-2 btn-primary link-accent">My LinkedIn Page</a>
       </p>
-      <p class="mt-1">Chico, CA, USA</p>
+      <p class="mt-1 text-muted">Chico, CA, USA</p>
     </section>
   </main>
 
