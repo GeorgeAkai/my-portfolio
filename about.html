@@ -6,7 +6,7 @@
   <title>George Akai - About Me</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
 
-  <!-- Graphite Lake theme variables + tiny utilities (Tailwind v2-friendly) -->
+  <!-- Graphite Lake theme variables + utilities (inline, Tailwind v2-friendly) -->
   <style>
     :root{
       --ink:#2F2A30;
@@ -15,55 +15,102 @@
       --accent:#5B7F95;
       --muted:#9FA6AD;
       --muted-2:#A1A8A6;
-      --page:#E5E9EB;
       --card:#D1D6D8;
       --card-2:#C2C9D3;
+      --page:#E5E9EB;
       --white:#ffffff;
       --black:#000000;
+
+      --accent-soft: rgba(91,127,149,.14);
+      --ink-soft: rgba(47,42,48,.6);
     }
     :root.dark{
       --text:#E5E9EB;
       --page:#0a0a0a;
-      --card:#1a1a1b;
+      --card:#151517;
       --card-2:#2F2A30;
       --muted:#A1A8A6;
     }
-    /* Light/Dark page gradients */
+
     .page-gradient{ background: linear-gradient(135deg, var(--page), #ffffff, var(--page)); }
-    .dark .page-gradient{ background: linear-gradient(135deg, #0b0b0b, #131316, #0b0b0b); }
+    .dark .page-gradient{ background: linear-gradient(135deg, #0b0b0b, #141417, #0b0b0b); }
 
-    /* Header band gradient */
     .header-band{ background: linear-gradient(90deg, var(--ink), var(--primary)); }
+    .header-soft{ background: linear-gradient(180deg, rgba(75,92,110,.08), transparent); }
 
-    /* Semantic theme utilities */
     .bg-ink{ background-color: var(--ink); }
+    .bg-primary{ background-color: var(--primary); }
+    .bg-accent{ background-color: var(--accent); }
     .bg-card{ background-color: var(--card); }
     .bg-card2{ background-color: var(--card-2); }
     .text-body{ color: var(--text); }
     .text-primary{ color: var(--primary); }
+    .text-accent{ color: var(--accent); }
     .text-muted{ color: var(--muted); }
     .border-card{ border-color: var(--card-2); }
-    .btn-primary{
-      background-color: var(--primary);
-      color: #fff;
-      border-radius: 9999px;
+    .ring-accent{ box-shadow: 0 0 0 2px var(--page), 0 0 0 4px var(--accent) !important; }
+
+    .btn { border-radius:9999px; padding:.35rem .75rem; font-weight:600; transition:transform .12s ease, background-color .2s ease, color .2s ease; }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary{ background:var(--primary); color:#fff; }
+    .btn-primary:hover{ background:#3f4f60; }
+    .btn-secondary{ background:var(--accent); color:#fff; }
+    .btn-secondary:hover{ background:#4d6c7e; }
+    .btn-subtle{ background:var(--accent-soft); color:var(--primary); }
+    .dark .btn-subtle{ background: rgba(75,92,110,.22); color:#e6ebef; }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--card-2);
+      border-radius:1rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      transition: box-shadow .2s ease, transform .15s ease, border-color .2s ease;
     }
-    .btn-primary:hover{ background-color: #3f4f60; }
-    .btn-primary:focus{
-      outline: 2px solid transparent;
-      box-shadow:
-        0 0 0 2px var(--page),
-        0 0 0 4px var(--accent);
+    .card:hover{ box-shadow: 0 4px 18px rgba(0,0,0,.08); }
+    .dark .card{ background:var(--card-2); border-color: rgba(75,92,110,.35); }
+
+    .heading{
+      color:var(--primary);
+      position:relative;
     }
-    .chip{ background-color: var(--card); border: 1px solid var(--card-2); }
-    .dark .chip{ background-color: var(--card-2); border-color: rgba(75,92,110,.35); }
+    .heading::after{
+      content:"";
+      display:block;
+      width:84px; height:3px;
+      margin:.5rem 0 0;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius:2px;
+      opacity:.9;
+    }
+
+    .chip{
+      background: var(--card);
+      border: 1px solid var(--card-2);
+      border-radius:.75rem;
+    }
+    .dark .chip{ background:var(--card-2); border-color:rgba(75,92,110,.35); }
+
+    .list-alt li:nth-child(odd){ background: var(--card); border:1px solid var(--card-2); }
+    .list-alt li:nth-child(even){ background: var(--accent-soft); border:1px solid var(--card-2); }
+    .dark .list-alt li:nth-child(even){ background: rgba(75,92,110,.22); }
+
     .img-frame{ border-color: var(--card-2) !important; }
-    .link-accent{ color: #ffffff; }
-    .link-accent:hover{ color: #f3f4f6; }
+    .portrait{
+      border:4px solid var(--card-2);
+      box-shadow: 0 10px 24px rgba(0,0,0,.12);
+    }
+
+    .link{ color:var(--primary); text-decoration:underline; text-underline-offset:4px; }
+    .link:hover{ color:var(--accent); }
+
+    .hr-accent{
+      height:1px; border:0; margin:2rem 0;
+      background: linear-gradient(90deg, transparent, var(--card-2), transparent);
+      opacity:.9;
+    }
   </style>
 
   <script>
-    // Respect saved theme
     const theme = localStorage.getItem('theme');
     if (theme === 'dark') document.documentElement.classList.replace('light', 'dark');
   </script>
@@ -74,18 +121,17 @@
     <div class="container mx-auto flex justify-between px-4 items-center">
       <h1 class="text-xl font-bold tracking-wide">George Akai</h1>
       <div class="flex items-center gap-4">
-        <a href="index.html" class="hover:underline underline-offset-4">Home</a>
-        <a href="#" class="hover:underline underline-offset-4">About Me</a>
-        <button onclick="toggleDarkMode()" class="text-sm px-3 py-1 btn-primary transition">Toggle Mode</button>
+        <a href="index.html" class="hover:underline underline-offset-4 link">Home</a>
+        <a href="#" class="hover:underline underline-offset-4 link">About Me</a>
+        <button onclick="toggleDarkMode()" class="text-sm px-3 py-1 btn btn-primary">Toggle Mode</button>
       </div>
     </div>
   </nav>
 
   <header class="text-center py-12 header-band text-white">
     <div class="container mx-auto px-4">
-      <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/dp.jpg?raw=true"
-           alt="George Akai Icon"
-           class="mx-auto rounded-2xl border-4 img-frame bg-white p-2 max-w-xs" />
+      <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/dp.jpg?raw=true" alt="George Akai Icon"
+           class="mx-auto rounded-2xl portrait bg-white p-2 max-w-xs" />
       <h2 class="text-3xl font-bold mt-4">About Me</h2>
       <p class="text-lg mt-2">Chico State Student<strong> · </strong>ChatGPT Ambassador<strong> · </strong>Web and AI Solutions</p>
     </div>
@@ -93,35 +139,34 @@
 
   <main class="container mx-auto px-4 py-10">
     <section class="mb-12">
-      <h2 class="text-2xl font-bold text-primary mb-4">George Akai</h2>
+      <h2 class="text-2xl font-bold heading mb-4">George Akai</h2>
       <p class="font-semibold mb-2">Computer Information Systems & Cybersecurity Student</p>
       <p class="font-semibold mb-2">ChatGPT Ambassador @ Chico State</p>
       <p class="font-semibold mb-4">Aspiring AI & Cybersecurity Analyst | AI Solutions Developer | Future AI Solutions Start-Up Founder</p>
-      <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/9004738_lock_security_padlock_secure_icon.png?raw=true"
-           alt="Profile Icon"
+      <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/9004738_lock_security_padlock_secure_icon.png?raw=true" alt="Profile Icon"
            class="mx-auto w-24 h-24 rounded-full border-4 img-frame bg-white p-2 shadow" />
     </section>
 
     <section class="mb-12">
-      <h2 class="text-2xl font-bold text-primary mb-4">Fun Facts</h2>
-      <ul class="space-y-2">
-        <li class="chip p-3 rounded-lg">International student from Kenya -- not a great runner.</li>
-        <li class="chip p-3 rounded-lg">I have been pursuing Computer Information Systems for 4 years now.</li>
-        <li class="chip p-3 rounded-lg">Started getting interested in Cybersecurity 3 years ago and a few months now into AI Development</li>
-        <li class="chip p-3 rounded-lg">Pursued the Google Cybersecurity Certificate in 2023 and 2024.</li>
-        <li class="chip p-3 rounded-lg">I participated in the National Cyber League in Fall 2024, learning and applying red-team techniques.</li>
-        <li class="chip p-3 rounded-lg">Joined the usr0 cybersecurity club.</li>
-        <li class="chip p-3 rounded-lg">I am the Fall 2025 ChatGPT Ambassador for Chico State.</li>
-        <li class="chip p-3 rounded-lg">Soccer is my favorite sport, I call it "football".</li>
+      <h2 class="text-2xl font-bold heading mb-4">Fun Facts</h2>
+      <ul class="space-y-2 list-alt">
+        <li class="p-3 rounded-lg">International student from Kenya -- not a great runner.</li>
+        <li class="p-3 rounded-lg">I have been pursuing Computer Information Systems for 4 years now.</li>
+        <li class="p-3 rounded-lg">Started getting interested in Cybersecurity 3 years ago and a few months now into AI Development</li>
+        <li class="p-3 rounded-lg">Pursued the Google Cybersecurity Certificate in 2023 and 2024.</li>
+        <li class="p-3 rounded-lg">I participated in the National Cyber League in Fall 2024, learning and applying red-team techniques.</li>
+        <li class="p-3 rounded-lg">Joined the usr0 cybersecurity club.</li>
+        <li class="p-3 rounded-lg">I am the Fall 2025 ChatGPT Ambassador for Chico State.</li>
+        <li class="p-3 rounded-lg">Soccer is my favorite sport, I call it "football".</li>
       </ul>
     </section>
 
     <!-- My Objectives -->
     <section class="mb-12">
-      <h2 class="text-2xl font-bold text-primary mb-4">Objectives</h2>
+      <h2 class="text-2xl font-bold heading mb-4">Objectives</h2>
       <div class="grid md:grid-cols-3 gap-6">
 
-        <div class="bg-card dark:bg-card2 p-4 rounded-xl border border-card shadow">
+        <div class="card p-4">
           <h3 class="text-lg font-semibold text-primary">Risk Assessment</h3>
           <p>
             Balancing business needs with security requirements to achieve maximum efficiency while keeping bad actors out of business systems. 
@@ -130,7 +175,7 @@
           </p>
         </div>
 
-        <div class="bg-card dark:bg-card2 p-4 rounded-xl border border-card shadow">
+        <div class="card p-4">
           <h3 class="text-lg font-semibold text-primary">Systems Security</h3>
           <p>
             Helping businesses meet their goals by ensuring systems remain secure, available, recoverable, and resilient against constant advanced threats. 
@@ -139,7 +184,7 @@
           </p>
         </div>
 
-        <div class="bg-card dark:bg-card2 p-4 rounded-xl border border-card shadow">
+        <div class="card p-4">
           <h3 class="text-lg font-semibold text-primary">Secure Web Development</h3>
           <p>
             Building secure applications that are free of OWASP vulnerabilities while offering users great accessibility features. 
@@ -148,7 +193,7 @@
           </p>
         </div>
 
-        <div class="bg-card dark:bg-card2 p-4 rounded-xl border border-card shadow md:col-span-3">
+        <div class="card p-4 md:col-span-3">
           <h3 class="text-lg font-semibold text-primary">Secure AI Development</h3>
           <p>
             Building AI solutions that enhance UI/UX while protecting private data. 
@@ -167,7 +212,7 @@
       <p>Let's build securely, let's secure boldly!</p>
       <p>
         <a href="https://www.linkedin.com/in/george-akai-91a41022b/" target="_blank"
-           class="inline-block mt-2 px-4 py-2 btn-primary link-accent">My LinkedIn Page</a>
+           class="inline-block mt-2 px-4 py-2 btn btn-secondary">My LinkedIn Page</a>
       </p>
       <p class="mt-1 text-muted">Chico, CA, USA</p>
     </section>
