@@ -1,12 +1,14 @@
-/* === Graphite Lake — Base Colors and Font === */
+/* === Blue–Aqua — Base Colors and Font === */
 :root {
-  /* Core palette */
-  --ink: #004B87;         /* deep header/nav */
-  --primary: #0076A8;     /* primary brand color */
-  --muted-2: #A1A8A6;     /* subtle text (dark) */
-  --card: #D1D6D8;        /* card background (light) */
-  --card-2: #C2C9D3;      /* card border / alt surface */
-  --page: #E5E9EB;        /* page background (light) */
+  /* Core palette (from your new theme) */
+  --ink:   #004B87;  /* deep header/nav */
+  --primary:#0076A8; /* primary brand color (headings, primary buttons) */
+  --accent:#00A3D2;  /* secondary actions, highlights */
+  --muted: #B4E0E7;  /* subtle text/dividers (light) */
+  --muted-2:#6BC4E2; /* subtle text (dark / stronger subtle) */
+  --card:  #D3F2F5;  /* card background (light) */
+  --card-2:#C1ECF4;  /* card border / alt surface */
+  --page:  #E0F4F8;  /* page background (light) */
   --black: #000000;
   --white: #ffffff;
 
@@ -16,7 +18,7 @@
   --gray: #7a8c8e;
 
   /* Effects */
-  --accent-soft: rgba(91,127,149,.14);
+  --accent-soft: rgba(0,163,210,.14);
 
   /* Typography */
   --modern-font: 'Inter', 'Segoe UI', 'Roboto', 'Arial', sans-serif;
@@ -26,10 +28,10 @@
 
 /* Dark mode overrides (works when <html class="dark">) */
 :root.dark {
-  --page: #0a0a0a;
-  --card: #151517;
-  --card-2: #2F2A30;
-  --muted: var(--muted-2);
+  --page:  #0b1117;
+  --card:  #0f1720;
+  --card-2:#2B5C8A;
+  --muted: var(--muted-2); /* keep subtle text readable on dark */
   /* primary/accent/ink stay the same for identity */
 }
 
@@ -102,7 +104,7 @@ body, body.bg-light {
   object-fit: cover;
   border: 4px solid var(--card-2);
   background: var(--white);
-  box-shadow: 0 4px 24px 0 rgba(61, 90, 90, 0.12);
+  box-shadow: 0 4px 24px 0 rgba(0, 26, 43, 0.12);
 }
 
 #headerImg h1 {
@@ -115,7 +117,7 @@ body, body.bg-light {
 }
 
 #headerImg .lead {
-  color: #f3f5f6;
+  color: #f3f9fb;
   font-size: 1.25rem;
 }
 
@@ -141,7 +143,7 @@ main.container, main.container-fluid {
   border: 1.5px solid var(--card-2);
   color: var(--primary);
   border-radius: 18px;
-  box-shadow: 0 4px 24px 0 rgba(61, 90, 90, 0.08);
+  box-shadow: 0 4px 24px 0 rgba(0, 26, 43, 0.08);
   margin-bottom: 2.5rem !important;
   padding: 2rem 1.5rem;
 }
@@ -150,18 +152,18 @@ main.container, main.container-fluid {
 
 /* Optional thin band styling */
 .section-band {
-  background: linear-gradient(90deg, rgba(75,92,110,.22), rgba(91,127,149,.18));
+  background: linear-gradient(90deg, rgba(0,118,168,.22), rgba(0,163,210,.18));
   border-top: 1px solid var(--card-2);
   border-bottom: 1px solid var(--card-2);
 }
 
 /* === Card Grid and Cards === */
 .card {
-  background: var(--card);                /* fixed: was var(--grey) */
+  background: var(--card);
   border: 1.5px solid var(--card-2);
   color: var(--black);
   border-radius: 14px;
-  box-shadow: 0 4px 24px 0 rgba(61, 90, 90, 0.10);
+  box-shadow: 0 4px 24px 0 rgba(0, 26, 43, 0.10);
   transition: box-shadow 0.2s, border-color 0.2s, transform .15s ease;
   padding: 0;
   text-align: left;
@@ -174,7 +176,7 @@ main.container, main.container-fluid {
 
 .card:hover {
   border-color: var(--accent);
-  box-shadow: 0 8px 32px 0 rgba(61, 90, 90, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 26, 43, 0.18);
 }
 
 .card img {
@@ -223,7 +225,7 @@ main.container, main.container-fluid {
 .img-fluid.rounded-circle {
   border: 3px solid var(--card-2);
   background: var(--white);
-  box-shadow: 0 2px 8px rgba(61, 90, 90, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 26, 43, 0.08);
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -276,7 +278,7 @@ h3, .card-title {
   border: none;
 }
 .btn-primary:hover, .btn-primary:focus {
-  background: #3f4f60; /* darker primary */
+  background: #2B5C8A; /* deeper brand hover */
   color: var(--white);
 }
 
@@ -286,7 +288,7 @@ h3, .card-title {
   border: none;
 }
 .btn-danger:hover, .btn-danger:focus {
-  background: #4d6c7e; /* darker accent */
+  background: #1A8AAE; /* darker accent hover */
   color: var(--white);
 }
 
@@ -355,7 +357,7 @@ h3, .card-title {
   max-height: 90vh;
   border-radius: 16px;
   border: 1px solid var(--card-2);
-  box-shadow: 0 8px 32px rgba(61,90,90,0.25);
+  box-shadow: 0 8px 32px rgba(0,26,43,0.25);
 }
 #imgModal span {
   position: absolute;
@@ -374,11 +376,11 @@ h3, .card-title {
 .text-darker    { color: var(--gray) !important; }
 
 /* ===== Dark mode enhancements ===== */
-.dark body { color: #E5E9EB; }
-.dark .navbar.bg-dark { background: var(--black) !important; }
+.dark body { color: #E8F6FB; }
+.dark .navbar.bg-dark { background: var(--ink) !important; }
 .dark .navbar-brand, .dark .nav-link { color: var(--muted-2) !important; }
 .dark .nav-link:hover { color: var(--accent) !important; }
-.dark .section { background: rgba(75,92,110,.22); border-color: var(--card-2); }
-.dark .card { color: #E5E9EB; }
+.dark .section { background: rgba(0,163,210,.22); border-color: var(--card-2); }
+.dark .card { color: #E8F6FB; }
 .dark .card-title { color: var(--muted); }
 .dark .card li { color: var(--muted-2); }
