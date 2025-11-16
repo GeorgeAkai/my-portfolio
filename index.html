@@ -126,6 +126,10 @@
     border-bottom-color:#b7e6ef; border-radius:.5rem; padding:.1rem .35rem; font-size:.75rem;
   }
   .dark .kbd{ background:#0f1720; border-color:#1e2a36; }
+
+  .dark .text-body{ color: var(--text); }
+  .dark .heading{ color: goldenrod;}
+
 </style>
 
 
@@ -168,8 +172,8 @@
     <div class="container mx-auto flex justify-between px-4 items-center">
       <h1 class="text-xl font-bold tracking-wide">Hi, I'm George</h1>
       <div class="flex items-center gap-4">
-        <a href="#" class="hover:underline underline-offset-4 link">Home</a>
-        <a href="about.html" class="hover:underline underline-offset-4 link">About Me</a>
+        <a href="#" class="hover:underline underline-offset-4 link" style="color: white !important;">Home</a>
+        <a href="about.html" class="hover:underline underline-offset-4 link" style="color: white !important;">About Me</a>
         <button onclick="toggleDarkMode()" class="text-sm px-3 py-1 btn btn-primary" id="Toggle">Toggle Mode</button>
       </div>
     </div>
@@ -198,7 +202,7 @@
               alt="National Cyber League" class="w-full object-contain max-h-64 cursor-pointer"
               onclick="openModal(this.src)">
             <div class="p-4">
-              <h3 class="text-xl font-semibold mb-3 text-primary">National Cyber League</h3>
+              <h3 class="text-xl font-semibold mb-3 text-primary heading">National Cyber League</h3>
               <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
                 During my participation in the National Cyber League, I tackled a wide range of
                 cybersecurity challenges that tested both technical skill and problem-solving ability.
