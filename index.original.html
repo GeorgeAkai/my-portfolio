@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>George Akai - Projects</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+
+<style>
+  :root{
+    /* === Blue–Aqua Theme Tokens === */
+    --ink:#004B87;      /* deep header/nav */
+    --text:#0e1726;     /* readable body text on light */
+    --primary:#0076A8;  /* brand (headings, primary actions) */
+    --accent:#00A3D2;   /* secondary actions, highlights */
+    --muted:#B4E0E7;    /* subtle text/dividers (light) */
+    --muted-2:#6BC4E2;  /* slightly stronger subtle */
+    --card:#D3F2F5;     /* card bg (light) */
+    --card-2:#C1ECF4;   /* card border/alt bg (light) */
+    --page:#f7f7f7;     /* page bg (light) */
+    --white:#ffffff;
+    --black:#000000;
+
+    /* derived */
+    --accent-soft: rgba(0,163,210,.14); /* soft tint of accent */
+    --ink-soft: rgba(0,75,135,.60);     /* translucent ink */
+  }
+
+  :root.dark{
+    --text:#E8F6FB;
+    --page:#121314ee;              /* deep neutral base */
+    --card:#0f1720;              /* dark card */
+    --card-2:#203b54;            /* alt card / borders */
+    --muted:#6BC4E2;             /* subtle text (dark) */
+  }
+
+  /* Base helpers */
+  .page-gradient{ background: linear-gradient(135deg, var(--page), #ffffff, var(--page)); }
+  .dark .page-gradient{ background: linear-gradient(135deg, #0a0f14, #0b1117, #0a0f14); }
+
+  .header-band{ background: linear-gradient(90deg, var(--ink), var(--primary)); }
+  .header-soft{ background: linear-gradient(180deg, rgba(0,163,210,.08), transparent); }
+
+  .bg-ink{ background-color: var(--ink); }
+  .bg-primary{ background-color: var(--primary); }
+  .bg-accent{ background-color: var(--accent); }
+  .bg-card{ background-color: var(--card); }
+  .bg-card2{ background-color: var(--card-2); }
+  .text-body{ color: var(--text); }
+  .text-primary{ color: var(--primary); }
+  .text-accent{ color: var(--accent); }
+  .text-muted{ color: var(--muted); }
+  .border-card{ border-color: var(--card-2); }
+  .ring-accent{ box-shadow: 0 0 0 2px var(--page), 0 0 0 4px var(--accent) !important; }
+
+  /* Components */
+  .btn { border-radius:9999px; padding:.35rem .75rem; font-weight:600; transition:transform .12s ease, background-color .2s ease, color .2s ease; }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary{ background:var(--primary); color:#fff; }
+  .btn-primary:hover{ background:#2B5C8A; } /* deeper brand */
+  .btn-secondary{ background:var(--accent); color:#fff; }
+  .btn-secondary:hover{ background:#1A8AAE; } /* darker accent */
+  .btn-subtle{ background:var(--accent-soft); color:var(--primary); }
+  .dark .btn-subtle{ background: rgba(0,163,210,.22); color:#daeff6; }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--card-2);
+    border-radius:1rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    transition: box-shadow .2s ease, transform .15s ease, border-color .2s ease;
+  }
+  .card:hover{ box-shadow: 0 4px 18px rgba(0,0,0,.10); }
+  .dark .card{ background:var(--card-2); border-color: rgba(0,75,135,.35); }
+
+  .heading{
+    color:var(--primary);
+    position:relative;
+  }
+  .heading::after{
+    content:"";
+    display:block;
+    width:84px; height:3px;
+    margin:.5rem auto 0;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius:2px;
+    opacity:.9;
+  }
+
+  .band{
+    background: linear-gradient(90deg, rgba(0,118,168,.22), rgba(0,163,210,.18));
+    border-top:1px solid var(--card-2);
+    border-bottom:1px solid var(--card-2);
+  }
+
+  .chip{
+    background: var(--card);
+    border: 1px solid var(--card-2);
+    border-radius:.75rem;
+  }
+  .dark .chip{ background:var(--card-2); border-color:rgba(0,75,135,.35); }
+
+  .list-alt li:nth-child(odd){ background: var(--card); border:1px solid var(--card-2); }
+  .list-alt li:nth-child(even){ background: var(--accent-soft); border:1px solid var(--card-2); }
+  .dark .list-alt li:nth-child(even){ background: rgba(0,163,210,.22); }
+
+  .img-frame{ border-color: var(--card-2) !important; }
+  .portrait{
+    border:4px solid var(--card-2);
+    box-shadow: 0 10px 24px rgba(0,0,0,.12);
+  }
+
+  .link{ color:var(--primary); text-decoration:underline; text-underline-offset:4px; }
+  .link:hover{ color:var(--ink); }
+
+  .hr-accent{
+    height:1px; border:0; margin:2rem 0;
+    background: linear-gradient(90deg, transparent, var(--card-2), transparent);
+    opacity:.95;
+  }
+
+  .modal-img{ border-radius:.75rem; box-shadow: 0 20px 40px rgba(0,0,0,.35); border:1px solid var(--card-2); }
+  .kbd{
+    background:var(--card); border:1px solid var(--card-2);
+    border-bottom-color:#b7e6ef; border-radius:.5rem; padding:.1rem .35rem; font-size:.75rem;
+  }
+  .dark .kbd{ background:#0f1720; border-color:#1e2a36; }
+
+  .dark .leading-relaxed { color: white; }
+  .dark .heading{ color: goldenrod;}
+
+</style>
+
+
+  <script>
+    // Initialize theme safely and respect saved preference or system preference
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      html.classList.add('dark');
+    } else if (savedTheme === 'light') {
+      html.classList.remove('dark');
+    } else {
+      // no saved preference: prefer system, otherwise default to light
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      const isDark = html.classList.contains('dark');
+      if (isDark) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+  </script>
+</head>
+
+<body class="page-gradient text-body font-sans">
+  <nav class="sticky top-0 z-50 bg-ink dark:bg-black text-white py-4 shadow-md">
+    <div class="container mx-auto flex justify-between px-4 items-center">
+      <h1 class="text-xl font-bold tracking-wide">Hi, I'm George</h1>
+      <div class="flex items-center gap-4">
+        <a href="#" class="hover:underline underline-offset-4 link" style="color: white !important;">Home</a>
+        <a href="about.html" class="hover:underline underline-offset-4 link" style="color: white !important;">About Me</a>
+        <button onclick="toggleDarkMode()" class="text-sm px-3 py-1 btn btn-primary" id="Toggle">Toggle Mode</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="text-center py-12 header-band text-white">
+    <div class="container mx-auto px-4">
+      <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/20250807-GeorgeAkai-JH-024.JPG?raw=true"
+        alt="George Akai Icon" class="mx-auto rounded-2xl portrait bg-white p-2 max-w-xs" />
+      <h2 class="text-3xl font-bold mt-4">Welcome to My Portfolio</h2>
+      <p class="text-lg mt-2">Cybersecurity · Web App Development · AI Solutions</p>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-10">
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-center heading mb-8">Featured Projects</h2>
+
+      <!-- Cybersecurity Section -->
+      <div class="mb-10">
+        <h3 class="text-xl font-bold text-center heading mb-6">Cybersecurity</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-fr">
+          <!-- National Cyber League -->
+          <div class="card overflow-hidden p-2">
+            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true"
+              alt="National Cyber League" class="w-full object-contain max-h-64 cursor-pointer"
+              onclick="openModal(this.src)">
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-3 text-primary heading">National Cyber League</h3>
+              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                During my participation in the National Cyber League, I tackled a wide range of
+                cybersecurity challenges that tested both technical skill and problem-solving ability.
+                I began with <strong>OSINT </strong>investigations uncovering publicly available
+                information. From there, I moved into <strong>cryptography</strong>, applying encryption and decryption
+                techniques to solve complex puzzles or crack encrypted passwords. I also analyzed network traffic to
+                identify anomalies
+                and potential vulnerabilities, while system enumeration exercises taught me how to detect
+                open ports, services, and exploitable configurations. Finally, I engaged in <strong> password cracking</strong>
+                , working with hashed data to retrieve flags and gain deeper insight into
+                real-world attack scenarios. Together, these experiences strengthened my ability to think
+                critically, adapt quickly, and apply<strong> red-team cybersecurity principles</strong> in practical contexts.
+              </p>
+            </div>
+          </div>
+
+          <!-- Google Cybersecurity Certificate -->
+          <div class="card overflow-hidden p-2">
+            <img
+              src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true"
+              alt="Google Cybersecurity Certificate" class="w-full object-contain max-h-64 cursor-pointer bg-white"
+              onclick="openModal(this.src)">
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-3 text-primary heading">Google Cybersecurity
+              </h3>
+              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Through the Google Cybersecurity Certificate program, I built a strong foundation in
+                security principles, including the <strong>CIA triad </strong>and the <strong>NIST Cybersecurity Framework</strong>.
+                I gained hands-on experience working with Linux and SQL, while also learning SOC
+                workflows to understand how security operations are managed in real-world environments.
+                Using Wireshark, I learned to <strong>analyze network traffic </strong>and identify potential threats,
+                and with Suricata I conducted <strong>vulnerability assessments </strong>while applying risk and asset
+                management strategies. I also explored security automation by writing Python scripts
+                to streamline repetitive tasks, and studied the importance of playbooks in guiding
+                <strong>effective incident response</strong>. Beyond the technical skills, the program emphasized how
+                to make an immediate impact as a cybersecurity analyst—integrating seamlessly into a
+                team and contributing from the very first day on the job.
+              </p>
+            </div>
+          </div>
+
+          <!-- Annual User Access Reviews -->
+          <div class="card overflow-hidden p-2">
+            <img
+              src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ChatGPT%20Image%20Jun%203%2C%202025%2C%2008_25_39%20AM.png?raw=true"
+              alt="Annual User Access Reviews" class="w-full object-contain max-h-64 cursor-pointer"
+              onclick="openModal(this.src)">
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-3 text-primary heading">Information Security: 2025 Annual
+                User Access Review</h3>
+              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                As part of the 2025 Annual User Access Review, I managed ticket workflows in collaboration
+                with campus MPPs, ensuring clear communication from initiation through follow-up. I verified
+                that <strong>Role-Based Access Control</strong> roles were properly aligned with the permissions required for
+                different levels of data access, and carefully validated these access levels while documenting
+                all outcomes in the Configuration Management Database. To maintain compliance, I reviewed
+                employee <strong>security awareness </strong>training records provided by CSU, confirming that all training
+                was current and unexpired. For departments that successfully passed the review, I distributed
+                certification requests through Adobe Sign, streamlining the approval process. Throughout the
+                project, I relied on Excel, our ticketing system and Adobe Sign to record data and compile detailed documentation,
+                ensuring that every finding was captured accurately and that the annual review process
+                supported both security and accountability across the institution to <strong>uphold our security posture</strong>.
+              </p>
+            </div>
+          </div>
+
+          <!-- KnowledgeBase Article Review -->
+          <div class="card overflow-hidden p-2">
+            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/data_inv.png?raw=true"
+              alt="KnowledgeBase Article Review" class="w-full object-contain max-h-64 cursor-pointer"
+              onclick="openModal(this.src)">
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-3 text-primary heading">Information Security:
+                KnowledgeBase Article Write & Review</h3>
+              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                While working in the Information Security Department, I was assigned to create a KnowledgeBase
+                article that would guide Chico State departments in preparing for the annual <strong>Sensitive Data
+                  Inventory Survey</strong>. I authored the article, which was published in the ISEC documentation on
+                the
+                school’s support page, ensuring that departments had clear instructions and resources to
+                complete the survey effectively. The article emphasized the importance of <strong>protecting Level 1
+                  data </strong>—CSU’s classification for highly sensitive information—and promoted compliance awareness
+                by explaining how the survey supported adherence to CSU policy. In doing so, I contributed to
+                broader security initiatives by providing clear documentation and communication that reinforced
+                the university’s <strong>commitment to data protection and compliance</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- Full Stack Web Section -->
+      <div class="mb-10">
+        <h3 class="text-xl font-bold text-center heading mb-6">Full Stack Web Application Dev
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-fr">
+          <div class="card overflow-hidden p-2">
+            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true"
+              alt="Kenrish Collection Website" class="w-full object-contain max-h-64 cursor-pointer"
+              onclick="openModal(this.src)">
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-3 text-primary heading">Kenrish Collection Website:
+                Node.js Early Version</h3>
+              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                For this project, I set out to build a web application for my sister’s cosmetics and beauty shop,
+                aiming to <strong>solve the challenge of visibility</strong> and give her business a stronger online
+                presence.
+                The goal was to make her products and services easily accessible to customers through both mobile
+                devices and computers. I designed the site with a responsive, mobile-first approach using HTML,
+                CSS, and Bootstrap, with a <strong>Node.js and Express.js backend</strong>, ensuring that the layout
+                adapted seamlessly across different screen sizes.
+                To enhance the user experience, I implemented a modern UI/UX with a custom color palette and
+                smooth navigation, creating an inviting and intuitive interface. The platform showcased her
+                offerings clearly, while also <strong>incorporating security measures</strong> such as password
+                encryption to
+                protect user accounts. This early Node.js version of the Kenrish Collection website laid the
+                foundation for a secure, user-friendly digital storefront that brought her business into the
+                spotlight.
+              </p>
+
+            </div>
+          </div>
+
+          <div class="card overflow-hidden p-2">
+            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/chess.png?raw=true"
+              alt="Chess Javascript App" class="w-full object-contain max-h-64 cursor-pointer"
+              onclick="openModal(this.src)">
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-3 text-primary heading">Chess Javascript App</h3>
+              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                As part of a software development class midterm project, my team and I set out to build a
+                fully functional chess game board using <strong>Django</strong>. The goal was to explore how
+                Django handles <strong>backend requests</strong> compared to other stacks that rely
+                more heavily on client-side rendering. On the frontend, we designed templates with
+                <strong>Bootstrap</strong>, <strong>CSS</strong>, <strong>HTML</strong>, <strong>JavaScript</strong>,
+                and <strong>JQuery</strong>, ensuring a <strong>responsive</strong> and visually appealing interface.
+                The backend was powered by Django and a SQLite3 database, where we
+                implemented <strong>models</strong>, <strong>views</strong>, and <strong>URLs</strong> to render the
+                board
+                accurately. These models provided the foundation of the project, while the
+                <strong>views</strong> acted as handlers that connected templates and URLs seamlessly. Movement of chess
+                pieces was achieved through a combination of JavaScript and Django backend requests,
+                allowing for dynamic interaction across the board. To safeguard user accounts, we applied
+                <strong>security best practices</strong> for <strong>form validation</strong>, <strong>signup</strong>,
+                <strong>login</strong>, and <strong>logout</strong> functionality. Finally, we documented our progress
+                and
+                maintained <strong>version control using GitHub</strong>, reinforcing good development practices.
+                This project was both challenging and rewarding, offering hands-on experience in blending
+                frontend design with backend logic while building something fun and interactive.
+              </p>
+
+            </div>
+          </div>
+
+          <!-- Django Kenrish Collection-->
+          <div class="card overflow-hidden p-2">
+            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/django kenrish.png?raw=true"
+              alt="Chess Javascript App" class="w-full object-contain max-h-64 cursor-pointer"
+              onclick="openModal(this.src)">
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-3 text-primary heading">Kenrish Collection Product
+                Management: Django New and Bold Version</h3>
+              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                To strengthen my <strong>full-stack Django development</strong> skills, I rebuilt my sister’s cosmetics
+                and beauty shop web application with a bold new version that introduced advanced features and improved
+                performance. On the frontend, I designed a responsive interface using <strong>Bootstrap</strong>,
+                <strong>CSS</strong>, <strong>HTML</strong>, and <strong>JavaScript</strong>, ensuring accessibility and
+                smooth navigation. The backend was powered by Django Python and a
+                SQLite3 Database, deployed on <strong>AWS EC2</strong> with <strong>DevOps practices</strong>
+                that included configuring an <strong>NGINX web server</strong> and Gunicorn service for
+                production readiness. Security was a priority throughout the project, with best practices
+                implemented for user and form validation, account signup, and login, as well as admin privileges
+                management.
+              </p>
+              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Beyond the core functionality, I added insightful <strong>analytics</strong> for administrative users,
+                supporting <strong>inventory management</strong>, <strong>accounting</strong>, and <strong>access
+                  control</strong>.
+                To enhance <strong>User Experience (UX)</strong>, I introduced a <strong>Wishlist feature</strong> that
+                allows
+                customers to save their favorite products, while refining the User Interface (UI) to be intuitive
+                and accessible. Development practices were documented and versioned through <strong>GitHub</strong>,
+                reinforcing
+                collaboration and maintainability. Finally, I conducted a <strong>threat modeling exercise</strong> and
+                used
+                <strong>Burp Suite</strong> to assess vulnerabilities, strengthening the application’s security posture
+                and ensuring
+                both user accounts and administrative pages remained protected. This project not only elevated the
+                business’s online
+                presence but also deepened my experience in secure, scalable, and user-focused web application
+                development.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full Stack AI Section -->
+      <div class="mb-10">
+        <h3 class="text-xl font-bold text-center heading mb-6 heading">Full Stack AI App Development
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-fr">
+          <div class="card overflow-hidden p-2">
+            <video width="320" height="240" controls class="w-full object-contain max-h-64 cursor-pointer">
+              <source src="https://github.com/GeorgeAkai/my-portfolio/blob/main/20250801_005127.mp4?raw=true">
+            </video>
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-3 text-primary heading">The Humboldt Helpers</h3>
+              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                <strong>During the Cal Poly DXHub AI Summer Camp</strong>, my team and I developed a solution to help
+                Humboldt University’s research department navigate their website more efficiently, addressing issues
+                of clickrage caused by multiple links on a single page. We designed a responsive interface using
+                <strong>Streamlit</strong> and <strong>CSS</strong>, paired with a modern <strong>UI/UX</strong> that
+                incorporated custom colors inspired by the Humboldt University website.
+              </p>
+              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                To enhance functionality, we implemented <strong>Retrieval Augmented Generation (RAG)</strong> for
+                dynamic content generation and leveraged <strong>Amazon Bedrock</strong> for its
+                <strong>RetrieveAndGenerate</strong> feature. Data was stored in <strong>Amazon S3 Buckets</strong>
+                and indexed with an <strong>S3 vector database</strong>, while <strong>Amazon Knowledge Base</strong>
+                features and a <strong>Semantic Chunking Strategy</strong> improved information retrieval and
+                contextual understanding. For advanced <strong>Natural Language Processing (NLP)</strong>, we used
+                <strong>Titan V2 Embeddings</strong> and <strong>Claude Sonnet</strong>, supported by
+                <strong>System Prompt Engineering</strong> to optimize AI model outputs. For security, we implemented
+                <strong>Guardrails </strong>
+                to monitor and control AI behavior, ensuring safe, accurate and reliable interactions.
+              </p>
+              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Throughout the project, we documented our progress in <strong>GitHub</strong>, ensuring proper
+                version control and adherence to good development practices. Greatest of all we experienced was the
+                privilege of meeting
+                and collaborating with excellent students from across the <strong>CSU system</strong>, each bringing
+                unique professional backgrounds. Together, we built powerful AI solutions that addressed real-world
+                problems. Huge thanks to <strong>Ryan Matteson</strong>, <strong>Nick Osterbur</strong>,
+                <strong>Darren Kraker</strong>, and all the other admins for creating such a transformative summer camp
+                that made a lasting impact on everyone who participated.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications Section -->
+      <div class="mb-10">
+        <h3 class="text-2xl font-bold text-center heading mb-6">Certifications</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <!-- Google Cybersecurity -->
+          <div class="card overflow-hidden p-4 flex flex-col items-center text-center">
+            <img
+              src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Screenshot 2024-11-20 004035.png?raw=true"
+              alt="Google Cybersecurity Certificate" class="w-full object-contain max-h-40 mb-4">
+            <h4 class="text-lg font-semibold text-primary heading">Google Cybersecurity Certificate</h4>
+            <p class="text-sm text-muted mt-1">Google / Coursera</p>
+          </div>
+
+          <!-- AI Solutions-->
+          <div class="card overflow-hidden p-4 flex flex-col items-center text-center">
+            <img
+              src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Building Generative AI Solutions.jpg?raw=true"
+              alt="Google Cybersecurity Certificate" class="w-full object-contain max-h-40 mb-4">
+            <h4 class="text-lg font-semibold text-primary heading">Building Generative AI Solutions using
+              AWS</h4>
+            <p class="text-sm text-muted mt-1">Amazon Web Services</p>
+          </div>
+
+          <!-- National Cyber League -->
+          <div class="card overflow-hidden p-4 flex flex-col items-center text-center">
+            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true"
+              alt="National Cyber League" class="w-full object-contain max-h-40 mb-4">
+            <h4 class="text-lg font-semibold text-primary heading">National Cyber League</h4>
+            <p class="text-sm text-muted mt-1">National Cyber League</p>
+          </div>
+
+          <!-- AWS Security Certification -->
+          <div class="card overflow-hidden p-4 flex flex-col items-center text-center">
+            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/AWS-Security.png?raw=true"
+              alt="AWS Security Certification" class="w-full object-contain max-h-40 mb-4">
+            <h4 class="text-lg font-semibold text-primary heading">AWS Security Fundamentals</h4>
+            <p class="text-sm text-muted mt-1">Amazon Web Services</p>
+          </div>
+
+          <!-- AWS AI Security Certification -->
+          <div class="card overflow-hidden p-4 flex flex-col items-center text-center">
+            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/AI Security.png?raw=true"
+              alt="AWS Security Certification" class="w-full object-contain max-h-40 mb-4">
+            <h4 class="text-lg font-semibold text-primary heading">AI Security on AWS</h4>
+            <p class="text-sm text-muted mt-1">Amazon Web Services</p>
+          </div>
+
+          <!-- Qualys Foundation -->
+          <div class="card overflow-hidden p-4 flex flex-col items-center text-center">
+            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/Qualys.jpg?raw=true" alt="Qualys Foundation"
+              class="w-full object-contain max-h-40 mb-4">
+            <h4 class="text-lg font-semibold text-primary heading">Qualys Vulnerability Management,
+              Detection and
+              Response</h4>
+            <p class="text-sm text-muted mt-1">Qualys</p>
+          </div>
+
+          <!-- Placeholder for future certifications -->
+          <div class="hidden md:flex card items-center justify-center p-4">
+            <p class="text-sm text-muted">Add more certifications here</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Modal for image zoom -->
+  <div id="imgModal" class="fixed inset-0 bg-black bg-opacity-80 hidden justify-center items-center z-50">
+    <span onclick="closeModal()" class="absolute top-6 right-8 text-white text-4xl font-bold cursor-pointer">&times;</span>
+    <img id="modalImg" class="max-w-[90vw] max-h-[90vh] modal-img" />
+  </div>
+
+  <footer class="text-center text-sm text-muted py-6">
+    <p>Last Updated on Nov 14, 2025</p>
+    <p><strong>George Akai</strong>: What can I do today to make another person's life better? Smile, perhaps...</p>
+  </footer>
+
+  <script>
+    function openModal(src) {
+      document.getElementById('modalImg').src = src;
+      document.getElementById('imgModal').classList.remove('hidden');
+      document.getElementById('imgModal').classList.add('flex');
+    }
+    function closeModal() {
+      document.getElementById('imgModal').classList.add('hidden');
+      document.getElementById('imgModal').classList.remove('flex');
+    }
+  </script>
+</body>
+
+</html>
