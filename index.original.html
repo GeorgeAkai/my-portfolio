@@ -10,16 +10,16 @@
 
 <style>
   :root{
-    /* === Blue–Aqua Theme Tokens === */
-    --ink:#004B87;      /* deep header/nav */
-    --text:#0e1726;     /* readable body text on light */
-    --primary:#0076A8;  /* brand (headings, primary actions) */
-    --accent:#00A3D2;   /* secondary actions, highlights */
-    --muted:#B4E0E7;    /* subtle text/dividers (light) */
-    --muted-2:#6BC4E2;  /* slightly stronger subtle */
-    --card:#D3F2F5;     /* card bg (light) */
-    --card-2:#C1ECF4;   /* card border/alt bg (light) */
-    --page:#f7f7f7;     /* page bg (light) */
+    /* Professional Light Theme */
+    --ink:#2D6CDF;
+    --text:#1A1A1A;
+    --primary:#2D6CDF;
+    --accent:#2D6CDF;
+    --muted:#6B7280;
+    --muted-2:#9CA3AF;
+    --card:#FFFFFF;
+    --card-2:#E5E7EB;
+    --page:#F7F9FC;
     --white:#ffffff;
     --black:#000000;
 
@@ -29,16 +29,20 @@
   }
 
   :root.dark{
-    --text:#E8F6FB;
-    --page:#121314ee;              /* deep neutral base */
-    --card:#0f1720;              /* dark card */
-    --card-2:#203b54;            /* alt card / borders */
-    --muted:#6BC4E2;             /* subtle text (dark) */
+    /* Professional Dark Theme */
+    --ink:#3B82F6;
+    --text:#E5E7EB;
+    --primary:#3B82F6;
+    --accent:#14B8A6;
+    --page:#0A0F1F;
+    --card:#111827;
+    --card-2:#1F2937;
+    --muted:#9CA3AF;
   }
 
   /* Base helpers */
   .page-gradient{ background: linear-gradient(135deg, var(--page), #ffffff, var(--page)); }
-  .dark .page-gradient{ background: linear-gradient(135deg, #0a0f14, #0b1117, #0a0f14); }
+  .dark .page-gradient{ background: linear-gradient(135deg, #0A0F1F, #0A0F1F, #111827); }
 
   .header-band{ background: linear-gradient(90deg, var(--ink), var(--primary)); }
   .header-soft{ background: linear-gradient(180deg, rgba(0,163,210,.08), transparent); }
@@ -59,11 +63,11 @@
   .btn { border-radius:9999px; padding:.35rem .75rem; font-weight:600; transition:transform .12s ease, background-color .2s ease, color .2s ease; }
   .btn:active { transform: translateY(1px); }
   .btn-primary{ background:var(--primary); color:#fff; }
-  .btn-primary:hover{ background:#2B5C8A; } /* deeper brand */
+  .btn-primary:hover{ background:#1E4FB8; }
   .btn-secondary{ background:var(--accent); color:#fff; }
-  .btn-secondary:hover{ background:#1A8AAE; } /* darker accent */
+  .btn-secondary:hover{ background:#0F766E; }
   .btn-subtle{ background:var(--accent-soft); color:var(--primary); }
-  .dark .btn-subtle{ background: rgba(0,163,210,.22); color:#daeff6; }
+  .dark .btn-subtle{ background: rgba(20,184,166,.22); color:#E5E7EB; }
 
   .card{
     background:var(--card);
@@ -73,7 +77,7 @@
     transition: box-shadow .2s ease, transform .15s ease, border-color .2s ease;
   }
   .card:hover{ box-shadow: 0 4px 18px rgba(0,0,0,.10); }
-  .dark .card{ background:var(--card-2); border-color: rgba(0,75,135,.35); }
+  .dark .card{ background:var(--card); border-color: var(--card-2); }
 
   .heading{
     color:var(--primary);
@@ -90,7 +94,7 @@
   }
 
   .band{
-    background: linear-gradient(90deg, rgba(0,118,168,.22), rgba(0,163,210,.18));
+    background: linear-gradient(90deg, rgba(45,108,223,.12), rgba(20,184,166,.12));
     border-top:1px solid var(--card-2);
     border-bottom:1px solid var(--card-2);
   }
@@ -100,11 +104,11 @@
     border: 1px solid var(--card-2);
     border-radius:.75rem;
   }
-  .dark .chip{ background:var(--card-2); border-color:rgba(0,75,135,.35); }
+  .dark .chip{ background:var(--card); border-color:var(--card-2); }
 
   .list-alt li:nth-child(odd){ background: var(--card); border:1px solid var(--card-2); }
   .list-alt li:nth-child(even){ background: var(--accent-soft); border:1px solid var(--card-2); }
-  .dark .list-alt li:nth-child(even){ background: rgba(0,163,210,.22); }
+  .dark .list-alt li:nth-child(even){ background: rgba(20,184,166,.12); }
 
   .img-frame{ border-color: var(--card-2) !important; }
   .portrait{
@@ -128,8 +132,8 @@
   }
   .dark .kbd{ background:#0f1720; border-color:#1e2a36; }
 
-  .dark .leading-relaxed { color: white; }
-  .dark .heading{ color: goldenrod;}
+  .dark .leading-relaxed { color: var(--text); }
+  .dark .heading{ color: var(--primary);}
 
 </style>
 
@@ -174,7 +178,7 @@
       <h1 class="text-xl font-bold tracking-wide">Hi, I'm George</h1>
       <div class="flex items-center gap-4">
         <a href="about.html" class="hover:underline underline-offset-4 link" style="color: white !important;">Home</a>
-        <a href="#" class="hover:underline underline-offset-4 link" style="color: white !important;">About Me</a>
+        <a href="#" class="hover:underline underline-offset-4 link" style="color: white !important;">Projects &amp; Experience</a>
         <button onclick="toggleDarkMode()" class="text-sm px-3 py-1 btn btn-primary" id="Toggle">Toggle Mode</button>
       </div>
     </div>
@@ -192,259 +196,184 @@
   <main class="container mx-auto px-4 py-10">
     <section class="mb-12">
       <h2 class="text-2xl font-bold text-center heading mb-8">Featured Projects</h2>
+      <p class="text-center text-muted mb-8">Selected work across AI, cybersecurity, and full-stack development, ordered by relevance and impact.</p>
 
-      <!-- Cybersecurity Section -->
-      <div class="mb-10">
-        <h3 class="text-xl font-bold text-center heading mb-6">Cybersecurity</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-fr">
-          <!-- National Cyber League -->
-          <div class="card overflow-hidden p-2">
-            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true"
-              alt="National Cyber League" class="w-full object-contain max-h-64 cursor-pointer"
-              onclick="openModal(this.src)">
-            <div class="p-4">
-              <h3 class="text-xl font-semibold mb-3 text-primary heading">National Cyber League</h3>
-              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                During my participation in the National Cyber League, I tackled a wide range of
-                cybersecurity challenges that tested both technical skill and problem-solving ability.
-                I began with <strong>OSINT </strong>investigations uncovering publicly available
-                information. From there, I moved into <strong>cryptography</strong>, applying encryption and decryption
-                techniques to solve complex puzzles or crack encrypted passwords. I also analyzed network traffic to
-                identify anomalies
-                and potential vulnerabilities, while system enumeration exercises taught me how to detect
-                open ports, services, and exploitable configurations. Finally, I engaged in <strong> password cracking</strong>
-                , working with hashed data to retrieve flags and gain deeper insight into
-                real-world attack scenarios. Together, these experiences strengthened my ability to think
-                critically, adapt quickly, and apply<strong> red-team cybersecurity principles</strong> in practical contexts.
-              </p>
-            </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-fr mb-12">
+        <!-- 1. Humboldt Helpers -->
+        <div class="card overflow-hidden p-2">
+          <video width="320" height="240" controls class="w-full object-contain max-h-64 cursor-pointer">
+            <source src="https://github.com/GeorgeAkai/my-portfolio/blob/main/20250801_005127.mp4?raw=true">
+          </video>
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2 text-primary heading">The Humboldt Helpers</h3>
+            <p class="font-semibold mb-2">Built at Cal Poly DXHub AI Summer Camp, this solution reduced website clickrage for Humboldt University researchers by delivering faster, contextual answers through RAG on AWS.</p>
+            <p class="text-sm mb-3"><strong>Tech Stack:</strong> Streamlit, CSS, AWS Bedrock, AWS S3, Amazon Knowledge Base, RAG, Semantic Chunking, Titan V2 Embeddings, Claude Sonnet, NLP, Prompt Engineering, Guardrails, GitHub.</p>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2">
+              During the Cal Poly DXHub AI Summer Camp, my team and I developed a solution to help Humboldt University’s research department navigate their website more efficiently, addressing clickrage caused by multiple links on a single page.
+            </p>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2">
+              We designed a responsive interface using <strong>Streamlit</strong> and <strong>CSS</strong> with modern <strong>UI/UX</strong> inspired by Humboldt branding, then implemented <strong>Retrieval Augmented Generation (RAG)</strong> using <strong>Amazon Bedrock RetrieveAndGenerate</strong>.
+            </p>
+            <ul class="list-disc ml-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+              <li>Used <strong>Amazon S3 Buckets</strong>, <strong>S3 vector database</strong>, and <strong>Amazon Knowledge Base</strong> for retrieval quality and scale.</li>
+              <li>Applied <strong>Semantic Chunking</strong>, <strong>Titan V2 Embeddings</strong>, and <strong>Claude Sonnet</strong> for stronger contextual responses.</li>
+              <li>Implemented <strong>Guardrails</strong> and prompt controls to support safe, accurate, and reliable AI behavior.</li>
+              <li>Documented progress in <strong>GitHub</strong> and collaborated with students across the <strong>CSU system</strong>.</li>
+            </ul>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed mt-2">
+              I am grateful to <strong>Ryan Matteson</strong>, <strong>Nick Osterbur</strong>, <strong>Darren Kraker</strong>, and the admin team for creating a transformative camp experience.
+            </p>
           </div>
+        </div>
 
-          <!-- Google Cybersecurity Certificate -->
-          <div class="card overflow-hidden p-2">
-            <img
-              src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true"
-              alt="Google Cybersecurity Certificate" class="w-full object-contain max-h-64 cursor-pointer bg-white"
-              onclick="openModal(this.src)">
-            <div class="p-4">
-              <h3 class="text-xl font-semibold mb-3 text-primary heading">Google Cybersecurity
-              </h3>
-              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Through the Google Cybersecurity Certificate program, I built a strong foundation in
-                security principles, including the <strong>CIA triad </strong>and the <strong>NIST Cybersecurity Framework</strong>.
-                I gained hands-on experience working with Linux and SQL, while also learning SOC
-                workflows to understand how security operations are managed in real-world environments.
-                Using Wireshark, I learned to <strong>analyze network traffic </strong>and identify potential threats,
-                and with Suricata I conducted <strong>vulnerability assessments </strong>while applying risk and asset
-                management strategies. I also explored security automation by writing Python scripts
-                to streamline repetitive tasks, and studied the importance of playbooks in guiding
-                <strong>effective incident response</strong>. Beyond the technical skills, the program emphasized how
-                to make an immediate impact as a cybersecurity analyst—integrating seamlessly into a
-                team and contributing from the very first day on the job.
-              </p>
-            </div>
+        <!-- 2. Kenrish Django -->
+        <div class="card overflow-hidden p-2">
+          <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/django kenrish.png?raw=true"
+            alt="Kenrish Collection Django Version" class="w-full object-contain max-h-64 cursor-pointer"
+            onclick="openModal(this.src)">
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2 text-primary heading">Kenrish Collection Product Management: Django New and Bold Version</h3>
+            <p class="font-semibold mb-2">Rebuilt a family business storefront into a production-ready Django platform with stronger security, improved UX, and AWS-backed deployment operations.</p>
+            <p class="text-sm mb-3"><strong>Tech Stack:</strong> Django, Python, SQLite3, Bootstrap, CSS, HTML, JavaScript, AWS EC2, NGINX, Gunicorn, DevOps, Burp Suite, Threat Modeling, GitHub.</p>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-2">
+              To strengthen my <strong>full-stack Django development</strong> skills, I rebuilt my sister’s cosmetics and beauty shop web application with advanced features and improved performance.
+            </p>
+            <ul class="list-disc ml-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+              <li>Designed a responsive and accessible interface with <strong>Bootstrap</strong>, <strong>CSS</strong>, <strong>HTML</strong>, and <strong>JavaScript</strong>.</li>
+              <li>Deployed on <strong>AWS EC2</strong> using <strong>DevOps practices</strong> with <strong>NGINX</strong> and <strong>Gunicorn</strong>.</li>
+              <li>Implemented security best practices for form validation, signup/login, and admin privilege management.</li>
+              <li>Added analytics, inventory management, accounting support, access control, and a customer wishlist feature.</li>
+              <li>Ran <strong>threat modeling</strong> and <strong>Burp Suite</strong> assessments to strengthen the security posture.</li>
+            </ul>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed mt-2">
+              This project elevated business visibility while deepening my experience in secure, scalable, and user-focused web application development.
+            </p>
           </div>
+        </div>
 
-          <!-- Annual User Access Reviews -->
-          <div class="card overflow-hidden p-2">
-            <img
-              src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ChatGPT%20Image%20Jun%203%2C%202025%2C%2008_25_39%20AM.png?raw=true"
-              alt="Annual User Access Reviews" class="w-full object-contain max-h-64 cursor-pointer"
-              onclick="openModal(this.src)">
-            <div class="p-4">
-              <h3 class="text-xl font-semibold mb-3 text-primary heading">Information Security: 2025 Annual
-                User Access Review</h3>
-              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                As part of the 2025 Annual User Access Review, I managed ticket workflows in collaboration
-                with campus MPPs, ensuring clear communication from initiation through follow-up. I verified
-                that <strong>Role-Based Access Control</strong> roles were properly aligned with the permissions required for
-                different levels of data access, and carefully validated these access levels while documenting
-                all outcomes in the Configuration Management Database. To maintain compliance, I reviewed
-                employee <strong>security awareness </strong>training records provided by CSU, confirming that all training
-                was current and unexpired. For departments that successfully passed the review, I distributed
-                certification requests through Adobe Sign, streamlining the approval process. Throughout the
-                project, I relied on Excel, our ticketing system and Adobe Sign to record data and compile detailed documentation,
-                ensuring that every finding was captured accurately and that the annual review process
-                supported both security and accountability across the institution to <strong>uphold our security posture</strong>.
-              </p>
-            </div>
+        <!-- 3. NCL -->
+        <div class="card overflow-hidden p-2">
+          <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/NCL%20Cert.png?raw=true"
+            alt="National Cyber League" class="w-full object-contain max-h-64 cursor-pointer"
+            onclick="openModal(this.src)">
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2 text-primary heading">National Cyber League</h3>
+            <p class="font-semibold mb-2">Applied red-team skills in a competitive environment, strengthening my ability to investigate, analyze, and respond under pressure.</p>
+            <p class="text-sm mb-3"><strong>Tech Stack:</strong> OSINT, Cryptography, Network Analysis, System Enumeration, Password Cracking, Red-Team Techniques.</p>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              During my participation in the National Cyber League, I tackled cybersecurity challenges across <strong>OSINT</strong>, <strong>cryptography</strong>, network traffic analysis, system enumeration, and <strong>password cracking</strong>.
+              These experiences improved my ability to think critically, adapt quickly, and apply <strong>red-team cybersecurity principles</strong> in practical contexts.
+            </p>
           </div>
+        </div>
 
-          <!-- KnowledgeBase Article Review -->
-          <div class="card overflow-hidden p-2">
-            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/data_inv.png?raw=true"
-              alt="KnowledgeBase Article Review" class="w-full object-contain max-h-64 cursor-pointer"
-              onclick="openModal(this.src)">
-            <div class="p-4">
-              <h3 class="text-xl font-semibold mb-3 text-primary heading">Information Security:
-                KnowledgeBase Article Write & Review</h3>
-              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                While working in the Information Security Department, I was assigned to create a KnowledgeBase
-                article that would guide Chico State departments in preparing for the annual <strong>Sensitive Data
-                  Inventory Survey</strong>. I authored the article, which was published in the ISEC documentation on
-                the
-                school’s support page, ensuring that departments had clear instructions and resources to
-                complete the survey effectively. The article emphasized the importance of <strong>protecting Level 1
-                  data </strong>—CSU’s classification for highly sensitive information—and promoted compliance awareness
-                by explaining how the survey supported adherence to CSU policy. In doing so, I contributed to
-                broader security initiatives by providing clear documentation and communication that reinforced
-                the university’s <strong>commitment to data protection and compliance</strong>.
-              </p>
-            </div>
+        <!-- 4. Google Cybersecurity -->
+        <div class="card overflow-hidden p-2">
+          <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/google-cybersecurity-certificate.png?raw=true"
+            alt="Google Cybersecurity Certificate" class="w-full object-contain max-h-64 cursor-pointer bg-white"
+            onclick="openModal(this.src)">
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2 text-primary heading">Google Cybersecurity</h3>
+            <p class="font-semibold mb-2">Built a practical analyst foundation with hands-on SOC workflows, threat analysis, and automation skills aligned with industry frameworks.</p>
+            <p class="text-sm mb-3"><strong>Tech Stack:</strong> Linux, SQL, Wireshark, Suricata, Python, SOC Workflows, NIST Cybersecurity Framework, CIA Triad, Incident Response Playbooks.</p>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Through the Google Cybersecurity Certificate program, I built a strong foundation in the <strong>CIA triad</strong> and the <strong>NIST Cybersecurity Framework</strong>, gained hands-on experience with Linux and SQL, and practiced SOC workflows.
+              I used Wireshark for network analysis, Suricata for vulnerability assessment, and Python for automation, while learning playbook-driven <strong>incident response</strong> and day-one team readiness.
+            </p>
+          </div>
+        </div>
+
+        <!-- 5. User Access Review -->
+        <div class="card overflow-hidden p-2">
+          <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ChatGPT%20Image%20Jun%203%2C%202025%2C%2008_25_39%20AM.png?raw=true"
+            alt="Annual User Access Reviews" class="w-full object-contain max-h-64 cursor-pointer"
+            onclick="openModal(this.src)">
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2 text-primary heading">Information Security: 2025 Annual User Access Review</h3>
+            <p class="font-semibold mb-2">Improved institutional accountability by coordinating access review workflows, validating RBAC controls, and ensuring compliance documentation was complete and audit-ready.</p>
+            <p class="text-sm mb-3"><strong>Tech Stack:</strong> RBAC, CMDB, Excel, Ticketing System, Adobe Sign, Compliance Documentation, Security Awareness Validation.</p>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              I managed ticket workflows with campus MPPs, validated <strong>Role-Based Access Control</strong> alignment, documented outcomes in the CMDB, and reviewed CSU security awareness training records for currency.
+              For departments that passed, I distributed Adobe Sign certifications and compiled detailed documentation to uphold institutional security posture and accountability.
+            </p>
+          </div>
+        </div>
+
+        <!-- 6. KnowledgeBase -->
+        <div class="card overflow-hidden p-2">
+          <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/data_inv.png?raw=true"
+            alt="KnowledgeBase Article Review" class="w-full object-contain max-h-64 cursor-pointer"
+            onclick="openModal(this.src)">
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2 text-primary heading">Information Security: KnowledgeBase Article Write & Review</h3>
+            <p class="font-semibold mb-2">Produced published guidance that helped departments complete the Sensitive Data Inventory Survey with stronger compliance awareness and clearer execution.</p>
+            <p class="text-sm mb-3"><strong>Tech Stack:</strong> KnowledgeBase Documentation, Compliance Communication, Sensitive Data Inventory Survey, CSU Policy Alignment.</p>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              In the Information Security Department, I authored a KnowledgeBase article for Chico State departments preparing for the annual <strong>Sensitive Data Inventory Survey</strong>.
+              The article was published in ISEC documentation on the school support page and emphasized protection of <strong>Level 1 data</strong>, reinforcing CSU policy compliance and the university’s commitment to data protection.
+            </p>
+          </div>
+        </div>
+
+        <!-- 7. Chess App -->
+        <div class="card overflow-hidden p-2">
+          <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/chess.png?raw=true"
+            alt="Chess Javascript App" class="w-full object-contain max-h-64 cursor-pointer"
+            onclick="openModal(this.src)">
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2 text-primary heading">Chess Javascript App</h3>
+            <p class="font-semibold mb-2">Delivered a collaborative full-stack class project that connected dynamic frontend interactions with Django backend logic in a secure, version-controlled workflow.</p>
+            <p class="text-sm mb-3"><strong>Tech Stack:</strong> Django, SQLite3, Bootstrap, CSS, HTML, JavaScript, JQuery, GitHub, Form Validation, Authentication.</p>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              For a midterm software development project, my team and I built a functional chess board with Django backend requests and responsive frontend templates.
+            </p>
+            <ul class="list-disc ml-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+              <li>Implemented Django <strong>models</strong>, <strong>views</strong>, and <strong>URLs</strong> with SQLite3 to render game behavior.</li>
+              <li>Connected JavaScript-driven piece movement with backend handling for dynamic interaction.</li>
+              <li>Applied security best practices for form validation, signup, login, and logout.</li>
+              <li>Maintained version control in <strong>GitHub</strong> to support collaboration and maintainability.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 8. Node.js Early Version -->
+        <div class="card overflow-hidden p-2">
+          <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true"
+            alt="Kenrish Collection Website" class="w-full object-contain max-h-64 cursor-pointer"
+            onclick="openModal(this.src)">
+          <div class="p-4">
+            <h3 class="text-xl font-semibold mb-2 text-primary heading">Kenrish Collection Website: Node.js Early Version</h3>
+            <p class="font-semibold mb-2">Launched an early online storefront that increased product visibility for a cosmetics business while establishing secure and mobile-friendly foundations.</p>
+            <p class="text-sm mb-3"><strong>Tech Stack:</strong> Node.js, Express.js, HTML, CSS, Bootstrap, Responsive UI/UX, Password Encryption.</p>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              I built this application for my sister’s cosmetics and beauty shop to solve visibility challenges and provide stronger online presence across mobile and desktop.
+              Using a responsive, mobile-first design and Node.js/Express backend, I created a secure and intuitive storefront with password encryption and clear product presentation.
+            </p>
           </div>
         </div>
       </div>
 
-
-
-      <!-- Full Stack Web Section -->
-      <div class="mb-10">
-        <h3 class="text-xl font-bold text-center heading mb-6">Full Stack Web Application Dev
-        </h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-fr">
-          <div class="card overflow-hidden p-2">
-            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/ken.png?raw=true"
-              alt="Kenrish Collection Website" class="w-full object-contain max-h-64 cursor-pointer"
-              onclick="openModal(this.src)">
-            <div class="p-4">
-              <h3 class="text-xl font-semibold mb-3 text-primary heading">Kenrish Collection Website:
-                Node.js Early Version</h3>
-              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                For this project, I set out to build a web application for my sister’s cosmetics and beauty shop,
-                aiming to <strong>solve the challenge of visibility</strong> and give her business a stronger online
-                presence.
-                The goal was to make her products and services easily accessible to customers through both mobile
-                devices and computers. I designed the site with a responsive, mobile-first approach using HTML,
-                CSS, and Bootstrap, with a <strong>Node.js and Express.js backend</strong>, ensuring that the layout
-                adapted seamlessly across different screen sizes.
-                To enhance the user experience, I implemented a modern UI/UX with a custom color palette and
-                smooth navigation, creating an inviting and intuitive interface. The platform showcased her
-                offerings clearly, while also <strong>incorporating security measures</strong> such as password
-                encryption to
-                protect user accounts. This early Node.js version of the Kenrish Collection website laid the
-                foundation for a secure, user-friendly digital storefront that brought her business into the
-                spotlight.
-              </p>
-
-            </div>
-          </div>
-
-          <div class="card overflow-hidden p-2">
-            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/chess.png?raw=true"
-              alt="Chess Javascript App" class="w-full object-contain max-h-64 cursor-pointer"
-              onclick="openModal(this.src)">
-            <div class="p-4">
-              <h3 class="text-xl font-semibold mb-3 text-primary heading">Chess Javascript App</h3>
-              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                As part of a software development class midterm project, my team and I set out to build a
-                fully functional chess game board using <strong>Django</strong>. The goal was to explore how
-                Django handles <strong>backend requests</strong> compared to other stacks that rely
-                more heavily on client-side rendering. On the frontend, we designed templates with
-                <strong>Bootstrap</strong>, <strong>CSS</strong>, <strong>HTML</strong>, <strong>JavaScript</strong>,
-                and <strong>JQuery</strong>, ensuring a <strong>responsive</strong> and visually appealing interface.
-                The backend was powered by Django and a SQLite3 database, where we
-                implemented <strong>models</strong>, <strong>views</strong>, and <strong>URLs</strong> to render the
-                board
-                accurately. These models provided the foundation of the project, while the
-                <strong>views</strong> acted as handlers that connected templates and URLs seamlessly. Movement of chess
-                pieces was achieved through a combination of JavaScript and Django backend requests,
-                allowing for dynamic interaction across the board. To safeguard user accounts, we applied
-                <strong>security best practices</strong> for <strong>form validation</strong>, <strong>signup</strong>,
-                <strong>login</strong>, and <strong>logout</strong> functionality. Finally, we documented our progress
-                and
-                maintained <strong>version control using GitHub</strong>, reinforcing good development practices.
-                This project was both challenging and rewarding, offering hands-on experience in blending
-                frontend design with backend logic while building something fun and interactive.
-              </p>
-
-            </div>
-          </div>
-
-          <!-- Django Kenrish Collection-->
-          <div class="card overflow-hidden p-2">
-            <img src="https://github.com/GeorgeAkai/my-portfolio/blob/main/django kenrish.png?raw=true"
-              alt="Chess Javascript App" class="w-full object-contain max-h-64 cursor-pointer"
-              onclick="openModal(this.src)">
-            <div class="p-4">
-              <h3 class="text-xl font-semibold mb-3 text-primary heading">Kenrish Collection Product
-                Management: Django New and Bold Version</h3>
-              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                To strengthen my <strong>full-stack Django development</strong> skills, I rebuilt my sister’s cosmetics
-                and beauty shop web application with a bold new version that introduced advanced features and improved
-                performance. On the frontend, I designed a responsive interface using <strong>Bootstrap</strong>,
-                <strong>CSS</strong>, <strong>HTML</strong>, and <strong>JavaScript</strong>, ensuring accessibility and
-                smooth navigation. The backend was powered by Django Python and a
-                SQLite3 Database, deployed on <strong>AWS EC2</strong> with <strong>DevOps practices</strong>
-                that included configuring an <strong>NGINX web server</strong> and Gunicorn service for
-                production readiness. Security was a priority throughout the project, with best practices
-                implemented for user and form validation, account signup, and login, as well as admin privileges
-                management.
-              </p>
-              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Beyond the core functionality, I added insightful <strong>analytics</strong> for administrative users,
-                supporting <strong>inventory management</strong>, <strong>accounting</strong>, and <strong>access
-                  control</strong>.
-                To enhance <strong>User Experience (UX)</strong>, I introduced a <strong>Wishlist feature</strong> that
-                allows
-                customers to save their favorite products, while refining the User Interface (UI) to be intuitive
-                and accessible. Development practices were documented and versioned through <strong>GitHub</strong>,
-                reinforcing
-                collaboration and maintainability. Finally, I conducted a <strong>threat modeling exercise</strong> and
-                used
-                <strong>Burp Suite</strong> to assess vulnerabilities, strengthening the application’s security posture
-                and ensuring
-                both user accounts and administrative pages remained protected. This project not only elevated the
-                business’s online
-                presence but also deepened my experience in secure, scalable, and user-focused web application
-                development.
-              </p>
-            </div>
-          </div>
+      <!-- Cybersecurity Projects -->
+      <div class="mb-12">
+        <h3 class="text-xl font-bold text-center heading mb-4">Cybersecurity Projects</h3>
+        <div class="band rounded-xl p-4 text-center text-sm">
+          National Cyber League, Google Cybersecurity, Information Security: 2025 Annual User Access Review, and Information Security: KnowledgeBase Article Write &amp; Review.
         </div>
       </div>
 
-      <!-- Full Stack AI Section -->
-      <div class="mb-10">
-        <h3 class="text-xl font-bold text-center heading mb-6 heading">Full Stack AI App Development
-        </h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-fr">
-          <div class="card overflow-hidden p-2">
-            <video width="320" height="240" controls class="w-full object-contain max-h-64 cursor-pointer">
-              <source src="https://github.com/GeorgeAkai/my-portfolio/blob/main/20250801_005127.mp4?raw=true">
-            </video>
-            <div class="p-4">
-              <h3 class="text-xl font-semibold mb-3 text-primary heading">The Humboldt Helpers</h3>
-              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                <strong>During the Cal Poly DXHub AI Summer Camp</strong>, my team and I developed a solution to help
-                Humboldt University’s research department navigate their website more efficiently, addressing issues
-                of clickrage caused by multiple links on a single page. We designed a responsive interface using
-                <strong>Streamlit</strong> and <strong>CSS</strong>, paired with a modern <strong>UI/UX</strong> that
-                incorporated custom colors inspired by the Humboldt University website.
-              </p>
-              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                To enhance functionality, we implemented <strong>Retrieval Augmented Generation (RAG)</strong> for
-                dynamic content generation and leveraged <strong>Amazon Bedrock</strong> for its
-                <strong>RetrieveAndGenerate</strong> feature. Data was stored in <strong>Amazon S3 Buckets</strong>
-                and indexed with an <strong>S3 vector database</strong>, while <strong>Amazon Knowledge Base</strong>
-                features and a <strong>Semantic Chunking Strategy</strong> improved information retrieval and
-                contextual understanding. For advanced <strong>Natural Language Processing (NLP)</strong>, we used
-                <strong>Titan V2 Embeddings</strong> and <strong>Claude Sonnet</strong>, supported by
-                <strong>System Prompt Engineering</strong> to optimize AI model outputs. For security, we implemented
-                <strong>Guardrails </strong>
-                to monitor and control AI behavior, ensuring safe, accurate and reliable interactions.
-              </p>
-              <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-                Throughout the project, we documented our progress in <strong>GitHub</strong>, ensuring proper
-                version control and adherence to good development practices. Greatest of all we experienced was the
-                privilege of meeting
-                and collaborating with excellent students from across the <strong>CSU system</strong>, each bringing
-                unique professional backgrounds. Together, we built powerful AI solutions that addressed real-world
-                problems. Huge thanks to <strong>Ryan Matteson</strong>, <strong>Nick Osterbur</strong>,
-                <strong>Darren Kraker</strong>, and all the other admins for creating such a transformative summer camp
-                that made a lasting impact on everyone who participated.
-              </p>
-            </div>
-          </div>
+      <!-- Full-Stack Development Projects -->
+      <div class="mb-12">
+        <h3 class="text-xl font-bold text-center heading mb-4">Full-Stack Development Projects</h3>
+        <div class="band rounded-xl p-4 text-center text-sm">
+          Kenrish Collection Product Management: Django New and Bold Version, Chess Javascript App, and Kenrish Collection Website: Node.js Early Version.
+        </div>
+      </div>
+
+      <!-- AI/ML Projects -->
+      <div class="mb-12">
+        <h3 class="text-xl font-bold text-center heading mb-4">AI/ML Projects</h3>
+        <div class="band rounded-xl p-4 text-center text-sm">
+          The Humboldt Helpers (RAG + Amazon Bedrock + AWS Knowledge Base + Semantic Chunking + Guardrails).
         </div>
       </div>
 
