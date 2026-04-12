@@ -1,30 +1,29 @@
 /**
- * Private analytics UI (analytics.html only). Requires correct passcode in window.__ANALYTICS_SECRET__.
+ * Private analytics UI (analytics.html only). Gate uses window.__ANALYTICS_SECRET_SHA256__
+ * (lowercase hex SHA-256 of the UTF-8 passcode), not the plaintext secret.
  */
 (function () {
   "use strict";
 
-  var FEEDBACK_KEY = "portfolio_feedback_v1";
+  function bufToHex(buf) {
+    var bytes = new Uint8Array(buf);
+    var hex = "";
+    for (var i = 0; i < bytes.length; i++) {
+      hex += ("0" + bytes[i].toString(16)).slice(-2);
+    }
+    return hex;
+  }
+
+  function sha256Utf8(str) {
+    if (!window.crypto || !window.crypto.subtle) {
+      return Promise.reject(new Error("Web Crypto unavailable"));
+    }
+    var enc = new TextEncoder();
+    return window.crypto.subtle.digest("SHA-256", enc.encode(str)).then(bufToHex);
+  }
 
   function $(id) {
     return document.getElementById(id);
-  }
-
-  function loadFeedback() {
-    try {
-      var raw = localStorage.getItem(FEEDBACK_KEY);
-      if (!raw) return { likeCount: 0, comments: [] };
-      var data = JSON.parse(raw);
-      if (!data || typeof data !== "object") return { likeCount: 0, comments: [] };
-      var likeCount = typeof data.likeCount === "number" ? data.likeCount : 0;
-      if (data.liked === true && likeCount < 1) likeCount = 1;
-      return {
-        likeCount: Math.max(0, likeCount),
-        comments: Array.isArray(data.comments) ? data.comments : [],
-      };
-    } catch (e) {
-      return { likeCount: 0, comments: [] };
-    }
   }
 
   function fmtTs(ts) {
@@ -66,11 +65,8 @@
   function render() {
     var data = window.SiteAnalytics ? window.SiteAnalytics.load() : { events: [] };
     var events = data.events || [];
-    var feedback = loadFeedback();
 
     $("stat-views").textContent = String(events.length);
-    $("stat-likes").textContent = String(feedback.likeCount);
-    $("stat-comments").textContent = String(feedback.comments.length);
 
     var sids = {};
     events.forEach(function (e) {
@@ -146,47 +142,30 @@
       });
       rtbody.appendChild(tr);
     });
-
-    var cwrap = $("comments-preview");
-    cwrap.innerHTML = "";
-    feedback.comments.slice(-15).reverse().forEach(function (c) {
-      var div = document.createElement("div");
-      div.className = "analytics-comment-preview";
-      var meta = document.createElement("div");
-      meta.className = "analytics-comment-meta";
-      meta.textContent = (c.name || "Anonymous") + " · " + (c.ts ? fmtTs(c.ts) : "");
-      var body = document.createElement("div");
-      body.className = "analytics-comment-body";
-      body.textContent = c.text || "";
-      div.appendChild(meta);
-      div.appendChild(body);
-      cwrap.appendChild(div);
-    });
-    if (feedback.comments.length === 0) {
-      var p = document.createElement("p");
-      p.className = "u-muted text-sm";
-      p.textContent = "No comments in local storage.";
-      cwrap.appendChild(p);
-    }
   }
 
   function initGate() {
-    var secret =
-      typeof window !== "undefined" && window.__ANALYTICS_SECRET__ !== undefined
-        ? String(window.__ANALYTICS_SECRET__)
+    var expectedHash =
+      typeof window !== "undefined" && window.__ANALYTICS_SECRET_SHA256__ !== undefined
+        ? String(window.__ANALYTICS_SECRET_SHA256__)
+            .trim()
+            .toLowerCase()
         : "";
     var form = $("analytics-login-form");
     var err = $("analytics-login-error");
 
     try {
-      if (sessionStorage.getItem("analytics_unlocked") === "1" && secret) {
+      if (sessionStorage.getItem("analytics_unlocked") === "1" && expectedHash) {
         showApp();
         return;
       }
     } catch (e) {}
 
-    if (!secret) {
-      if (err) err.textContent = "Set window.__ANALYTICS_SECRET__ in analytics.html before using this page.";
+    if (!expectedHash) {
+      if (err) {
+        err.textContent =
+          "Set window.__ANALYTICS_SECRET_SHA256__ in analytics.html (hex SHA-256 of your passcode) before using this page.";
+      }
       return;
     }
 
@@ -197,12 +176,18 @@
       err.textContent = "";
       var input = $("analytics-pass");
       var val = input ? input.value : "";
-      if (val === secret) {
-        input.value = "";
-        showApp();
-      } else {
-        err.textContent = "Incorrect passcode.";
-      }
+      sha256Utf8(val)
+        .then(function (hex) {
+          if (hex.toLowerCase() === expectedHash) {
+            if (input) input.value = "";
+            showApp();
+          } else {
+            err.textContent = "Incorrect passcode.";
+          }
+        })
+        .catch(function () {
+          err.textContent = "Could not verify passcode (Web Crypto required).";
+        });
     });
   }
 

@@ -19,9 +19,10 @@
       }
     })();
   </script>
-  <!-- Set your passcode here before deploying. Do not link this page from the public site. -->
+  <!-- Passcode gate: SHA-256 (hex) below — keep in sync with ANALYTICS_SECRET_SHA256 in .env. Regenerate when you change the passcode. Do not link this page from the public site. -->
   <script>
-    window.__ANALYTICS_SECRET__ = "8122001";
+    window.__ANALYTICS_SECRET_SHA256__ =
+      "4eaa05818f35c82f6ec03e722fe6f604470e9490ab701bda2993ed36e258f3a0";
   </script>
 </head>
 <body class="portfolio-body min-h-screen">
@@ -29,7 +30,7 @@
     <div class="site-nav-inner">
       <span class="site-brand analytics-private-brand">Private analytics</span>
       <nav class="site-nav-links" aria-label="Analytics">
-        <a href="index.original.html">Back to portfolio</a>
+        <a href="projects.html">Back to portfolio</a>
         <button type="button" class="btn-theme" onclick="document.documentElement.classList.toggle('dark'); localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');">Theme</button>
       </nav>
     </div>
@@ -38,12 +39,12 @@
   <main class="content-wrap analytics-main">
     <div id="analytics-gate" class="analytics-gate academic-card">
       <h1 class="text-xl font-heading mb-2">Sign in</h1>
-      <p class="text-sm u-muted mb-4">This page is not listed in the public navigation. Enter the passcode you configured in <code class="text-xs">analytics.html</code>.</p>
+      <p class="text-sm u-muted mb-4">This page is not listed in the public navigation. Enter your passcode.</p>
       <form id="analytics-login-form" class="analytics-login-form" autocomplete="off">
-        <label for="analytics-pass" class="portfolio-feedback__label">Passcode</label>
-        <input type="password" id="analytics-pass" class="portfolio-feedback__input" required placeholder="Passcode" />
-        <button type="submit" class="portfolio-feedback__submit">Unlock dashboard</button>
-        <p id="analytics-login-error" class="portfolio-feedback__status text-red-600 dark:text-red-400" role="alert"></p>
+        <label for="analytics-pass" class="analytics-form__label">Passcode</label>
+        <input type="password" id="analytics-pass" class="analytics-form__input" required placeholder="Passcode" />
+        <button type="submit" class="analytics-form__submit">Unlock dashboard</button>
+        <p id="analytics-login-error" class="analytics-form__status text-red-600 dark:text-red-400" role="alert"></p>
       </form>
     </div>
 
@@ -51,7 +52,7 @@
       <p class="section-label">Owner</p>
       <h1 class="section-title analytics-page-title">Portfolio analytics</h1>
       <p class="text-sm u-muted mb-6 max-w-3xl">
-        Data below is read from this browser&apos;s <strong>localStorage</strong> (page views and session IDs) and the same storage used for public likes and comments. It is <strong>not</strong> a global visitor count across all users unless you add a backend ingest URL (see <code class="text-xs">site-analytics.js</code>). Use export to merge logs from another device.
+        Data below is read from this browser&apos;s <strong>localStorage</strong> (page views and session IDs). It is <strong>not</strong> a global visitor count across all users unless you add a backend ingest URL (see <code class="text-xs">site-analytics.js</code>). Use export to merge logs from another device.
       </p>
 
       <div class="analytics-stats-row">
@@ -62,14 +63,6 @@
         <div class="analytics-stat academic-card">
           <p class="analytics-stat__label">Sessions (unique IDs in log)</p>
           <p id="stat-sessions" class="analytics-stat__value">0</p>
-        </div>
-        <div class="analytics-stat academic-card">
-          <p class="analytics-stat__label">Likes (feedback storage)</p>
-          <p id="stat-likes" class="analytics-stat__value">0</p>
-        </div>
-        <div class="analytics-stat academic-card">
-          <p class="analytics-stat__label">Comments</p>
-          <p id="stat-comments" class="analytics-stat__value">0</p>
         </div>
       </div>
 
@@ -103,18 +96,15 @@
         </table>
       </div>
 
-      <h2 class="analytics-subheading font-heading">Recent comments (preview)</h2>
-      <div id="comments-preview" class="analytics-comments-wrap academic-card"></div>
-
       <h2 class="analytics-subheading font-heading">Export / import</h2>
       <div class="academic-card analytics-io">
         <p class="text-sm u-muted mb-3">Copy JSON for backup. Paste merged JSON from another browser and import to combine visit logs.</p>
         <textarea id="analytics-import-export" class="analytics-io-textarea" rows="6" placeholder="{}"></textarea>
         <div class="analytics-io-buttons">
-          <button type="button" id="btn-export" class="portfolio-feedback__submit">Copy log to clipboard</button>
+          <button type="button" id="btn-export" class="analytics-form__submit">Copy log to clipboard</button>
           <button type="button" id="btn-import" class="btn-outline-academic analytics-io-secondary">Merge import</button>
         </div>
-        <p id="analytics-io-status" class="portfolio-feedback__status u-muted" role="status"></p>
+        <p id="analytics-io-status" class="analytics-form__status u-muted" role="status"></p>
       </div>
     </div>
   </main>

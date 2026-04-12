@@ -684,6 +684,27 @@ html.dark .homelab-panel__viz {
   max-width: 12rem;
 }
 
+.homelab-panel__viz--screenshot {
+  height: auto;
+  min-height: 0;
+  padding: 0 0 0.35rem;
+  align-items: stretch;
+}
+
+.homelab-panel__screenshot {
+  display: block;
+  width: 100%;
+  height: 5.25rem;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 4px;
+  border: 1px solid rgba(45, 108, 223, 0.12);
+}
+
+html.dark .homelab-panel__screenshot {
+  border-color: rgba(59, 130, 246, 0.15);
+}
+
 .homelab-bar {
   flex: 1;
   min-width: 4px;
@@ -1046,82 +1067,15 @@ html.dark .cert-pdf-link {
   text-wrap: balance;
 }
 
-/* Portfolio feedback (likes + comments; client-side storage) */
-.portfolio-feedback__card {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.portfolio-feedback__like-row {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.portfolio-feedback__like-hint {
-  font-size: 0.8125rem;
-  margin: 0;
-}
-
-.portfolio-feedback__like-num {
-  font-weight: 800;
-  min-width: 1.25rem;
-  text-align: center;
-}
-
-.btn-portfolio-like {
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
-  min-height: var(--tap-min);
-  padding: 0.45rem 1.1rem;
-  border-radius: 9999px;
-  border: 2px solid var(--border);
-  background: var(--bg-page);
-  color: var(--text);
-  cursor: pointer;
-  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
-}
-
-.btn-portfolio-like:hover {
-  border-color: var(--accent);
-}
-
-.btn-portfolio-like:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-.btn-portfolio-like.is-liked {
-  border-color: var(--accent);
-  background: rgba(45, 108, 223, 0.12);
-  color: var(--accent);
-}
-
-html.dark .btn-portfolio-like.is-liked {
-  background: rgba(59, 130, 246, 0.18);
-}
-
-.portfolio-feedback__form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-.portfolio-feedback__label {
+/* Private analytics page — form controls (analytics.html) */
+.analytics-form__label {
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--text);
 }
 
-.portfolio-feedback__input,
-.portfolio-feedback__textarea {
+.analytics-form__input,
+.analytics-form__textarea {
   font-family: var(--font-body);
   font-size: 0.875rem;
   width: 100%;
@@ -1132,18 +1086,18 @@ html.dark .btn-portfolio-like.is-liked {
   color: var(--text);
 }
 
-.portfolio-feedback__textarea {
+.analytics-form__textarea {
   min-height: 6rem;
   resize: vertical;
 }
 
-.portfolio-feedback__input:focus,
-.portfolio-feedback__textarea:focus {
+.analytics-form__input:focus,
+.analytics-form__textarea:focus {
   outline: 2px solid var(--accent);
   outline-offset: 1px;
 }
 
-.portfolio-feedback__submit {
+.analytics-form__submit {
   font-family: var(--font-body);
   font-size: 0.875rem;
   font-weight: 700;
@@ -1157,58 +1111,23 @@ html.dark .btn-portfolio-like.is-liked {
   cursor: pointer;
 }
 
-html.dark .portfolio-feedback__submit {
+html.dark .analytics-form__submit {
   background: #3b82f6;
 }
 
-.portfolio-feedback__submit:hover {
+.analytics-form__submit:hover {
   opacity: 0.92;
 }
 
-.portfolio-feedback__submit:focus-visible {
+.analytics-form__submit:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
-.portfolio-feedback__status {
+.analytics-form__status {
   font-size: 0.8125rem;
   margin: 0;
   min-height: 1.25rem;
-}
-
-.portfolio-feedback__comments {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.portfolio-feedback__comment {
-  padding: 0.75rem 0.9rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: var(--bg-page);
-}
-
-.portfolio-feedback__comment-meta {
-  font-size: 0.75rem;
-  color: var(--muted);
-  margin-bottom: 0.35rem;
-}
-
-.portfolio-feedback__comment-body {
-  font-size: 0.875rem;
-  color: var(--text);
-  white-space: pre-wrap;
-  word-break: break-word;
-}
-
-.portfolio-feedback__empty {
-  font-size: 0.8125rem;
-  color: var(--muted);
-  margin: 0;
 }
 
 /* Private analytics page (analytics.html) */
@@ -1255,7 +1174,7 @@ html.dark .portfolio-feedback__submit {
 
 @media (min-width: 1024px) {
   .analytics-stats-row {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1321,35 +1240,6 @@ html.dark .analytics-stat__value {
 
 .analytics-table tbody tr:last-child td {
   border-bottom: none;
-}
-
-.analytics-comments-wrap {
-  padding: 1rem 1.1rem;
-}
-
-.analytics-comment-preview {
-  padding-bottom: 0.75rem;
-  margin-bottom: 0.75rem;
-  border-bottom: 1px solid var(--border);
-}
-
-.analytics-comment-preview:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.analytics-comment-meta {
-  font-size: 0.75rem;
-  color: var(--muted);
-  margin-bottom: 0.25rem;
-}
-
-.analytics-comment-body {
-  font-size: 0.875rem;
-  color: var(--text);
-  white-space: pre-wrap;
-  word-break: break-word;
 }
 
 .analytics-io {
