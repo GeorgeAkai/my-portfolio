@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="George Akai's project portfolio: AI (AWS Bedrock RAG, forensics platform), cybersecurity (CompTIA Security+, NCL, Qualys VMDR, InfoSec ops), and full-stack engineering (Django, React, Node.js). B.S. CIS &amp; Cybersecurity, Chico State 2026." />
+  <meta property="og:title" content="George Akai | Projects &amp; Experience" />
+  <meta property="og:description" content="Applied AI, cybersecurity, and full-stack software engineering projects. CompTIA Security+, AWS, Django, React. Chico State 2026." />
+  <meta property="og:type" content="website" />
   <title>George Akai | Projects &amp; Experience</title>
   <link rel="icon" href="assets/images/9004738_lock_security_padlock_secure_icon.png" type="image/png" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
@@ -45,6 +49,7 @@
       <nav id="site-nav-menu" class="site-nav-links" aria-label="Primary">
         <a href="about.html">About</a>
         <a href="projects.html">Projects &amp; Experience</a>
+        <a href="https://about-george-akai.vercel.app" target="_blank" rel="noopener noreferrer">Personal Brand</a>
         <button type="button" class="btn-theme" onclick="toggleDarkMode()">Theme</button>
       </nav>
     </div>
@@ -56,13 +61,15 @@
         <img src="assets/images/20250807-GeorgeAkai-JH-024.JPG" alt="George Akai" class="site-header-photo" width="256" height="256" />
         <div>
           <h1 class="page-title-h1 font-heading mb-1">George Akai</h1>
-          <p class="site-header-titles">Aspiring Cybersecurity Analyst · Full Stack Software Developer · AI Solutions Developer</p>
-          <p class="site-header-uni">Portfolio: AI Solutions, Cybersecurity, and Full-stack development projects, Experience, and Credentials</p>
-          <p class="site-header-uni">California State University, Chico. Graduating May 2026</p>
+          <p class="site-header-titles">Cybersecurity Analyst &middot; Software Developer &middot; AI Solutions Developer</p>
+          <p class="site-header-uni">AI Solutions &nbsp;&middot;&nbsp; Cybersecurity &nbsp;&middot;&nbsp; Full-Stack Engineering &nbsp;&middot;&nbsp; Certifications</p>
+          <p class="site-header-uni">B.S. Computer Information Systems &amp; Cybersecurity &nbsp;&middot;&nbsp; California State University, Chico &nbsp;&middot;&nbsp; 2026</p>
           <div class="site-header-links">
+            <a class="btn-outline-academic" href="https://about-george-akai.vercel.app" target="_blank" rel="noopener noreferrer">Personal Brand Page</a>
             <a class="btn-outline-academic" href="https://github.com/GeorgeAkai" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a class="btn-outline-academic" href="https://www.linkedin.com/in/george-akai-91a41022b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a class="btn-outline-academic" href="assets/docs/GeorgeNResume.pdf" download="GeorgeNResume.pdf"> Download Resume (PDF)</a>
+            <a class="btn-outline-academic" href="mailto:georgeakaing@gmail.com">Email</a>
+            <a class="btn-outline-academic" href="assets/docs/GeorgeNResume.pdf" download="GeorgeNResume.pdf">Resume (PDF)</a>
           </div>
         </div>
       </div>
@@ -70,29 +77,31 @@
   </div>
 
   <main class="content-wrap">
-    <p class="text-sm max-w-3xl mb-8 u-muted intro-lede">
-      This page documents applied AI work, cybersecurity practice, software engineering projects, technical writing, and professional certifications, including <strong>CompTIA Security+ (ce)</strong> as a core industry credential alongside hands-on practice (NCL, Google Cybersecurity, and campus security operations).
-      Entries are ordered by academic and professional strength within each section.
+    <p class="text-sm max-w-3xl mb-8 u-muted intro-lede no-rm">
+      This page documents applied AI, cybersecurity, and software engineering work — from production-deployed full-stack applications and hands-on InfoSec operations to competitive cybersecurity and AI development on AWS.
+      Credentials include <strong>CompTIA Security+ (ce)</strong>, Qualys VMDR, and multiple AWS security and AI certifications.
+      Entries are ordered by impact within each section.
     </p>
 
     <section class="section-block" aria-labelledby="homelab-heading" id="home-lab">
       <p class="section-label">Lab</p>
       <h2 id="homelab-heading" class="section-title">Home Lab Setup</h2>
       <p class="text-sm mb-6 u-muted max-w-3xl">
-        Tools and platforms I use in a local lab for blue-team practice, network visibility, forensics, and vulnerability assessment. Layout below is a simple dashboard-style overview (illustrative, not live telemetry).
+        Tools and platforms I use in a local lab for blue-team practice, network visibility, forensics, and vulnerability assessment. Layout below is a simple dashboard-style overview.
       </p>
 
       <div class="homelab-dashboard" role="region" aria-label="Home lab tools">
         <article class="homelab-panel">
           <div class="homelab-panel__viz homelab-panel__viz--screenshot">
             <img
-              class="homelab-panel__screenshot"
+              class="homelab-panel__screenshot cursor-pointer"
               src="assets/images/wazuh-cis-configuration-assessment.png"
               width="1024"
               height="362"
               loading="lazy"
               decoding="async"
               alt="Wazuh dashboard: CIS Microsoft Windows 11 Enterprise configuration assessment on a lab agent."
+              onclick="openModal(this.src)"
             />
           </div>
           <div class="homelab-panel__head">
@@ -105,13 +114,14 @@
         <article class="homelab-panel">
           <div class="homelab-panel__viz homelab-panel__viz--screenshot">
             <img
-              class="homelab-panel__screenshot"
+              class="homelab-panel__screenshot cursor-pointer"
               src="assets/images/sift-workstation.png"
               width="1024"
               height="395"
               loading="lazy"
               decoding="async"
               alt="SIFT Workstation desktop: terminal listing home directory with pcap and forensic reference PDFs."
+              onclick="openModal(this.src)"
             />
           </div>
           <div class="homelab-panel__head">
@@ -122,13 +132,17 @@
         </article>
 
         <article class="homelab-panel">
-          <div class="homelab-panel__viz" aria-hidden="true">
-            <span class="homelab-bar" style="height: 48%"></span>
-            <span class="homelab-bar" style="height: 72%"></span>
-            <span class="homelab-bar" style="height: 60%"></span>
-            <span class="homelab-bar" style="height: 90%"></span>
-            <span class="homelab-bar" style="height: 35%"></span>
-            <span class="homelab-bar" style="height: 78%"></span>
+          <div class="homelab-panel__viz homelab-panel__viz--screenshot">
+            <img
+              class="homelab-panel__screenshot cursor-pointer"
+              src="assets/images/sofelk.png"
+              width="1024"
+              height="362"
+              loading="lazy"
+              decoding="async"
+              alt="SOF-ELK dashboard: network forensics and log visualization."
+              onclick="openModal(this.src)"
+            />
           </div>
           <div class="homelab-panel__head">
             <span class="homelab-panel__dot"></span>
@@ -138,11 +152,17 @@
         </article>
 
         <article class="homelab-panel">
-          <div class="homelab-panel__viz" aria-hidden="true">
-            <span class="homelab-bar homelab-bar--teal" style="height: 62%"></span>
-            <span class="homelab-bar homelab-bar--teal" style="height: 92%"></span>
-            <span class="homelab-bar homelab-bar--teal" style="height: 50%"></span>
-            <span class="homelab-bar homelab-bar--teal" style="height: 76%"></span>
+          <div class="homelab-panel__viz homelab-panel__viz--screenshot">
+            <img
+              class="homelab-panel__screenshot cursor-pointer"
+              src="assets/images/suricata.png"
+              width="1024"
+              height="362"
+              loading="lazy"
+              decoding="async"
+              alt="Suricata IDS/IPS: network traffic alerts and rule triggers."
+              onclick="openModal(this.src)"
+            />
           </div>
           <div class="homelab-panel__head">
             <span class="homelab-panel__dot"></span>
@@ -235,35 +255,83 @@
           </div>
         </article>
 
-        <!-- 2. Kenrish Django -->
-        <article class="project-card-academic" id="kenrish-django">
-          <img class="project-thumb cursor-pointer" src="assets/images/django kenrish.png" alt="Kenrish Collection Django" onclick="openModal(this.src)" />
+        <!-- 2. Forensics Agent (Capstone) -->
+        <article class="project-card-academic" id="forensics-agent">
+          <img class="project-thumb cursor-pointer" src="assets/images/forensics-agent.png" alt="Forensics Agent — AI-assisted digital forensics platform" onclick="openModal(this.src)" />
           <div class="project-body">
             <div class="project-card__summary">
-              <h3 class="text-lg font-heading">Kenrish Collection Product Management: Django New and Bold Version</h3>
+              <h3 class="text-lg font-heading">Forensics Agent</h3>
               <p class="project-abstract">
-                <em>Abstract.</em> A cosmetics storefront required a more capable, secure, and observable web platform. The system was rebuilt in Django, deployed on AWS with production web serving, and assessed for vulnerabilities.
+                <em>Abstract.</em> Analysts lose time manually extracting and correlating artifacts from forensic acquisitions. This Capstone project delivers a full-stack platform that automates artifact extraction, stores parsed data in AWS S3, and deploys an AI agent with RAG to generate investigation timelines, detailed reports, and context-aware answers to analyst queries.
               </p>
               <div class="badge-row" aria-label="Tech stack">
-                <span class="tech-badge">Django</span><span class="tech-badge">Python</span><span class="tech-badge">SQLite</span><span class="tech-badge">Bootstrap</span><span class="tech-badge">AWS EC2</span><span class="tech-badge">NGINX</span><span class="tech-badge">Gunicorn</span><span class="tech-badge">Burp Suite</span><span class="tech-badge">GitHub</span>
+                <span class="tech-badge">Django REST</span><span class="tech-badge">React</span><span class="tech-badge">Vite</span><span class="tech-badge">AWS S3</span><span class="tech-badge">AWS Bedrock</span><span class="tech-badge">AI Agent</span><span class="tech-badge">RAG</span><span class="tech-badge">JWT</span>
+              </div>
+              <button type="button" class="project-card__toggle" id="forensics-agent-toggle" aria-expanded="false" aria-controls="forensics-agent-details">Read more</button>
+            </div>
+            <div class="project-card__details" id="forensics-agent-details" hidden>
+              <p class="meta-line"><strong>Role:</strong> Lead developer · <strong>Timeline:</strong> Jan 2026 – Present · <strong>Context:</strong> CIS Capstone, California State University, Chico</p>
+              <p class="project-narrative">
+                For my Computer Information Systems Capstone project, I am developing a full-stack web application designed to streamline digital forensic investigations. The platform automates the extraction and parsing of artifacts from forensic acquisitions, enabling analysts to quickly surface relevant evidence.
+              </p>
+              <p class="project-narrative">
+                Parsed data is securely stored in an <strong>AWS S3</strong> bucket and leveraged to power an <strong>AI-driven analysis agent</strong> capable of generating detailed timelines and investigative reports. The application also includes an AI chatbot that uses <strong>Retrieval-Augmented Generation (RAG)</strong> to answer analyst queries and provide context-aware insights based on the collected artifacts.
+              </p>
+              <p class="project-narrative">
+                This project integrates <strong>AWS cloud services</strong>, automation, and modern AI techniques to enhance the speed, accuracy, and accessibility of forensic analysis workflows.
+              </p>
+              <p class="key-contrib-label">Key contributions</p>
+              <ul class="list-academic">
+                <li>Automated artifact extraction and parsing from forensic acquisitions (PCAPs, registry hives).</li>
+                <li>Architected secure storage pipeline using <strong>AWS S3</strong> for parsed forensic data.</li>
+                <li>Built AI agent with <strong>RAG</strong> on <strong>AWS Bedrock</strong> for timeline generation and investigative reporting.</li>
+                <li>Implemented AI chatbot for context-aware analyst query answering from artifact corpus.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Kenrish Collection: Full-Stack IMS (React + Django) -->
+        <article class="project-card-academic" id="kenrish-django">
+          <img class="project-thumb cursor-pointer" src="assets/images/newkenrish.png" alt="Kenrish Collection full-stack IMS" onclick="openModal(this.src)" />
+          <div class="project-body">
+            <div class="project-card__summary">
+              <h3 class="text-lg font-heading">Kenrish Collection: Full-Stack IMS (React + Django)</h3>
+              <p class="project-abstract">
+                <em>Abstract.</em> Boutique retail businesses need a single platform to track inventory, record sales, and answer customer questions without manual spreadsheets. Kenrish Collection is a responsive full-stack IMS that gives store administrators real-time visibility into stock, pricing, and financials. It also includes a <strong>RAG chatbot</strong> powered by OpenRouter models to answer customer questions about products and services.
+              </p>
+              <div class="badge-row" aria-label="Tech stack">
+                <span class="tech-badge">React</span><span class="tech-badge">Django REST</span><span class="tech-badge">Python</span><span class="tech-badge">JWT</span><span class="tech-badge">RAG</span><span class="tech-badge">OpenRouter</span><span class="tech-badge">NLP</span><span class="tech-badge">Render</span><span class="tech-badge">Dark Mode</span>
+              </div>
+              <div class="badge-row mt-1">
+                <a class="tech-badge" href="https://kenrishcollection.onrender.com" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">Live site &rarr;</a>
               </div>
               <button type="button" class="project-card__toggle" id="kenrish-django-toggle" aria-expanded="false" aria-controls="kenrish-django-details">Read more</button>
             </div>
             <div class="project-card__details" id="kenrish-django-details" hidden>
-              <p class="meta-line"><strong>Role:</strong> Full-stack developer · <strong>Timeline:</strong> Ongoing project · <strong>Context:</strong> Family cosmetics and beauty business; personal portfolio</p>
+              <p class="meta-line"><strong>Role:</strong> Full-stack developer · <strong>Timeline:</strong> Ongoing · <strong>Context:</strong> Family cosmetics and beauty business · <a href="https://kenrishcollection.onrender.com" target="_blank" rel="noopener noreferrer" class="underline link-accent">kenrishcollection.onrender.com</a></p>
               <p class="project-narrative">
-                To strengthen my <strong>full-stack Django development</strong> skills, I rebuilt my sister’s cosmetics and beauty shop web application with a bold new version that introduced advanced features and improved performance. On the frontend, I designed a responsive interface using <strong>Bootstrap</strong>, <strong>CSS</strong>, <strong>HTML</strong>, and <strong>JavaScript</strong>, ensuring accessibility and smooth navigation. The backend was powered by Django Python and a SQLite3 Database, deployed on <strong>AWS EC2</strong> with <strong>DevOps practices</strong> that included configuring an <strong>NGINX web server</strong> and Gunicorn service for production readiness. Security was a priority throughout the project, with best practices implemented for user and form validation, account signup, and login, as well as admin privileges management.
+                Kenrish Collection is a responsive, full-stack <strong>Inventory Management System (IMS)</strong> designed for boutique retail businesses specializing in cosmetics, apparel, and fashion accessories. The platform streamlines back-office workflows by giving store administrators real-time visibility into stock levels, operational costs, product pricing, and financial health.
               </p>
               <p class="project-narrative">
-                Beyond the core functionality, I added insightful <strong>analytics</strong> for administrative users, supporting <strong>inventory management</strong>, <strong>accounting</strong>, and <strong>access control</strong>. To enhance <strong>User Experience (UX)</strong>, I introduced a <strong>Wishlist feature</strong> that allows customers to save their favorite products, while refining the User Interface (UI) to be intuitive and accessible. Development practices were documented and versioned through <strong>GitHub</strong>, reinforcing collaboration and maintainability. Finally, I conducted a <strong>threat modeling exercise</strong> and used <strong>Burp Suite</strong> to assess vulnerabilities, strengthening the application’s security posture and ensuring both user accounts and administrative pages remained protected. This project not only elevated the business’s online presence but also deepened my experience in secure, scalable, and user-focused web application development.
+                Core admin features include <strong>real-time inventory tracking</strong> across diverse product categories with automated low-stock warnings, a <strong>Dynamic Valuation Engine</strong> that calculates total inventory value per item based on real-time cost vs. retail pricing, and integrated <strong>stock and sales management</strong> modules for updating wholesale costs, adjusting consumer pricing, and recording transactions. A historical <strong>Ledger and Revenue Logging</strong> database is linked to point-of-sale workflows for accurate profit margin calculation and financial reporting.
+              </p>
+              <p class="project-narrative">
+                The platform includes a <strong>Retrieval-Augmented Generation (RAG) chatbot</strong> controlled by a model harness using <strong>OpenRouter</strong> models. It uses NLP to answer customer questions about services and products offered by the business. Authentication is secured via <strong>JWT tokens</strong>, and the UI supports <strong>dark and light mode</strong> with a clean, mobile-friendly tabbed dashboard built for quick navigation and rapid data entry on the retail floor.
               </p>
               <p class="key-contrib-label">Key contributions</p>
               <ul class="list-academic">
-                <li>Responsive, accessible interface with <strong>Bootstrap</strong>, <strong>CSS</strong>, <strong>HTML</strong>, and <strong>JavaScript</strong>.</li>
-                <li>Backend: Django and <strong>SQLite3</strong>; deployment on <strong>AWS EC2</strong> with <strong>DevOps</strong> practices, <strong>NGINX</strong>, and <strong>Gunicorn</strong>.</li>
-                <li>Security: validation, signup/login, admin privileges; <strong>threat modeling</strong> and <strong>Burp Suite</strong> assessment.</li>
-                <li>Features: analytics, inventory, accounting support, access control, <strong>wishlist</strong>; versioning on <strong>GitHub</strong>.</li>
+                <li>Full-stack IMS: <strong>React</strong> frontend, <strong>Django REST</strong> backend, deployed on <strong>Render</strong>.</li>
+                <li>Dynamic Valuation Engine with real-time cost vs. retail pricing and automated low-stock alerts.</li>
+                <li>RAG chatbot using <strong>OpenRouter</strong> models and a model harness for controlled NLP-driven customer Q&amp;A.</li>
+                <li>JWT-secured auth; dark/light mode; mobile-friendly tabbed admin dashboard.</li>
               </ul>
+              <p class="key-contrib-label">Screenshots</p>
+              <div class="cert-grid" style="grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 0.5rem;">
+                <img class="cursor-pointer" src="assets/images/kenrish-products-chatbot.png" alt="Kenrish Collection products page with RAG chatbot" onclick="openModal(this.src)" style="width:100%; border-radius:0.5rem; border:1px solid var(--border-color, #e5e7eb);" loading="lazy" />
+                <img class="cursor-pointer" src="assets/images/kenrish-reservations.png" alt="Kenrish Collection reservations calendar" onclick="openModal(this.src)" style="width:100%; border-radius:0.5rem; border:1px solid var(--border-color, #e5e7eb);" loading="lazy" />
+                <img class="cursor-pointer" src="assets/images/kenrish-admin-inventory.png" alt="Kenrish Collection admin inventory management" onclick="openModal(this.src)" style="width:100%; border-radius:0.5rem; border:1px solid var(--border-color, #e5e7eb);" loading="lazy" />
+              </div>
             </div>
           </div>
         </article>
@@ -314,25 +382,46 @@
           </div>
         </article>
 
-        <!-- 5. User Access Review -->
+        <!-- 5. Information Security Analyst Assistant -->
         <article class="project-card-academic" id="uar">
-          <img class="project-thumb cursor-pointer" src="assets/images/ChatGPT%20Image%20Jun%203%2C%202025%2C%2008_25_39%20AM.png" alt="User Access Review" onclick="openModal(this.src)" />
+          <img class="project-thumb cursor-pointer" src="assets/images/cves.png" alt="Information Security Analyst Assistant" onclick="openModal(this.src)" />
           <div class="project-body">
             <div class="project-card__summary">
-              <h3 class="text-lg font-heading">Information Security: 2025 Annual User Access Review</h3>
+              <h3 class="text-lg font-heading">Information Security Analyst Assistant — Chico State</h3>
               <p class="project-abstract">
-                <em>Abstract.</em> Annual access reviews require coordinated validation of roles, training compliance, and auditable records across departments. I supported ticketing, RBAC verification, and documentation for accountability.
+                <em>Abstract.</em> Enterprise security operations require coordinated vulnerability management, access control, compliance communications, and proactive threat monitoring. I supported the full InfoSec operations cycle across the campus — from Qualys VMDR reporting and RBAC access reviews to DMARC compliance and CISA advisory monitoring — improving vulnerability remediation efficiency by 15%.
               </p>
               <div class="badge-row" aria-label="Tech stack">
-                <span class="tech-badge">RBAC</span><span class="tech-badge">CMDB</span><span class="tech-badge">Excel</span><span class="tech-badge">Ticketing</span><span class="tech-badge">Adobe Sign</span>
+                <span class="tech-badge">Qualys VMDR</span><span class="tech-badge">RBAC</span><span class="tech-badge">CMDB</span><span class="tech-badge">CISA / CVEs</span><span class="tech-badge">DMARC</span><span class="tech-badge">Adobe Sign</span><span class="tech-badge">CSU Learn</span><span class="tech-badge">Excel</span>
               </div>
               <button type="button" class="project-card__toggle" id="uar-toggle" aria-expanded="false" aria-controls="uar-details">Read more</button>
             </div>
             <div class="project-card__details" id="uar-details" hidden>
-              <p class="meta-line"><strong>Role:</strong> Security operations support · <strong>Timeline:</strong> 2025 · <strong>Context:</strong> Chico State Information Security</p>
+              <p class="meta-line"><strong>Role:</strong> Information Security Analyst Assistant · <strong>Timeline:</strong> Feb–Jun 2025 · <strong>Context:</strong> Information Security Office, Chico State</p>
               <p class="project-narrative">
-                As part of the 2025 Annual User Access Review, I managed ticket workflows in collaboration with campus MPPs, ensuring clear communication from initiation through follow-up. I verified that <strong>Role-Based Access Control</strong> roles were properly aligned with the permissions required for different levels of data access, and carefully validated these access levels while documenting all outcomes in the Configuration Management Database. To maintain compliance, I reviewed employee <strong>security awareness</strong> training records provided by CSU, confirming that all training was current and unexpired. For departments that successfully passed the review, I distributed certification requests through Adobe Sign, streamlining the approval process. Throughout the project, I relied on Excel, our ticketing system and Adobe Sign to record data and compile detailed documentation, ensuring that every finding was captured accurately and that the annual review process supported both security and accountability across the institution to <strong>uphold our security posture</strong>.
+                Working in the Chico State Information Security Office, I supported a broad range of security operations under the direction of the <strong>CISSP-qualified Information Security Officer</strong> and in close collaboration with the Risk Management Officer.
               </p>
+              <p class="project-narrative">
+                For <strong>vulnerability management</strong>, I generated and analyzed <strong>Qualys VMDR</strong> vulnerability reports, tracked remediation progress, and coordinated follow-up with campus departments on patching compliance and end-of-life servers — improving team efficiency by <strong>15%</strong> and reducing outstanding high-risk vulnerabilities. I also supported incident-remediation discussions and documented next steps in the <strong>CMDB</strong>, enabling faster resolution of campus security concerns by 15%.
+              </p>
+              <p class="project-narrative">
+                For <strong>identity and access management</strong>, I led annual user access reviews to validate <strong>RBAC</strong> permissions across campus applications and data systems in all departments, ensuring proper access control and reducing unauthorized access risk. I managed ticket workflows in collaboration with campus MPPs and distributed certification requests via <strong>Adobe Sign</strong>.
+              </p>
+              <p class="project-narrative">
+                For <strong>compliance and awareness</strong>, I authored knowledge-base and procedural documentation for the annual sensitive data inventory survey. I prepared <strong>DMARC</strong> email-conformance communications for technical, managerial, and non-technical stakeholders, and tracked security-awareness training completion via <strong>CSU Learn</strong>, coordinating follow-up with users and improving campus-wide participation.
+              </p>
+              <p class="project-narrative">
+                For <strong>threat intelligence</strong>, I monitored <strong>CISA advisories</strong>, CVEs, and indicators of compromise to support proactive threat detection, enabling early identification of potential threats and faster response.
+              </p>
+              <p class="key-contrib-label">Key contributions</p>
+              <ul class="list-academic">
+                <li>Qualys VMDR vulnerability reporting and remediation tracking — <strong>15% efficiency improvement</strong>.</li>
+                <li>Led RBAC user access reviews across all campus departments; documented findings in CMDB.</li>
+                <li>Authored DMARC compliance communications for technical and non-technical stakeholders.</li>
+                <li>Monitored CISA advisories, CVEs, and IOCs for proactive threat detection.</li>
+                <li>Tracked security-awareness training (CSU Learn) and coordinated follow-up, increasing participation.</li>
+                <li>Collaborated with CISSP ISO and Risk Management Officer on vulnerability exceptions and risk assessment.</li>
+              </ul>
             </div>
           </div>
         </article>
@@ -349,9 +438,8 @@
               <div class="badge-row" aria-label="Tech stack">
                 <span class="tech-badge">KnowledgeBase</span><span class="tech-badge">Compliance</span><span class="tech-badge">CSU policy</span>
               </div>
-              <button type="button" class="project-card__toggle" id="kb-toggle" aria-expanded="false" aria-controls="kb-details">Read more</button>
             </div>
-            <div class="project-card__details" id="kb-details" hidden>
+            <div class="project-card__details" id="kb-details">
               <p class="meta-line"><strong>Role:</strong> Author / technical writer · <strong>Timeline:</strong> 2025 (annual survey cycle) · <strong>Context:</strong> Chico State ISEC</p>
               <p class="project-narrative">
                 While working in the Information Security Department, I was assigned to create a KnowledgeBase article that would guide Chico State departments in preparing for the annual <strong>Sensitive Data Inventory Survey</strong>. I authored the article, which was published in the ISEC documentation on the school’s support page, ensuring that departments had clear instructions and resources to complete the survey effectively. The article emphasized the importance of <strong>protecting Level 1 data</strong> (CSU’s classification for highly sensitive information) and promoted compliance awareness by explaining how the survey supported adherence to CSU policy. In doing so, I contributed to broader security initiatives by providing clear documentation and communication that reinforced the university’s <strong>commitment to data protection and compliance</strong>.
@@ -360,7 +448,40 @@
           </div>
         </article>
 
-        <!-- 7. Chess -->
+        <!-- 7. Computer Deployment Technician -->
+        <article class="project-card-academic" id="deployment-tech">
+          <img class="project-thumb cursor-pointer" src="assets/images/deployment.jpeg" alt="Computer deployment — Windows 11 rollout" onclick="openModal(this.src)" />
+          <div class="project-body">
+            <div class="project-card__summary">
+              <h3 class="text-lg font-heading">Computer Deployment Technician — Chico State IT</h3>
+              <p class="project-abstract">
+                <em>Abstract.</em> A campus-wide PC-as-a-Service rollout required imaging, configuring, and deploying 300+ Windows 11 machines across labs and offices on a tight timeline. I managed the full workflow from ticket tracking through end-user onboarding and e-waste retirement — completing the rollout <strong>two weeks ahead of schedule</strong>.
+              </p>
+              <div class="badge-row" aria-label="Tech stack">
+                <span class="tech-badge">Windows 11</span><span class="tech-badge">MDT</span><span class="tech-badge">Team Dynamix</span><span class="tech-badge">Endpoint Management</span><span class="tech-badge">IT Support</span>
+              </div>
+              <button type="button" class="project-card__toggle" id="deployment-tech-toggle" aria-expanded="false" aria-controls="deployment-tech-details">Read more</button>
+            </div>
+            <div class="project-card__details" id="deployment-tech-details" hidden>
+              <p class="meta-line"><strong>Role:</strong> Computer Deployment Technician · <strong>Timeline:</strong> Jun–Aug 2025 · <strong>Context:</strong> IT Support Services, Chico State</p>
+              <p class="project-narrative">
+                As a Computer Deployment Technician with IT Support Services at Chico State, I was responsible for the campus <strong>PC-as-a-Service rollout</strong> — deploying, imaging, and configuring over <strong>300 Windows 11 PCs</strong> across campus labs and offices using <strong>Microsoft Deployment Toolkit (MDT)</strong>.
+              </p>
+              <p class="project-narrative">
+                I managed deployment tickets and workflow documentation in <strong>Team Dynamix</strong>, ensuring all tickets were resolved within service-level agreements. After machines were deployed and users connected to their accounts, I supported end-user needs and service delivery — improving service delivery by <strong>20%</strong>. I also followed Chico State e-waste procedures to retire legacy equipment safely, achieving full compliance with university environmental policies.
+              </p>
+              <p class="key-contrib-label">Key contributions</p>
+              <ul class="list-academic">
+                <li>Deployed, imaged, and configured <strong>300+ Windows 11 PCs</strong> using Microsoft Deployment Toolkit — <strong>two weeks ahead of schedule</strong>.</li>
+                <li>Managed deployment tickets and SLA-compliant workflow documentation in <strong>Team Dynamix</strong>.</li>
+                <li>Supported end-user onboarding and account setup, improving service delivery by <strong>20%</strong>.</li>
+                <li>Retired legacy hardware per Chico State e-waste procedures, achieving full environmental compliance.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. Chess -->
         <article class="project-card-academic" id="chess">
           <img class="project-thumb cursor-pointer" src="assets/images/chess.png" alt="Chess app" onclick="openModal(this.src)" />
           <div class="project-body">
@@ -390,7 +511,7 @@
           </div>
         </article>
 
-        <!-- 8. Node Kenrish -->
+        <!-- 10. Node Kenrish -->
         <article class="project-card-academic" id="kenrish-node">
           <img class="project-thumb cursor-pointer" src="assets/images/ken.png" alt="Kenrish Node" onclick="openModal(this.src)" />
           <div class="project-body">
@@ -425,30 +546,9 @@
         Includes ongoing work in AI-assisted forensics and the Humboldt Helpers project (also listed above under Featured work: The Humboldt Helpers).
       </p>
 
-      <div class="project-grid cols-2">
-        <article class="project-card-academic" id="forensics">
-          <img class="project-thumb cursor-pointer" src="assets/images/Correlation.png" alt="Forensics Suite" onclick="openModal(this.src)" />
-          <div class="project-body">
-            <div class="project-card__summary">
-              <h3 class="text-lg font-heading">Forensics Suite</h3>
-              <p class="project-abstract">
-                <em>Abstract.</em> Analysts lose time correlating PCAPs and registry artifacts manually. This web application ingests PCAPs and registry hives, extracts investigation-relevant signals, and uses an AI agent with RAG to draft high-level reports while preserving optional manual analysis.
-              </p>
-              <div class="badge-row" aria-label="Tech stack">
-                <span class="tech-badge">Django REST</span><span class="tech-badge">React</span><span class="tech-badge">Vite</span><span class="tech-badge">JWT</span><span class="tech-badge">AWS agents</span><span class="tech-badge">RAG</span>
-              </div>
-              <button type="button" class="project-card__toggle" id="forensics-toggle" aria-expanded="false" aria-controls="forensics-details">Read more</button>
-            </div>
-            <div class="project-card__details" id="forensics-details" hidden>
-              <p class="meta-line"><strong>Role:</strong> Lead developer (in progress) · <strong>Timeline:</strong> In progress · <strong>Context:</strong> Independent / portfolio research project</p>
-              <p class="project-narrative">
-                Forensics Suite is a project I am currently working on. The application ingests PCAPs and registry hives, extracts useful investigation data, and structures it into analyst-friendly reporting workflows.
-                It uses an AI agent to generate high-level reports that help analysts save time while preserving the option for full manual analysis whenever deeper technical validation is needed.
-              </p>
-            </div>
-          </div>
-        </article>
-      </div>
+      <p class="text-sm u-muted">
+        The <a href="#forensics-agent" class="underline link-accent">Forensics Agent</a> Capstone project is documented in full under <strong>Featured work</strong> above.
+      </p>
     </section>
 
     <div class="section-divider"></div>
@@ -458,9 +558,9 @@
       <p class="section-label">Security operations &amp; practice</p>
       <h2 id="cyber-heading" class="section-title">Cybersecurity experience</h2>
       <p class="text-sm mb-4 u-muted">
-        Complete problem statements, methodologies, and outcomes for the National Cyber League, Google Cybersecurity Certificate program, and the 2025 Annual User Access Review are documented in <strong>Featured work</strong> above (see National Cyber League; Google Cybersecurity; Information Security: 2025 Annual User Access Review).
+        Complete problem statements, methodologies, and outcomes for the National Cyber League, Google Cybersecurity Certificate program, and the Information Security Analyst Assistant role are documented in <strong>Featured work</strong> above.
       </p>
-      <div class="academic-card credential-highlight-card">
+      <div class="academic-card credential-highlight-card no-rm">
         <p class="credential-highlight-label">Credential highlight</p>
         <p class="text-sm u-text">
           <strong>CompTIA Security+ (Continuing Education)</strong> complements this experience by validating baseline mastery of threats, vulnerabilities, identity and access, architecture, operations, and governance, aligned with entry-level security analyst and SOC-adjacent roles. The official certificate PDF is linked in <a class="underline link-accent" href="#comptia-security-plus">Certifications</a> below.
@@ -474,7 +574,7 @@
       <p class="section-label">Engineering</p>
       <h2 id="se-heading" class="section-title">Software engineering &amp; full-stack development</h2>
       <p class="text-sm mb-4 u-muted">
-        Full project narratives for Kenrish Collection (Django new version), Kenrish Collection (Node.js early version), and the Chess Javascript App appear in <strong>Featured work</strong> above.
+        Full project narratives for Kenrish Collection (React + Django IMS), Kenrish Collection (Node.js early version), and the Chess Javascript App appear in <strong>Featured work</strong> above.
       </p>
     </section>
 
@@ -517,7 +617,7 @@
           </div>
         </div>
 
-        <div class="cert-learned read-more-block">
+        <div class="cert-learned">
           <h4 class="cert-learned-title">What I Learned</h4>
           <ol class="cert-learned-list">
             <li>
@@ -621,13 +721,12 @@
   </div>
 
   <footer class="site-footer">
-    <p>Last updated: April 11, 2026</p>
+    <p>Last updated: June 2026</p>
     <p class="motto"><strong>George Akai</strong>: What can I do today to make another person&apos;s day better? Smile, perhaps...</p>
-    <p class="text-xs mt-2 u-muted">George Akai · Chico State · Projects &amp; Experience</p>
+    <p class="text-xs mt-2 u-muted">George Akai &nbsp;&middot;&nbsp; georgeakaing@gmail.com &nbsp;&middot;&nbsp; Projects &amp; Experience</p>
   </footer>
 
   <script src="assets/js/mobile-nav.js" defer></script>
-  <script src="assets/js/site-analytics.js" defer></script>
   <script src="assets/js/project-card-toggle.js" defer></script>
   <script src="assets/js/read-more.js" defer></script>
 </body>

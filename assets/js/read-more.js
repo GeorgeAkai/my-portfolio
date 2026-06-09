@@ -48,6 +48,7 @@
     if (p.closest(".site-header-strip")) return;
     if (p.closest(".read-more-block")) return;
     if (p.closest(".project-card-academic")) return;
+    if (p.closest(".no-rm")) return;
     var t = p.textContent.replace(/\s+/g, " ").trim();
     if (t.length <= MIN_CHARS) return;
 
