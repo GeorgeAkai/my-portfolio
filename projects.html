@@ -27,6 +27,17 @@
       var dark = html.classList.toggle("dark");
       localStorage.setItem("theme", dark ? "dark" : "light");
     }
+    function downloadPortfolioPDF() {
+      var html = document.documentElement;
+      var wasDark = html.classList.contains("dark");
+      if (wasDark) html.classList.remove("dark");
+      function restore() {
+        if (wasDark) html.classList.add("dark");
+        window.removeEventListener("afterprint", restore);
+      }
+      window.addEventListener("afterprint", restore);
+      setTimeout(function () { window.print(); }, 60);
+    }
     function openModal(src) {
       document.getElementById("modalImg").src = src;
       document.getElementById("imgModal").classList.remove("hidden");
@@ -70,6 +81,7 @@
             <a class="btn-outline-academic" href="https://www.linkedin.com/in/george-akai-91a41022b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a class="btn-outline-academic" href="mailto:georgeakaing@gmail.com">Email</a>
             <a class="btn-outline-academic" href="assets/docs/GeorgeNResume.pdf" download="GeorgeNResume.pdf">Resume (PDF)</a>
+            <button type="button" id="print-pdf-btn" class="btn-outline-academic" onclick="downloadPortfolioPDF()">Download Portfolio PDF</button>
           </div>
         </div>
       </div>

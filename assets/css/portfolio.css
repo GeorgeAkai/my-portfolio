@@ -1505,3 +1505,83 @@ svg {
     padding-right: 0.75rem;
   }
 }
+
+/* ─── Print / Save as PDF ──────────────────────────────────────── */
+@media print {
+  /* Force light-theme variable overrides regardless of class */
+  :root,
+  html,
+  html.dark {
+    --bg: #ffffff;
+    --card-bg: #f9fafb;
+    --card-border: #e5e7eb;
+    --text: #111827;
+    --muted: #4b5563;
+    --accent: #2d6cdf;
+    --border-color: #e5e7eb;
+    color-scheme: light;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ── Hide interactive chrome ─── */
+  .site-topbar,
+  .btn-theme,
+  #print-pdf-btn,
+  .project-card__toggle,
+  .read-more__toggle { display: none !important; }
+
+  /* ── Show all collapsed / hidden content ─── */
+  .project-card__details[hidden],
+  [hidden] { display: block !important; }
+
+  .read-more__panel,
+  .read-more__panel--collapsed {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  /* ── Single-column layout for print readability ─── */
+  .project-grid,
+  .project-grid.cols-2 { grid-template-columns: 1fr !important; }
+
+  .homelab-dashboard {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .cert-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* ── Videos can't print — hide them ─── */
+  video { display: none !important; }
+
+  /* ── Page break control ─── */
+  .project-card-academic,
+  .cert-highlight,
+  .homelab-panel,
+  .objective-mini { break-inside: avoid; page-break-inside: avoid; }
+
+  .section-block { break-before: auto; }
+
+  .section-divider { break-after: avoid; }
+
+  /* ── Clean backgrounds ─── */
+  body,
+  .portfolio-body { background: #ffffff !important; }
+
+  .site-header-strip { background: #f3f4f6 !important; }
+
+  .academic-card,
+  .project-card-academic,
+  .homelab-panel { background: #f9fafb !important; border-color: #e5e7eb !important; }
+
+  /* ── Suppress URL printing next to links ─── */
+  a::after { content: "" !important; }
+
+  /* ── Footer ─── */
+  .site-footer { border-top: 1px solid #e5e7eb; }
+}
